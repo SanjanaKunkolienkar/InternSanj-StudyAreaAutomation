@@ -10,7 +10,7 @@ def print_folderstructure_test():
     # Use a breakpoint in the code line below to debug your script.
     print('*******This is a test to check if the code is in correct folder*******')
     print(__file__)
-    print('Input folder path:',os.path.join(ROOT_DIR,'Input Data'))
+    print('Input folder path:', os.path.join(ROOT_DIR, 'Input Data'))
 
 
 # Press the green button in the gutter to run the script.
