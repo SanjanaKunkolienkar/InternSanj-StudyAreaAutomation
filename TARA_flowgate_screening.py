@@ -7,8 +7,6 @@ import numpy as np
 #import config_parser_helper as cph
 from config.definitions import ROOT_DIR
 
-
-
 def read_input_files():  # Read all input files needed for performing the Flowgate screening in TARA
     cwd = os.path.join(ROOT_DIR, 'Input Data/')
     study_file = ''
@@ -21,10 +19,12 @@ def read_input_files():  # Read all input files needed for performing the Flowga
     main_reports = os.path.join(cwd, 'main_reports')
     ind_gens = os.path.join(cwd, 'ind_gens')
     templates_folder = os.path.join(cwd, 'templates')
+    for file in os.listdir(temp_folder):
+        if file.endswith(".con"):
+            study_file = os.path.join(files_folder, file)
     for file in os.listdir(files_folder):
         if file.endswith(".raw"):
             study_file = os.path.join(files_folder, file)
-    for file in os.listdir(files_folder):
         if file.endswith(".sub"):
             sub_file = os.path.join(files_folder, file)
         if file.endswith(".mon"):

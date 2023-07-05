@@ -30,7 +30,7 @@ def create_combined_confile():
     # Function to combine all ERCOT confiles : only includes N-1 contingencies: P1, P2, P4, P5 and P7
     path_to_file = os.path.join(ROOT_DIR, 'Input Data\ERCOTcontingencies\\')
     output_file = os.path.join(ROOT_DIR, 'Temp\\')
-    filename = os.path.join(output_file, 'AllERCOTcontingencies.txt')
+    filename = os.path.join(output_file, 'AllERCOTcontingencies.con')
     with open(filename, 'w') as f:
         f.write('DEFAULT DISPATCH\n  SUBSYSTEM \'DEFAULT DISPATCH\'\nEND\n')
         f.write('')
