@@ -6,3 +6,8 @@ Before running the main.py ensure the following:
    3. TARA ??
 2. All packages are installed on your computer.
 3. Add the ERCOT contingencies in the Input Data/ERCOTcontingencies folder. When doing this add only the .con files corresponding to the study SSWG case.
+4. Load the input files in following folders:
+   1. ERCOTcontingencies: All ERCOT contingences for PSSE for the study case as .con files.
+   2. files: Keep empty
+   3. PlanningDataDictionary: ERCOT planning data dictionary
+   4. SSWGCase: .raw file of the study case.

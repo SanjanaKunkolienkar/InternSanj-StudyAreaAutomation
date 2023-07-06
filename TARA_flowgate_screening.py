@@ -14,23 +14,22 @@ def read_input_files():  # Read all input files needed for performing the Flowga
     mon_file = ''
     con_file = ''
     exc_file = ''
-    files_folder = os.path.join(cwd, 'files')
-    temp_folder = os.path.join(ROOT_DIR, 'Temp') #contingencies are combined and output in the Temp folder
+    files_folder = os.path.join(cwd, 'files') #contains .con , .sub , .mon  .exc and .csv files
+    case_folder = os.path.join(cwd, 'SSWGCase') #contains the .raw file
+    temp_folder = os.path.join(ROOT_DIR, 'Temp')
     main_reports = os.path.join(cwd, 'main_reports')
     ind_gens = os.path.join(cwd, 'ind_gens')
     templates_folder = os.path.join(cwd, 'templates')
-    for file in os.listdir(temp_folder):
-        if file.endswith(".con"):
-            study_file = os.path.join(files_folder, file)
-    for file in os.listdir(files_folder):
+    for file in os.listdir(case_folder):
         if file.endswith(".raw"):
-            study_file = os.path.join(files_folder, file)
+            study_file = os.path.join(case_folder, file)
+    for file in os.listdir(files_folder):
         if file.endswith(".sub"):
             sub_file = os.path.join(files_folder, file)
         if file.endswith(".mon"):
             mon_file = os.path.join(files_folder, file)
         if file.endswith(".con"):
-            con_file = os.path.join(files_folder, file)
+            con_file = os.path.join(files_folder, file) #contingencies are combined and output in the Temp folder
         if file.endswith(".exc"):
             exc_file = os.path.join(files_folder, file)
         if file.endswith(".csv"):
