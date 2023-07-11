@@ -54,7 +54,7 @@ def read_input_files():  # Read all input files needed for performing the Flowga
 
 def run_tara_template(files):
     template = os.path.join(files['temp'], 'template_run')
-    tara_exe = pw.powerGemExe(exeFilePath="P:/TARA/New Release/TARA2102_3/tara.exe")
+    tara_exe = pw.powerGemExe(exeFilePath=os.path.join(files['temp'],"tara.exe"))
     print('Simulation Started')
     output = tara_exe.runScript(scriptFilePath=template)
     print(output)

@@ -3,6 +3,7 @@ import os
 from config.definitions import ROOT_DIR
 import pyPowerGEM.pyTARA as pt
 import generatefiles as gf
+import TARA_flowgate_screening as tfs
 
 def print_folderstructure_test():
     # Use a breakpoint in the code line below to debug your script.
@@ -35,3 +36,4 @@ if __name__ == '__main__':
     gf.create_combined_confile(ROOT_DIR)
     gf.create_monfile(ROOT_DIR)
     gf.create_subfile(ROOT_DIR)
+    tfs.main()
