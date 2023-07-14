@@ -27,10 +27,15 @@ def getcounty(buses):
             check_bus = "Bus is missing from planning dictionary. Check if these are from the study system: \n"
             missing_list.append(bus)
     county_list = [*set(county_list)]
+
     print(county_list)
     print(check_bus, missing_list)
+    return county_list
 
+def main():
+    buses = eb.main()
+    cl = getcounty(buses)
+    return cl
 
 if __name__ == "__main__":
-    buses = eb.main()
-    getcounty(buses)
+    main()
