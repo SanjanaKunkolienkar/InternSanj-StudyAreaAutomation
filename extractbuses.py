@@ -15,13 +15,16 @@ def extract_from_fg_violations():
         buses.append(int(word[0]))
         buses.append(int(word[3]))
     unique_buses = [*set(buses)]
-    print(len(buses))
-    print(len(unique_buses))
+    #print(len(buses))
+    #print(len(unique_buses))
+    return unique_buses
 
-def main(action):
+def main():
+    action = 'flowgatescreening'
     if action == 'flowgatescreening':
-        extract_from_fg_violations()
+        buses = extract_from_fg_violations()
+        return buses
 
 if __name__ == "__main__":
     action = 'flowgatescreening'
-    main(action)
+    buses = main()
