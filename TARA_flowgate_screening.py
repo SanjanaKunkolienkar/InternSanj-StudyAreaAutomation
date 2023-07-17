@@ -69,9 +69,10 @@ def mod_template(template_file, config_dict, files):
     output_file.write(new_script)
 
 def run_fgt_screening(files):  # Perform flowgate screening using templates and the input files to get the .fgt file
+    load = 80
     template_file = files['fgt_screening'] #fgt_screen_temp file path = 1_screening.template
     config_dict = {'temp': files['temp'], 'study': files['study'], 'sub': files['sub'], 'con': files['con'],
-                   'mon': files['mon'],'main_reports': files['main_reports']}
+                   'mon': files['mon'],'main_reports': files['main_reports'], 'loading': load}
     mod_template(template_file, config_dict, files)
     run_tara_template(files)
 

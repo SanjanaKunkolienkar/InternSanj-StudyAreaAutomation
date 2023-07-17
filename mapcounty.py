@@ -13,7 +13,7 @@ def mapcounty(county):
     fig, ax = plt.subplots(figsize=(10, 10))
     texas_map.plot(ax=ax, color='lightgray', edgecolor='black')
     highlighted_map.plot(ax=ax, color='red', edgecolor='black')
-    highlighted_map.apply(lambda x: ax.annotate(text=x['name'], xy=x.geometry.centroid.coords[0], ha='center', fontsize=6.5), axis=1);
+    highlighted_map.apply(lambda x: ax.annotate(text=x['name'], xy=x.geometry.centroid.coords[0], ha='center', fontsize=6), axis=1)
     ax.set_axis_off()
     plt.show()
     #print(texas)

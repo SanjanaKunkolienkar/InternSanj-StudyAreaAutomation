@@ -5,6 +5,7 @@ import pyPowerGEM.pyTARA as pt
 import generatefiles as gf
 import TARA_flowgate_screening as tfs
 import getcounty as gc
+import mapcounty as mc
 
 def print_folderstructure_test():
     # Use a breakpoint in the code line below to debug your script.
@@ -40,3 +41,4 @@ if __name__ == '__main__':
     files = tfs.read_input_files()
     tfs.main(files)
     county = gc.main()
+    mc.mapcounty(county)
