@@ -11,12 +11,18 @@ def extract_from_fg_violations():
     #print(viol.head())
     for num in viol:
         words = (num.strip()).split(" ")
-        word = [x for x in words if x != '']
+        #print(words)
+        filtered = filter(lambda x: (len(x) > 0) and (len(x) < 7), words)
+        filtered_list = list(filtered)
+        #print(filtered_list[0])
+        word = [x for x in filtered_list if ((x == '-') or (x.isdigit())) and ((x != '138') and (x != '345') and (x != '1'))]
+        #print(word)
         buses.append(int(word[0]))
-        buses.append(int(word[3]))
+        buses.append(int(word[1]))
+
     unique_buses = [*set(buses)]
     #print(len(buses))
-    #print(len(unique_buses))
+    print(unique_buses)
     return unique_buses
 
 def main():

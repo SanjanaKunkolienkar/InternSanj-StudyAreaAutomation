@@ -6,11 +6,17 @@ import matplotlib.pyplot as plt
 
 def mapcounty(county):
     path_to_data = os.path.join(ROOT_DIR, 'Input Data\TexasCountyMap\Texas Counties Map.geojson')
-    texas = geopandas.read_file(path_to_data)
-    ax = texas.plot(color='white', edgecolor='black')
+    texas_map = geopandas.read_file(path_to_data)
+    # Filter the Texas map to include only the selected counties
+    highlighted_map = texas_map[texas_map['name'].str.lower().isin([x.lower() for x in county])]
+    print(highlighted_map)
+    fig, ax = plt.subplots(figsize=(10, 10))
+    texas_map.plot(ax=ax, color='lightgray', edgecolor='black')
+    highlighted_map.plot(ax=ax, color='red', edgecolor='black')
+    highlighted_map.apply(lambda x: ax.annotate(text=x['name'], xy=x.geometry.centroid.coords[0], ha='center', fontsize=6.5), axis=1);
     ax.set_axis_off()
     plt.show()
-    print(texas)
+    #print(texas)
 
 def main():
     county = gc.main()
