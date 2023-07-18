@@ -1,10 +1,11 @@
 import os
-def create_combined_confile(ROOT_DIR):
+def create_combined_confile(ROOT_DIR, filename, confolder):
     # Function to combine all ERCOT confiles : only includes N-1 contingencies: P1, P2, P4, P5 and P7
-    path_to_file = os.path.join(ROOT_DIR, 'Input Data\ERCOTcontingencies\\')
-    output_file = os.path.join(ROOT_DIR, 'Input Data\\files\\')
-    filename = os.path.join(output_file, 'AllERCOTcontingencies.con')
-    with open(filename, 'w') as f:
+    path_to_file = os.path.join(ROOT_DIR, 'Input Data\ERCOTcontingencies\\', confolder)
+    output_file = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'files\\')
+    print(output_file)
+    opfilename = os.path.join(output_file, 'AllERCOTcontingencies.con')
+    with open(opfilename, 'w') as f:
         f.write('DEFAULT DISPATCH\n  SUBSYSTEM \'Export\'\nEND\n')
         f.write('')
         f.write('/ *Contingencies in P1\n')
@@ -42,8 +43,8 @@ def create_combined_confile(ROOT_DIR):
                 statement = 'INCLUDE \"' + os.path.join(path_to_file, file) + '\"'
                 f.write(statement)
                 f.write('\n')
-def create_monfile(ROOT_DIR):
-    output_file = os.path.join(ROOT_DIR, 'Input Data\\files\\')
+def create_monfile(ROOT_DIR, filename):
+    output_file = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'files\\')
     filename = os.path.join(output_file, 'MON.mon')
     with open(filename, 'w') as f:
         f.write('MONITOR BRANCHES IN SUBSYSTEM \'Import\'\n')
@@ -52,15 +53,15 @@ def create_monfile(ROOT_DIR):
         f.write('MONITOR TIES FROM SUBSYSTEM \'Import\'\n')
         f.write('\nEND')
 
-def create_subfile(ROOT_DIR):
-    inputbuses = input("Enter the study buses to which generators are connected in the following format XXXXXX, XXXXXX : ")
+def create_subfile(ROOT_DIR, filename, buses):
+    inputbuses = buses #input("Enter the study buses to which generators are connected in the following format XXXXXX, XXXXXX : ")
     buses = [int(bus) for bus in inputbuses.split(",")]
-    output_file = os.path.join(ROOT_DIR, 'Input Data\\files\\')
+    output_file = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'files\\')
     filename = os.path.join(output_file, 'SUB.sub')
     with open(filename, 'w') as f:
         f.write('subsystem \'Export\'\n')
         for bus in buses:
-            statement = '{}{}{}'.format(' bus ',bus,'\n')
+            statement = '{}{}{}'.format(' bus ', bus, '\n')
             f.write(statement)
         f.write('End\n')
         f.write('subsystem \'Import\'\n')

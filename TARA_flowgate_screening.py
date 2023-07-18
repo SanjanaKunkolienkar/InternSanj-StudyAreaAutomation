@@ -7,22 +7,26 @@ import numpy as np
 #import config_parser_helper as cph
 from config.definitions import ROOT_DIR
 
-def read_input_files():  # Read all input files needed for performing the Flowgate screening in TARA
-    cwd = os.path.join(ROOT_DIR, 'Input Data\\')
+def read_input_files(filename):  # Read all input files needed for performing the Flowgate screening in TARA
+    cwd = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename)
     study_file = ''
     sub_file = ''
     mon_file = ''
     con_file = ''
     exc_file = ''
     files_folder = os.path.join(cwd, 'files') #contains .con , .sub , .mon  .exc and .csv files
-    case_folder = os.path.join(cwd, 'SSWGCase') #contains the .raw file
-    temp_folder = os.path.join(ROOT_DIR, 'Temp')
-    templates_folder = os.path.join(temp_folder, 'templates')
+    if not os.path.exists(os.path.join(cwd, 'Temp')):
+        os.makedirs(os.path.join(cwd, 'Temp'))
+    temp_folder = os.path.join(cwd, 'Temp')
+    templates_folder = os.path.join(ROOT_DIR, 'Input Data\\templates\\')
+    tara_folder = os.path.join(ROOT_DIR, 'Input Data\\tara\\')
+    if not os.path.exists(os.path.join(temp_folder, 'main_reports')):
+        os.makedirs(os.path.join(temp_folder, 'main_reports'))
     main_reports = os.path.join(temp_folder, 'main_reports')
     #ind_gens = os.path.join(cwd, 'ind_gens')
-    for file in os.listdir(case_folder):
+    for file in os.listdir(cwd):
         if file.endswith(".raw"):
-            study_file = os.path.join(case_folder, file)
+            study_file = os.path.join(cwd, file)
     for file in os.listdir(files_folder):
         if file.endswith(".sub"):
             sub_file = os.path.join(files_folder, file)
@@ -50,11 +54,11 @@ def read_input_files():  # Read all input files needed for performing the Flowga
             'sub': sub_file, 'con': con_file, 'create_fgt_temp': create_fgt_temp,
             'run_fgt_ac': run_fgt_ac, 'temp': temp_folder, 'fgt_file': fgt_file, 'read_sub_temp': read_sub_temp,
             'fgt_screening': fgt_screen_temp, 'dfax_report_folder': dfax_report_folder,
-            'main_reports': main_reports} #'gens_file': gens_file
+            'main_reports': main_reports, 'tara': tara_folder} #'gens_file': gens_file
 
 def run_tara_template(files):
     template = os.path.join(files['temp'], 'template_run')
-    tara_exe = pw.powerGemExe(exeFilePath=os.path.join(files['temp'],"tara.exe"))
+    tara_exe = pw.powerGemExe(exeFilePath=os.path.join(files['tara'],"tara.exe"))
     print('Simulation Started')
     output = tara_exe.runScript(scriptFilePath=template)
     print(output)
@@ -68,16 +72,15 @@ def mod_template(template_file, config_dict, files):
     new_script = template_script.substitute(**config_dict)
     output_file.write(new_script)
 
-def run_fgt_screening(files):  # Perform flowgate screening using templates and the input files to get the .fgt file
-    load = 80
+def run_fgt_screening(files, loading):  # Perform flowgate screening using templates and the input files to get the .fgt file
     template_file = files['fgt_screening'] #fgt_screen_temp file path = 1_screening.template
     config_dict = {'temp': files['temp'], 'study': files['study'], 'sub': files['sub'], 'con': files['con'],
-                   'mon': files['mon'],'main_reports': files['main_reports'], 'loading': load}
+                   'mon': files['mon'],'main_reports': files['main_reports'], 'loading': loading}
     mod_template(template_file, config_dict, files)
     run_tara_template(files)
 
-def main(files):
-    run_fgt_screening(files)
+def main(files, loading):
+    run_fgt_screening(files, loading)
 
 if __name__ == "__main__":
     files = read_input_files() #read .mon , .con , .sub , .raw files

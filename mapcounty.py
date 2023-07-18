@@ -4,7 +4,7 @@ import getcounty as gc
 import geopandas
 import matplotlib.pyplot as plt
 
-def mapcounty(county):
+def mapcounty(county, savemap):
     path_to_data = os.path.join(ROOT_DIR, 'Input Data\TexasCountyMap\Texas Counties Map.geojson')
     texas_map = geopandas.read_file(path_to_data)
     # Filter the Texas map to include only the selected counties
@@ -16,6 +16,8 @@ def mapcounty(county):
     highlighted_map.apply(lambda x: ax.annotate(text=x['name'], xy=x.geometry.centroid.coords[0], ha='center', fontsize=6), axis=1)
     ax.set_axis_off()
     plt.show()
+    filename = '{}{}'.format(savemap, 'Map.jpg')
+    plt.savefig(os.path.join(ROOT_DIR, 'Input Data\\SSWGCase\\', filename))
     #print(texas)
 
 def main():

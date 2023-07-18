@@ -32,8 +32,8 @@ def getcounty(buses):
     print(check_bus, missing_list)
     return county_list
 
-def main():
-    buses = eb.main()
+def main(filename):
+    buses = eb.main(filename)
     cl = getcounty(buses)
     return cl
 

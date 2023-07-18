@@ -4,8 +4,9 @@ from config.definitions import ROOT_DIR
 
 #Initially it extracts buses individually and send to get counties
 #Ultimately, it should combine all buses together and then send to get counties
-def extract_from_fg_violations():
-    filepath = os.path.join(ROOT_DIR, 'Temp\main_reports\ViolationScreenSum.csv')
+def extract_from_fg_violations(filename):
+
+    filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename , 'Temp\main_reports\ViolationScreenSum.csv')
     viol = (pd.read_csv(filepath, skiprows=10)).iloc[:,0]
     buses = []
     #print(viol.head())
@@ -25,10 +26,10 @@ def extract_from_fg_violations():
     print(unique_buses)
     return unique_buses
 
-def main():
+def main(filename):
     action = 'flowgatescreening'
     if action == 'flowgatescreening':
-        buses = extract_from_fg_violations()
+        buses = extract_from_fg_violations(filename)
         return buses
 
 if __name__ == "__main__":
