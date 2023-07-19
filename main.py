@@ -7,6 +7,7 @@ import TARA_flowgate_screening as tfs
 import getcounty as gc
 import mapcounty as mc
 import Test as tst
+import extractGTC as eg
 
 def print_folderstructure_test():
     # Use a breakpoint in the code line below to debug your script.
@@ -34,11 +35,15 @@ def tara_test():
 if __name__ == '__main__':
     print_folderstructure_test()
     tara_test()
-    filename, loading, confolder, buses = tst.test()
-    gf.create_combined_confile(ROOT_DIR, filename, confolder)
-    gf.create_monfile(ROOT_DIR, filename)
-    gf.create_subfile(ROOT_DIR, filename, buses)
-    files = tfs.read_input_files(filename)
-    tfs.main(files, loading)
-    county = gc.main(filename)
-    mc.mapcounty(county, filename)
+    filename, loading, confolder, buses, SA_county = tst.test()
+    eg.extractGTC(SA_county)
+    # gf.create_combined_confile(ROOT_DIR, filename, confolder)
+    # gf.create_monfile(ROOT_DIR, filename)
+    # gf.create_subfile(ROOT_DIR, filename, buses)
+    # files = tfs.read_input_files(filename)
+    # tfs.main(files, loading)
+    # county = gc.main(filename)
+    # merge county obtained from getcounty and extractGTC, then send to map county
+
+    # mc.mapcounty(county, filename)
+
