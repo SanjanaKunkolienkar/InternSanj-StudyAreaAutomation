@@ -33,17 +33,16 @@ def tara_test():
 # Press the green button in the gutter to run the script.
 
 if __name__ == '__main__':
-    print_folderstructure_test()
-    tara_test()
-    filename, loading, confolder, buses, SA_county = tst.test()
-    eg.extractGTC(SA_county)
-    # gf.create_combined_confile(ROOT_DIR, filename, confolder)
-    # gf.create_monfile(ROOT_DIR, filename)
-    # gf.create_subfile(ROOT_DIR, filename, buses)
-    # files = tfs.read_input_files(filename)
-    # tfs.main(files, loading)
-    # county = gc.main(filename)
-    # merge county obtained from getcounty and extractGTC, then send to map county
 
-    # mc.mapcounty(county, filename)
+    filename, loading, confolder, buses, SA_county = tst.test()
+    #eg.extractGTC(SA_county)
+    gf.create_combined_confile(ROOT_DIR, filename, confolder)
+    gf.create_monfile(ROOT_DIR, filename)
+    gf.create_subfile(ROOT_DIR, filename, buses)
+    files = tfs.read_input_files(filename)
+    print(files)
+    tfs.main(files, loading)
+    county = gc.main(filename)
+    # merge county obtained from getcounty and extractGTC, then send to map county
+    mc.mapcounty(county)
 

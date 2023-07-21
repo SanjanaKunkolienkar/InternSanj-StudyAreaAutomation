@@ -38,4 +38,5 @@ def main(filename):
     return cl
 
 if __name__ == "__main__":
-    main()
+    filename = 'Brotherton'
+    main(filename)

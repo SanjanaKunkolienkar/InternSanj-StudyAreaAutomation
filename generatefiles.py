@@ -3,7 +3,7 @@ def create_combined_confile(ROOT_DIR, filename, confolder):
     # Function to combine all ERCOT confiles : only includes N-1 contingencies: P1, P2, P4, P5 and P7
     path_to_file = os.path.join(ROOT_DIR, 'Input Data\ERCOTcontingencies\\', confolder)
     output_file = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'files\\')
-    print(output_file)
+    #print(output_file)
     opfilename = os.path.join(output_file, 'AllERCOTcontingencies.con')
     with open(opfilename, 'w') as f:
         f.write('DEFAULT DISPATCH\n  SUBSYSTEM \'Export\'\nEND\n')
@@ -43,6 +43,7 @@ def create_combined_confile(ROOT_DIR, filename, confolder):
                 statement = 'INCLUDE \"' + os.path.join(path_to_file, file) + '\"'
                 f.write(statement)
                 f.write('\n')
+    print("Generated con file in", output_file)
 def create_monfile(ROOT_DIR, filename):
     output_file = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'files\\')
     filename = os.path.join(output_file, 'MON.mon')
@@ -52,6 +53,7 @@ def create_monfile(ROOT_DIR, filename):
         f.write('MONITOR VOLTAGE DEVIATION IN SUBSYSTEM \'Import\'  0.080 0.080\n')
         f.write('MONITOR TIES FROM SUBSYSTEM \'Import\'\n')
         f.write('\nEND')
+    print("Generated mon file in", output_file)
 
 def create_subfile(ROOT_DIR, filename, buses):
     inputbuses = buses #input("Enter the study buses to which generators are connected in the following format XXXXXX, XXXXXX : ")
@@ -68,3 +70,4 @@ def create_subfile(ROOT_DIR, filename, buses):
         f.write(' AREAS 1 1200\n') #assuming all SSWG cases have Areas 1 to 1200
         f.write(' scale all for Import\n')
         f.write('End\n')
+    print("Generated sub file in", output_file)

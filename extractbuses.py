@@ -6,10 +6,10 @@ from config.definitions import ROOT_DIR
 #Ultimately, it should combine all buses together and then send to get counties
 def extract_from_fg_violations(filename):
 
-    filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename , 'Temp\main_reports\ViolationScreenSum.csv')
-    viol = (pd.read_csv(filepath, skiprows=10)).iloc[:,0]
+    filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename , 'Temp\FilteredFlowgates.csv')
+    viol = (pd.read_csv(filepath, skiprows=10)).iloc[:,1]
     buses = []
-    #print(viol.head())
+    print(viol.head())
     for num in viol:
         words = (num.strip()).split(" ")
         #print(words)
@@ -34,4 +34,5 @@ def main(filename):
 
 if __name__ == "__main__":
     action = 'flowgatescreening'
-    buses = main()
+    filename = 'Brotherton'
+    buses = main(filename)

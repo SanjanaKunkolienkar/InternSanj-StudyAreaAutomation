@@ -48,22 +48,23 @@ def extractGTC(studycounty):
     texas_adj_county = adj_county[adj_county['countyname'].str.contains(', TX')]
     # check for GTC counties 2 levels away from study county
     #return county list around SA - 1 county away
-    SA_adj_county_list = []
-    SA_adj_county_list_final = []
     # counties that are around the study county
     studycounty_adj = texas_adj_county[texas_adj_county['countyname'].str.contains(studycounty)]
-    SA_adj_county_list.extend(studycounty_adj['neighborname'].tolist())
-    print(SA_adj_county_list)
-    SA_adj_county_list_final = SA_adj_county_list
+    X = studycounty_adj['neighborname'].tolist()
+    SA_adj_county_list_final = []
     #find counties that are around the study county
-    n=0
-    for county in SA_adj_county_list:
-        print(county)
-        #print(county)
+    for county in X:
         county_adj = texas_adj_county[texas_adj_county['countyname'].str.contains(county)]
         SA_adj_county_list_final.extend(county_adj['neighborname'].tolist())
-        #print(SA_adj_county_list_final)
-        n=n+1
+    unique_adj = [*set(SA_adj_county_list_final)]
+
+
+    countylist_lower = [x.lower() for x in countylist]
+    unique_adj_lower = [x.lower() for x in unique_adj]
+    print(countylist_lower)
+    print(unique_adj_lower)
+
+
 
 if __name__ == '__main__':
     studycounty = 'Leon'
