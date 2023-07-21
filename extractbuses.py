@@ -32,7 +32,7 @@ def main(filename):
         buses = extract_from_fg_violations(filename)
         return buses
 
-if __name__ == "__main__":
-    action = 'flowgatescreening'
-    filename = 'Brotherton'
-    buses = main(filename)
+# if __name__ == "__main__":
+    #action = 'flowgatescreening'
+    #filename = 'Brotherton'
+    #buses = main(filename)

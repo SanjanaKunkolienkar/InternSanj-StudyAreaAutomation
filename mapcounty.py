@@ -24,6 +24,6 @@ def main(filename):
     county = gc.main(filename)
     mapcounty(county)
 
-if __name__ == "__main__":
-    filename = 'Pecan Praire'
-    main(filename)
+# if __name__ == "__main__":
+#     filename = 'BRP Bonete'
+#     main(filename)

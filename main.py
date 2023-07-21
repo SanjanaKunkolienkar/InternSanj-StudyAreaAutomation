@@ -34,14 +34,14 @@ def tara_test():
 
 if __name__ == '__main__':
 
-    filename, loading, confolder, buses, SA_county = tst.test()
+    filename, loading, confolder, buses, SA_county, dfax_cutoff = tst.test()
     #eg.extractGTC(SA_county)
     gf.create_combined_confile(ROOT_DIR, filename, confolder)
     gf.create_monfile(ROOT_DIR, filename)
     gf.create_subfile(ROOT_DIR, filename, buses)
     files = tfs.read_input_files(filename)
     print(files)
-    tfs.main(files, loading)
+    tfs.main(files, loading, dfax_cutoff)
     county = gc.main(filename)
     # merge county obtained from getcounty and extractGTC, then send to map county
     mc.mapcounty(county)

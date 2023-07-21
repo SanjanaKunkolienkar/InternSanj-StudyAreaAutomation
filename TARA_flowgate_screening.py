@@ -86,7 +86,14 @@ def run_fgt_screening(files, loading):  # Perform flowgate screening using templ
 
 def run_fgt_report(files):
     viol_screen_sum = os.path.join(files['main_reports'], 'ViolationScreenSum.csv')  # reads the flowgate screening results
-    df = pd.read_csv(viol_screen_sum, skiprows=10)  # skips to the results to count the number of flowgates
+    df = pd.read_csv(viol_screen_sum, skiprows=10, header=0)  # skips to the results to count the number of flowgates
+    print(df)
+    df = df.rename(columns=lambda x: x.strip())
+    value = 80
+    df = df.rename(columns={"Loading%": "Loading"})
+    df[['Loading']] = df[['Loading']].astype(int)
+    df = df[df.Loading >= value]
+    df.to_csv(os.path.join(files['main_reports'], 'ViolationScreenSum_loading.csv'))
     dfax_report_txt = 'opt report\n\
       MWCutOff        2 //MW impact cutoff for detatiled report\n\
       LimitCutOff     1 //Detailed report cutoff based on % of rating\n\
@@ -120,7 +127,7 @@ def run_fgt_report(files):
     run_tara_template(files)
 
 # merge the dfax reports into one single table to include all study gens, and identifying the flowgate id in the header, find CRIS values after dispatching all units to 100%
-def create_har_ref(files):
+def create_har_ref(files, dfax_cutoff):
     all_csv_files = []
     for file in os.listdir(files['dfax_report_folder']):
         if file.endswith(".csv"):
@@ -139,7 +146,7 @@ def create_har_ref(files):
         mon = df_fgt_name.iloc[0, 0].split("=", 1)[1].strip()
         con = df_fgt_name.iloc[1, 0].split("=", 1)[1].strip()
         df_dfax.drop(df_dfax.columns[[-1, ]], axis=1, inplace=True)
-        if (df_dfax['Dfax'].astype(float)).max()>0.03:
+        if ((df_dfax['Dfax'].astype(float)).max()>dfax_cutoff or (df_dfax['Dfax'].astype(float)).min()<(-1*dfax_cutoff)):
             fgt_name.append(mon)
             cont_name.append(con)
             max_dfax.append(df_dfax['Dfax'].max())
@@ -149,10 +156,10 @@ def create_har_ref(files):
     filtered_mon['Max Dfax'] = max_dfax
     filtered_mon.to_csv(os.path.join(files['temp'],'FilteredFlowgates.csv'))
 
-def main(files, loading):
+def main(files, loading, dfax_cutoff):
     run_fgt_screening(files, loading)
     run_fgt_report(files)
-    create_har_ref(files)
+    create_har_ref(files, dfax_cutoff)
     print("Generated Flowgate Screening files")
 
 # if __name__ == "__main__":

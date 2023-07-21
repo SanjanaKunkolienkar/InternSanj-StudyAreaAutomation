@@ -37,6 +37,6 @@ def main(filename):
     cl = getcounty(buses)
     return cl
 
-if __name__ == "__main__":
-    filename = 'Brotherton'
-    main(filename)
+# if __name__ == "__main__":
+#     filename = 'BRP Bonete'
+#     main(filename)
