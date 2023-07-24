@@ -24,25 +24,28 @@ def tara_test():
     #Load example case
     print('TARA API loading case')
     case_fp = r'P:\TARA\API\examples\pyTARA\example_data\sample2014.raw'
-    print('TARA API example case loaded successfully')
     tara.loadRawCase(caseFilePath=case_fp, rawVer=32)
+    print('TARA API example case loaded successfully')
     tara.solveCase()
     for bus in tara.loopBuses():
         print(bus)
     print('TARA API running correctly')
-# Press the green button in the gutter to run the script.
+    # Press the green button in the gutter to run the script.
 
 if __name__ == '__main__':
-
+    # input filename, loading percentage, contingency folder name, generator buses and dfax_cutoff
     filename, loading, confolder, buses, SA_county, dfax_cutoff = tst.test()
-    #eg.extractGTC(SA_county)
+    # creates con file
     gf.create_combined_confile(ROOT_DIR, filename, confolder)
+    # creates mon file
     gf.create_monfile(ROOT_DIR, filename)
+    # creates sub file
     gf.create_subfile(ROOT_DIR, filename, buses)
+    # Reads con, mon, sub, sswg,
     files = tfs.read_input_files(filename)
     print(files)
     tfs.main(files, loading, dfax_cutoff)
     county = gc.main(filename)
     # merge county obtained from getcounty and extractGTC, then send to map county
-    mc.mapcounty(county)
+    mc.mapcounty(county, SA_county)
 

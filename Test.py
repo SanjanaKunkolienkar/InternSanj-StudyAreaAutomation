@@ -4,7 +4,7 @@ import os
 def test():
     print("Select the case number to run")
     case = input("\n 1.Water Valley; 2.Trigo Solar; 3.BRP Bonete; 4.SMT Ironman; 5.Big Star; 6.Brotherton; 7.Pecan Praire")
-    loading = 40 #input("\n Enter loading: ")
+    loading = 80 #input("\n Enter loading: ")
     dfax_cutoff = 0.03
 
     if case == '1':
