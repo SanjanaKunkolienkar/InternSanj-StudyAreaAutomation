@@ -7,22 +7,28 @@ import numpy as np
 #import config_parser_helper as cph
 from config.definitions import ROOT_DIR
 
-def read_input_files(filename):  # Read all input files needed for performing the Flowgate screening in TARA
+def read_input_files(filename):
+    # ## this function reads all input files needed for performing the Flowgate screening in TARA ## #
     cwd = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename)
     study_file = ''
     sub_file = ''
     mon_file = ''
     con_file = ''
-    exc_file = ''
     files_folder = os.path.join(cwd, 'files') #contains .con , .sub , .mon  .exc and .csv files
+
+    # ###### Check if Temp folder exists and if not, create one ###### #
     if not os.path.exists(os.path.join(cwd, 'Temp')):
         os.makedirs(os.path.join(cwd, 'Temp'))
-    temp_folder = os.path.join(cwd, 'Temp')
-    templates_folder = os.path.join(ROOT_DIR, 'Input Data\\templates\\')
-    tara_folder = os.path.join(ROOT_DIR, 'Input Data\\tara\\')
+    temp_folder = os.path.join(cwd, 'Temp') # Intermediate TARA files saved here
+    templates_folder = os.path.join(ROOT_DIR, 'Input Data\\templates\\') # Skeleton TARA templates to run saved here
+    tara_folder = os.path.join(ROOT_DIR, 'Input Data\\tara\\') # Path to folder that contains tara.exe
+
+    # ###### Check if main_reports folder exists and if not, create one ###### #
     if not os.path.exists(os.path.join(temp_folder, 'main_reports')):
         os.makedirs(os.path.join(temp_folder, 'main_reports'))
     main_reports = os.path.join(temp_folder, 'main_reports')
+
+    # ###### Read the files: .raw ; .sub ; .mon ; .con ###### #
     for file in os.listdir(os.path.join(cwd, 'Study Case')):
         if file.endswith(".raw"):
             study_file = os.path.join(cwd, 'Study Case', file)
@@ -37,30 +43,32 @@ def read_input_files(filename):  # Read all input files needed for performing th
             exc_file = os.path.join(files_folder, file)
     if study_file == '' or sub_file == '' or mon_file == '' or con_file == '':
         sys.exit('ERROR MISSING SIMULATION FILE')
-    if exc_file == '':
-        print('NO EXCLUDE FILE LOADED')
+
+    # ###### Check if screening_dfax_reports folder exists and if not, create one ###### #
+    # ###### If it exists, clear all previous results from a previous run ###### #
     if not os.path.exists(os.path.join(temp_folder, 'screening_dfax_reports')):
         os.makedirs(os.path.join(temp_folder, 'screening_dfax_reports'))
     else:
         for f in os.listdir(os.path.join(temp_folder, 'screening_dfax_reports')):
             os.remove(os.path.join(os.path.join(temp_folder, 'screening_dfax_reports'), f))
-    dfax_report_folder = os.path.join(temp_folder, 'screening_dfax_reports')
-    create_fgt_temp = os.path.join(templates_folder,'create_flowgate.template')
-    read_sub_temp = os.path.join(templates_folder,'read_sub.template')
-    fgt_screen_temp = os.path.join(templates_folder, '1_screening.template')
-    fgt_rep = os.path.join(templates_folder, '2_All_fgts.template')
-    # Flowgates created by the script will be saved in the temp folder with the following path
-    fgt_file = os.path.join(temp_folder, '1_flowgates.fgt')
-    run_fgt_ac = os.path.join(templates_folder, 'run_fgt.template')
+
+    # ###### Path to save all TARA outputs ###### #
+    dfax_report_folder = os.path.join(temp_folder, 'screening_dfax_reports')  # Dfax report for each flowgate saved here
+    create_fgt_temp = os.path.join(templates_folder, 'create_flowgate.template')
+    read_sub_temp = os.path.join(templates_folder, 'read_sub.template')
+    fgt_screen_temp = os.path.join(templates_folder, '1_screening.template')  # Template to obtain all violations
+    fgt_rep = os.path.join(templates_folder, '2_All_fgts.template')  # Template to obtain dfax screening reports for all violations
+    fgt_file = os.path.join(temp_folder, '1_flowgates.fgt') #Flowgate created by TARA saved here
     results = os.path.join(temp_folder, 'results')
 
     print("Read input files for TARA flowgate screening in ", filename)
     return {'results': results, 'files': files_folder, 'cwd': cwd, 'study': study_file, 'mon': mon_file,
-            'sub': sub_file, 'con': con_file, 'run_fgt_ac': run_fgt_ac, 'temp': temp_folder, 'fgt_file': fgt_file,
+            'sub': sub_file, 'con': con_file, 'temp': temp_folder, 'fgt_file': fgt_file,
             'fgt_screening': fgt_screen_temp, 'dfax_report_folder': dfax_report_folder,'main_reports': main_reports,
-            'tara': tara_folder, 'fgt_rep': fgt_rep, 'create_fgt_temp':create_fgt_temp, 'read_sub_temp':read_sub_temp,}
+            'tara': tara_folder, 'fgt_rep': fgt_rep, 'create_fgt_temp': create_fgt_temp, 'read_sub_temp': read_sub_temp}
 
 def run_tara_template(files):
+    # Runs the TARA templates through tara.exe
     template = os.path.join(files["temp"], 'template_run')
     tara_exe = pw.powerGemExe(exeFilePath=os.path.join(files['tara'], 'tara.exe'))
     print('Simulation Started')
@@ -69,6 +77,7 @@ def run_tara_template(files):
     print('Simulation Finished')
 
 def mod_template(template_file, config_dict, files):
+    # Modifies the TARA templates to substitue all $values in the template file as per user input
     output_file = open(os.path.join(files['temp'], 'template_run'), "w")
     template = open(template_file, 'r')  # constructed template file with $template arguments to be swapped out
     template_read = template.read()
@@ -76,14 +85,17 @@ def mod_template(template_file, config_dict, files):
     new_script = template_script.substitute(**config_dict)
     output_file.write(new_script)
 
-def run_fgt_screening(files, loading, dfax_cutoff):# Perform flowgate screening using templates and the input files to get the .fgt file
-    template_file = files['fgt_screening'] #fgt_screen_temp file path = 1_screening.template
+def run_fgt_screening(files, loading, dfax_cutoff):
+    # Perform flowgate screening using templates and the input files to get the .fgt file
+    template_file = files['fgt_screening']
+    # Values to replace the $value with in the template file
     config_dict = {'temp': files['temp'], 'study': files['study'], 'sub': files['sub'], 'con': files['con'],
                    'mon': files['mon'], 'main_reports': files['main_reports'], 'loading': loading, 'dfax': dfax_cutoff}
     mod_template(template_file, config_dict, files)
     run_tara_template(files)
 
 def run_fgt_report(files, loading, dfax_cutoff):
+    # Use the violations summary to calculate dfax reports and filter them based on cut off value
     viol_screen_sum = os.path.join(files['main_reports'], 'ViolationScreenSum.csv')  # reads the flowgate screening results
     df = pd.read_csv(viol_screen_sum, skiprows=10, header=0)  # skips to the results to count the number of flowgates
     print(df)
@@ -93,6 +105,7 @@ def run_fgt_report(files, loading, dfax_cutoff):
     df[['Loading']] = df[['Loading']].astype(int)
     df = df[df.Loading >= value]
     df.to_csv(os.path.join(files['main_reports'], 'ViolationScreenSum_loading.csv'))
+    # Add properties to each dfax report - for running flowgate calculation for dfax of study generators (Export)
     dfax_report_txt = 'opt report\n\
       MWCutOff        2 //MW impact cutoff for detatiled report\n\
       LimitCutOff     1 //Detailed report cutoff based on % of rating\n\

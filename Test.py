@@ -6,6 +6,7 @@ def test():
     case = input("\n 1.Water Valley; 2.Trigo Solar; 3.BRP Bonete; 4.SMT Ironman; 5.Big Star; 6.Brotherton; 7.Pecan Praire")
     loading = 80 #input("\n Enter loading: ")
     dfax_cutoff = 0.03
+    voltage_cutoff = 0.05
 
     if case == '1':
         filename = 'Water Valley'
@@ -43,7 +44,7 @@ def test():
         buses = '995967, 994967'
         SA_county = 'Leon'
 
-    return filename, loading, confolder, buses, SA_county, dfax_cutoff
+    return filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff
 
 if __name__ == '__main__':
     filename, loading, confolder, SA_county, dfax_cutoff = test()
