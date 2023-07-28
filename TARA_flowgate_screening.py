@@ -100,10 +100,11 @@ def run_fgt_report(files, loading, dfax_cutoff):
     df = pd.read_csv(viol_screen_sum, skiprows=10, header=0)  # skips to the results to count the number of flowgates
     print(df)
     df = df.rename(columns=lambda x: x.strip())
-    value = loading
+    value = 100#loading
     df = df.rename(columns={"Loading%": "Loading"})
     df[['Loading']] = df[['Loading']].astype(int)
     df = df[df.Loading >= value]
+    df = df[df.Type != 'Base Case']
     df.to_csv(os.path.join(files['main_reports'], 'ViolationScreenSum_loading.csv'))
     # Add properties to each dfax report - for running flowgate calculation for dfax of study generators (Export)
     dfax_report_txt = 'opt report\n\

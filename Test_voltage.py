@@ -1,5 +1,3 @@
-import os
-
 
 def test():
     print("Select the case number to run")
@@ -55,4 +53,4 @@ def test():
     return filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level
 
 if __name__ == '__main__':
-    filename, loading, confolder, SA_county, dfax_cutoff, POI_bus, level = test()
+    filename, SA_county, POI_bus, level = test()

@@ -5,6 +5,7 @@ import geopandas
 import matplotlib.pyplot as plt
 
 def mapcounty(county, SA_county):
+
     path_to_data = os.path.join(ROOT_DIR, 'Input Data\TexasCountyMap\Texas Counties Map.geojson')
     texas_map = geopandas.read_file(path_to_data)
     # Filter the Texas map to include only the selected counties

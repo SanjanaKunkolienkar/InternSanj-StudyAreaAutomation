@@ -17,12 +17,8 @@ elif os.path.exists("C:\\Program Files (x86)\\PTI\\PSSE35\\35.3\\PSSBIN"):
     os.environ['PATH'] = "C:\\Program Files (x86)\\PTI\\PSSE35\\35.3\\PSSPY39" + ";" + os.environ['PATH']
 
 import psse35
-import redirect
 import psspy
-import pssarrays
-import epe_generic_tools as egt
-import pssexcel
-
+import redirect
 _i = psspy.getdefaultint()
 _f = psspy.getdefaultreal()
 _s = psspy.getdefaultchar()
@@ -117,14 +113,14 @@ def main(filename,voltage_cutoff, SA_county):
     buses = filtered_combine.index.tolist()
 
     county = gc.getcounty(buses)
-    if SA_county is not []:
-        mc.mapcounty(county, SA_county)
+    # if SA_county is not []:
+    #mc.mapcounty(county, SA_county)
 
     return county
 
 
 if __name__ == "__main__":
-    filename = 'Pecan Praire'
-    sacounty = 'Leon'
-    voltage_cutoff = 0.10
+    filename = 'Brotherton'
+    sacounty = 'Anderson'
+    voltage_cutoff = 0.05
     county = main(filename, voltage_cutoff, sacounty)
