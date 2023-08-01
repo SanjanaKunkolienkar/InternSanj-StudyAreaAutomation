@@ -2,7 +2,6 @@ from config.definitions import ROOT_DIR
 import os, sys
 import numpy as np
 import pandas as pd
-import mapcounty as mc
 import getcounty as gc
 
 if os.path.exists("C:\\Program Files\\PTI\\PSSE35\\35.3\\PSSBIN"):
@@ -55,8 +54,6 @@ def get_voltage():
 def read_psse_output_voltage(filename, studypath, benchpath):
 
     psse_files = read_input(filename)
-    print(psse_files)
-
     redirect.psse2py()
     psspy.psseinit(150000)
     psspy.read(0, psse_files['study'])
@@ -100,18 +97,13 @@ def main(filename,voltage_cutoff, SA_county):
         os.makedirs(filepath)
     studypath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Voltages\Study.csv')
     benchpath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Voltages\Bench.csv')
-
     read_psse_output_voltage(filename, studypath, benchpath)
     combine = combine_csv(filename,studypath, benchpath)
-
     #filter combine dataframe for greater than 0.05%
     filtered_combine = combine[combine['Sensitivity'].abs() > voltage_cutoff]
-
     #get the list of buses with voltage sensitivity > 0.05
     buses = filtered_combine.index.tolist()
-
     county = gc.getcounty(buses, SA_county)
-
 
     return county
 

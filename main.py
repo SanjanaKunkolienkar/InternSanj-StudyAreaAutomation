@@ -46,10 +46,10 @@ if __name__ == '__main__':
     county1 = gc.main(filename, SA_county)
     county2 = vs.main(filename, voltage_cutoff, SA_county)
     county3 = nl.main(filename, POI_bus, level, SA_county)
-    county = set(county1) & set(county2) & set(county3)
+    county = county1 + county2 + county3
     county = [*set(county)]
     print(county)
     print(SA_county)
     # merge county obtained from getcounty and extractGTC, then send to map county
-    mc.mapcounty(county, SA_county)
+    mc.mapcounty(county3, SA_county)
 

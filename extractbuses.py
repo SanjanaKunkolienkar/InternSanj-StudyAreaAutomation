@@ -2,8 +2,7 @@ import os
 import pandas as pd
 from config.definitions import ROOT_DIR
 
-#Initially it extracts buses individually and send to get counties
-#Ultimately, it should combine all buses together and then send to get counties
+#Initially it extracts buses from flowgates and sends to get counties
 def extract_from_fg_violations(filename):
 
     filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename , 'Temp\FilteredFlowgates.csv')

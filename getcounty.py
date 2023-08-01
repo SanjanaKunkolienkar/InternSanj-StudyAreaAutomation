@@ -1,6 +1,5 @@
 import os
 import pandas as pd
-import numpy as np
 from config.definitions import ROOT_DIR
 import extractbuses as eb
 import warnings
@@ -33,8 +32,8 @@ def getcounty(buses, sa_county):
     #if sa_county == 'REYNOSA':
     #    sa_county = 'HIDALGO'
 
-    print(county_list)
-    print(check_bus, missing_list)
+    # print(county_list)
+    # print(check_bus, missing_list)
 
     return cleanedList
 

@@ -1,5 +1,3 @@
-import os
-
 
 def test():
     print("Select the case number to run")
@@ -7,7 +5,7 @@ def test():
     loading = 100 #input("\n Enter loading: ")
     dfax_cutoff = 0.03
     voltage_cutoff = 0.05
-    level = int(4)
+    level = int(8)
 
     if case == '1':
         filename = 'Water Valley'

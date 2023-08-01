@@ -1,8 +1,5 @@
 from config.definitions import ROOT_DIR
-import os, sys
-import numpy as np
-import pandas as pd
-import mapcounty as mc
+import os , sys
 import getcounty as gc
 import Test_voltage as tst
 
@@ -62,7 +59,6 @@ def get_n_levels_away(POI, levels):
                                 busdict[kbus] = level + 1
                                 nextbuses[kbus] = level + 1
             buses = buses | nextbuses
-                #level = level + 1  # jbus found
     else:
         print("ERROR : Value of level is 0")
 
@@ -80,9 +76,6 @@ def main(filename, POI_bus, level, SA_county):
     print("Buses N levels away")
     print(bus_list)
     county = gc.getcounty(bus_list, SA_county)
-    #mc.mapcounty(county, SA_county)
-
-    print('Buses are', bus_list)
 
     ierr_close_line = psspy.close_powerflow()
     ierr_del_tmpfiles = psspy.deltmpfiles()
