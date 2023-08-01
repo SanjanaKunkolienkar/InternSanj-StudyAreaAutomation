@@ -19,21 +19,19 @@ elif os.path.exists("C:\\Program Files (x86)\\PTI\\PSSE35\\35.3\\PSSBIN"):
 
 import psse35
 import redirect
+redirect.psse2py()
 import psspy
-
+ierr = psspy.psseinit(150000)
+psspy.lines_per_page_one_device(1, 100000)
 
 _i = psspy.getdefaultint()
 _f = psspy.getdefaultreal()
 _s = psspy.getdefaultchar()
 
-redirect.psse2py()
-ierr = psspy.psseinit(150000)
-psspy.lines_per_page_one_device(1, 100000)
-
 def get_n_levels_away(POI, levels):
     ibus = int(POI)
-    ms=True
-    flag=2
+    ms = True
+    flag = 2
     buses = {}
     if levels != 0:
         busdict = {ibus: 0}  # dict with level for each analysed bus
@@ -72,19 +70,25 @@ def get_n_levels_away(POI, levels):
     return bus_list
 
 
-def main(filename, POI_bus, level):
+def main(filename, POI_bus, level, SA_county):
     cwd = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename)
     for file in os.listdir(os.path.join(cwd, 'Study Case')):
         if file.endswith(".raw"):
             study_file = os.path.join(cwd, 'Study Case', file)
     psspy.read(0, study_file)
     bus_list = get_n_levels_away(POI_bus, level)
-    county, SA_county = gc.getcounty(bus_list, POI_bus)
-    mc.mapcounty(county, SA_county)
+    print("Buses N levels away")
+    print(bus_list)
+    county = gc.getcounty(bus_list, SA_county)
+    #mc.mapcounty(county, SA_county)
 
     print('Buses are', bus_list)
 
-    #return county
+    ierr_close_line = psspy.close_powerflow()
+    ierr_del_tmpfiles = psspy.deltmpfiles()
+    ierr_halt = psspy.pssehalt_2()
+
+    return county
 
 
 if __name__ == "__main__":

@@ -6,7 +6,7 @@ import extractbuses as eb
 import warnings
 
 
-def getcounty(buses, POI):
+def getcounty(buses, sa_county):
     files_folder = os.path.join(ROOT_DIR, 'Input Data\Planning Data Dictionary\\')
     for file in os.listdir(files_folder):
         if file.endswith(".xlsx"):
@@ -19,7 +19,6 @@ def getcounty(buses, POI):
     check_bus = "All buses accounted for"
     county_list = []
     missing_list= []
-    sa_county = df.loc[df['SSWG BUS NUMBER'] == POI, 'PLANNING BUS COUNTY'].item()
     print('STUDY County', sa_county)
     for bus in buses:
         if bus in df['SSWG BUS NUMBER'].values:
@@ -31,18 +30,19 @@ def getcounty(buses, POI):
     county_list = [*set(county_list)]
     cleanedList = [x for x in county_list if x == x]
 
-    if sa_county == 'REYNOSA':
-        sa_county = 'HIDALGO'
+    #if sa_county == 'REYNOSA':
+    #    sa_county = 'HIDALGO'
 
     print(county_list)
     print(check_bus, missing_list)
-    return cleanedList, sa_county
 
-def main(filename, POI):
+    return cleanedList
+
+def main(filename, SA_county):
     buses = eb.main(filename)
-    cl, sa_county = getcounty(buses, POI)
-    return cl, sa_county
+    cl = getcounty(buses, SA_county)
+    return cl
 
-# if __name__ == "__main__":
-#     filename = 'BRP Bonete'
-#     main(filename)
+if __name__ == "__main__":
+    filename = 'BRP Bonete'
+    main(filename)

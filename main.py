@@ -8,6 +8,7 @@ import getcounty as gc
 import mapcounty as mc
 import Test as tst
 import voltagesensitivity as vs
+import nlevels as nl
 
 def tara_test():
     # This function checks if access to TARA is available on your computer
@@ -28,8 +29,9 @@ def tara_test():
 
 if __name__ == '__main__':
     # check if TARA runs on your system
-    ## tara_test()
+    tara_test()
     # input filename, loading percentage, contingency folder name, generator buses and dfax_cutoff
+    # replaced with user input file as a .ini file
     filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = tst.test()
     # creates con file - function name: generatefiles.py
     gf.create_combined_confile(ROOT_DIR, filename, confolder)
@@ -41,10 +43,12 @@ if __name__ == '__main__':
     files = tfs.read_input_files(filename)
     # run TARA flowgate screening
     tfs.main(files, loading, dfax_cutoff)
-    county1 = gc.main(filename)
-    county2 = vs.main(filename, voltage_cutoff, [])
-    county = county1 + county2
+    county1 = gc.main(filename, SA_county)
+    county2 = vs.main(filename, voltage_cutoff, SA_county)
+    county3 = nl.main(filename, POI_bus, level, SA_county)
+    county = set(county1) & set(county2) & set(county3)
     county = [*set(county)]
+    print(county)
     print(SA_county)
     # merge county obtained from getcounty and extractGTC, then send to map county
     mc.mapcounty(county, SA_county)

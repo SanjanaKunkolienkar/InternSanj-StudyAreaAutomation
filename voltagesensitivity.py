@@ -76,9 +76,7 @@ def read_psse_output_voltage(filename, studypath, benchpath):
     bench_V, bench_B = get_voltage()
     bench_system = pd.DataFrame({'Bus Number_bench': bench_B, 'Voltage_bench': bench_V})
     bench_system.to_csv(benchpath)
-    ierr_close_line = psspy.close_powerflow()
-    ierr_del_tmpfiles = psspy.deltmpfiles()
-    ierr_halt = psspy.pssehalt_2()
+
 
     return studypath, benchpath
 
@@ -112,9 +110,8 @@ def main(filename,voltage_cutoff, SA_county):
     #get the list of buses with voltage sensitivity > 0.05
     buses = filtered_combine.index.tolist()
 
-    county = gc.getcounty(buses)
-    # if SA_county is not []:
-    #mc.mapcounty(county, SA_county)
+    county = gc.getcounty(buses, SA_county)
+
 
     return county
 
@@ -123,4 +120,4 @@ if __name__ == "__main__":
     filename = 'Brotherton'
     sacounty = 'Anderson'
     voltage_cutoff = 0.05
-    county = main(filename, voltage_cutoff, sacounty)
+    county = main(filename, voltage_cutoff, SA_county)
