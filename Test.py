@@ -1,11 +1,11 @@
 
 def test():
     print("Select the case number to run")
-    case = '7' #input("\n 1.Water Valley; 2.Trigo Solar; 3.BRP Bonete; 4.SMT Ironman; 5.Big Star; 6.Brotherton; 7.Pecan Praire")
+    case = '6' #input("\n 1.Water Valley; 2.Trigo Solar; 3.BRP Bonete; 4.SMT Ironman; 5.Big Star; 6.Brotherton; 7.Pecan Praire")
     loading = 100 #input("\n Enter loading: ")
     dfax_cutoff = 0.03
     voltage_cutoff = 0.05
-    level = int(3)
+    level = int(8)
 
     if case == '1':
         filename = 'Water Valley'

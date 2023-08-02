@@ -67,16 +67,19 @@ def plot_polygons(all_polygons, selected_polygons, SA_county):
                              fontsize=8, ha='center', va='bottom', color='black')
             elif name in [SA_county]:
                 plt.plot(x, y, 'black', linewidth=1)
-                plt.fill(x, y, 'b', alpha=0.6)
+                plt.fill(x, y, 'b', alpha=0.8)
                 plt.annotate(SA_county, xy=(centroid_x[0], centroid_y[0]),
                              xytext=(centroid_x[0], centroid_y[0]),
                              fontsize=8, ha='center', va='bottom', color='black')
         elif polygon.intersects(calculate_convex_hull(selected_polygons)):
-            plt.plot(x, y, 'black', linewidth=1)
-            plt.fill(x, y, 'g', alpha=0.6)
-            plt.annotate(name, xy=(centroid_x[0], centroid_y[0]),
-                         xytext=(centroid_x[0], centroid_y[0]),
-                         fontsize=8, ha='center', va='bottom', color='black')
+            if ((polygon.intersection(calculate_convex_hull(selected_polygons)).area)*100 > 5.0):
+                # print("For county", name)
+                # print("Area of intersection is", polygon.intersection(calculate_convex_hull(selected_polygons)).area)
+                plt.plot(x, y, 'black', linewidth=1)
+                plt.fill(x, y, 'g', alpha=0.6)
+                plt.annotate(name, xy=(centroid_x[0], centroid_y[0]),
+                             xytext=(centroid_x[0], centroid_y[0]),
+                             fontsize=8, ha='center', va='bottom', color='black')
         else:
             plt.plot(x, y, 'black', linewidth=1)
 
