@@ -34,8 +34,8 @@ def getcounty(buses, sa_county):
 
     # print(county_list)
     # print(check_bus, missing_list)
-
-    return cleanedList
+    county = [x.lower() for x in cleanedList]
+    return [*set(county)]
 
 def main(filename, SA_county):
     buses = eb.main(filename)

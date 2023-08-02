@@ -81,7 +81,8 @@ def main(filename, POI_bus, level, SA_county):
     ierr_del_tmpfiles = psspy.deltmpfiles()
     ierr_halt = psspy.pssehalt_2()
 
-    return county
+    county = [x.lower() for x in county]
+    return [*set(county)]
 
 
 if __name__ == "__main__":

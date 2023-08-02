@@ -43,13 +43,17 @@ if __name__ == '__main__':
     files = tfs.read_input_files(filename)
     # run TARA flowgate screening
     tfs.main(files, loading, dfax_cutoff)
-    county1 = gc.main(filename, SA_county)
-    county2 = vs.main(filename, voltage_cutoff, SA_county)
+    # county1 = gc.main(filename, SA_county)
+    # county2 = vs.main(filename, voltage_cutoff, SA_county)
     county3 = nl.main(filename, POI_bus, level, SA_county)
-    county = county1 + county2 + county3
-    county = [*set(county)]
+    print("County 1, 2 and 3")
+    # print(county1)
+    # print(county2)
+    print(county3)
+    county_final = set([SA_county.lower()]) | set(county3)
+    county = [*set(county_final)]
     print(county)
     print(SA_county)
     # merge county obtained from getcounty and extractGTC, then send to map county
-    mc.mapcounty(county3, SA_county)
+    mc.main(county, SA_county)
 

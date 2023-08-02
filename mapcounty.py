@@ -1,34 +1,103 @@
 import os
 from config.definitions import ROOT_DIR
 import getcounty as gc
+import nlevels as nl
 import geopandas
+import Test as tst
+
+import json
+import random
 import matplotlib.pyplot as plt
+from shapely.geometry import shape, Polygon, MultiPolygon
 
-def mapcounty(county, SA_county):
 
-    path_to_data = os.path.join(ROOT_DIR, 'Input Data\TexasCountyMap\Texas Counties Map.geojson')
-    texas_map = geopandas.read_file(path_to_data)
-    # Filter the Texas map to include only the selected counties
-    highlighted_map = texas_map[texas_map['name'].str.lower().isin([x.lower() for x in county])]
-    sacounty = texas_map[texas_map['name'].str.lower().isin([SA_county.lower()])]
-    print(highlighted_map)
-    print(sacounty)
-    fig, ax = plt.subplots(figsize=(10, 10))
-    texas_map.plot(ax=ax, color='lightgray', edgecolor='black')
-    highlighted_map.plot(ax=ax, color='red', edgecolor='black')
-    sacounty.plot(ax=ax, color='blue', edgecolor='black')
-    highlighted_map.apply(lambda x: ax.annotate(text=x['name'], xy=x.geometry.centroid.coords[0], ha='center', fontsize=6), axis=1)
-    sacounty.apply(lambda x: ax.annotate(text=SA_county, xy=x.geometry.centroid.coords[0], ha='center', fontsize=6), axis=1)
-    ax.set_axis_off()
+def read_geojson():
+    file_path = os.path.join(ROOT_DIR, 'Input Data\TexasCountyMap\Texas Counties Map.geojson')
+    with open(file_path, 'r') as f:
+        data = json.load(f)
+    return data
+def extract_polygons(geojson_data):
+    polygons = []
+    for feature in geojson_data['features']:
+        geometry = shape(feature['geometry'])
+        if 'name' in feature['properties']:
+            name = feature['properties']['name']
+        else:
+            name = 'Unnamed Polygon'
+        if isinstance(geometry, Polygon):
+            polygons.append((geometry, name))
+        elif isinstance(geometry, MultiPolygon):
+            for sub_polygon in geometry.geoms:
+                polygons.append((sub_polygon, name))
+    return polygons
+
+
+def extract_polygons_by_name(geojson_data, target_polygon_names):
+    selected_polygons = []
+    for feature in geojson_data['features']:
+        geometry = shape(feature['geometry'])
+        name = feature['properties'].get('name', None)  # Assuming the name property is present in the GeoJSON
+
+        if isinstance(geometry, Polygon) and name and name.lower() in target_polygon_names:
+            selected_polygons.append(geometry)
+        elif isinstance(geometry, MultiPolygon):
+            if name and name.lower() in target_polygon_names:
+                selected_polygons.extend(list(geometry.geoms))
+
+    return selected_polygons
+
+
+def calculate_convex_hull(polygons):
+    return MultiPolygon(polygons).convex_hull
+
+
+def plot_polygons(all_polygons, selected_polygons, SA_county):
+    plt.figure(figsize=(8, 6))
+    for polygon_data in all_polygons:
+        if isinstance(polygon_data, tuple):
+            polygon, name = polygon_data
+        x, y = polygon.exterior.xy
+        centroid_x, centroid_y = polygon.centroid.xy
+        if polygon in selected_polygons:
+            if name not in [SA_county]:
+                plt.plot(x, y, 'black', linewidth=2, label='Random Polygon', fillstyle='full')
+                plt.fill(x, y, 'r', alpha=0.8)
+                plt.annotate(name, xy=(centroid_x[0], centroid_y[0]),
+                             xytext=(centroid_x[0], centroid_y[0]),
+                             fontsize=8, ha='center', va='bottom', color='black')
+            elif name in [SA_county]:
+                plt.plot(x, y, 'black', linewidth=1)
+                plt.fill(x, y, 'b', alpha=0.6)
+                plt.annotate(SA_county, xy=(centroid_x[0], centroid_y[0]),
+                             xytext=(centroid_x[0], centroid_y[0]),
+                             fontsize=8, ha='center', va='bottom', color='black')
+        elif polygon.intersects(calculate_convex_hull(selected_polygons)):
+            plt.plot(x, y, 'black', linewidth=1)
+            plt.fill(x, y, 'g', alpha=0.6)
+            plt.annotate(name, xy=(centroid_x[0], centroid_y[0]),
+                         xytext=(centroid_x[0], centroid_y[0]),
+                         fontsize=8, ha='center', va='bottom', color='black')
+        else:
+            plt.plot(x, y, 'black', linewidth=1)
+
+    convex_hull = calculate_convex_hull(selected_polygons)
+    x_hull, y_hull = convex_hull.exterior.xy
+    plt.plot(x_hull, y_hull, 'g-', linewidth=2, label='Convex Hull')
+
+    plt.xlabel('Longitude')
+    plt.ylabel('Latitude')
+    plt.title('Counties and Convex Hull')
+    plt.grid(True)
     plt.show()
-    #filename = '{}{}'.format(savemap, 'Map.jpg')
-    #plt.savefig(os.path.join(ROOT_DIR, 'Input Data\\SSWGCase\\', filename))
-    #print(texas)
 
-def main(filename, sacounty):
-    county = gc.main(filename)
-    mapcounty(county, sacounty)
+def main(target_polygon_names,SA_county):
+    geojson_data = read_geojson()
+    all_polygons = extract_polygons(geojson_data)
+    selected_polygons = extract_polygons_by_name(geojson_data, target_polygon_names)
 
-# if __name__ == "__main__":
-#     filename = 'BRP Bonete'
-#     main(filename)
+    plot_polygons(all_polygons, selected_polygons, SA_county)
+
+if __name__ == "__main__":
+    filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = tst.test()
+    target_polygon_names = nl.main(filename, POI_bus, level, SA_county)
+    main(target_polygon_names, SA_county)

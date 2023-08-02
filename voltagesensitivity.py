@@ -105,7 +105,8 @@ def main(filename,voltage_cutoff, SA_county):
     buses = filtered_combine.index.tolist()
     county = gc.getcounty(buses, SA_county)
 
-    return county
+    county = [x.lower() for x in county]
+    return [*set(county)]
 
 
 if __name__ == "__main__":
