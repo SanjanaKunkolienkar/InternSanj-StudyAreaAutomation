@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 from config.definitions import ROOT_DIR
+import warnings
 
 #Initially it extracts buses from flowgates and sends to get counties
 def extract_from_fg_violations(filename):
@@ -25,13 +26,26 @@ def extract_from_fg_violations(filename):
     print(unique_buses)
     return unique_buses
 
+def extract_from_counties(countylist):
+    files_folder = os.path.join(ROOT_DIR, 'Input Data\Planning Data Dictionary\\')
+    for file in os.listdir(files_folder):
+        if file.endswith(".xlsx"):
+            plandata = os.path.join(files_folder, file)
+
+    with warnings.catch_warnings(record=True):
+        warnings.simplefilter("always")
+        df = pd.read_excel(plandata, sheet_name='Data Dictionary', engine="openpyxl")
+
+    buses = []
+    for county in countylist:
+        val = df.loc[df['PLANNING BUS COUNTY'].str.lower() == county.lower(), 'SSWG BUS NUMBER'].tolist()
+        buses.append(val)
+
+    flat_list = [item for sublist in buses for item in sublist] #converting a list of lists to a flat list
+    unique_buses = [*set(flat_list)] #eliminating repetitive bus numbers
+    return unique_buses
 def main(filename):
     action = 'flowgatescreening'
     if action == 'flowgatescreening':
         buses = extract_from_fg_violations(filename)
         return buses
-
-# if __name__ == "__main__":
-    #action = 'flowgatescreening'
-    #filename = 'Brotherton'
-    #buses = main(filename)

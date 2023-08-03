@@ -55,19 +55,22 @@ def create_monfile(ROOT_DIR, filename):
         f.write('\nEND')
     print("Generated mon file in", output_file)
 
-def create_subfile(ROOT_DIR, filename, buses):
-    inputbuses = buses #input("Enter the study buses to which generators are connected in the following format XXXXXX, XXXXXX : ")
-    buses = [int(bus) for bus in inputbuses.split(",")]
+def create_subfile(ROOT_DIR, filename, buses, genbuses):
+    inputbuses = genbuses #input("Enter the study buses to which generators are connected in the following format XXXXXX, XXXXXX : ")
+    Gbuses = [int(bus) for bus in inputbuses.split(',')]
     output_file = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'files\\')
     filename = os.path.join(output_file, 'SUB.sub')
     with open(filename, 'w') as f:
         f.write('subsystem \'Export\'\n')
-        for bus in buses:
+        for bus in Gbuses:
             statement = '{}{}{}'.format(' bus ', bus, '\n')
             f.write(statement)
         f.write('End\n')
         f.write('subsystem \'Import\'\n')
-        f.write(' AREAS 1 1200\n') #assuming all SSWG cases have Areas 1 to 1200
+        for bus in buses:
+            statement = '{}{}{}'.format(' bus ', bus, '\n')
+            f.write(statement)
+        # f.write(' AREAS 1 1200\n') #assuming all SSWG cases have Areas 1 to 1200
         f.write(' scale all for Import\n')
         f.write('End\n')
     print("Generated sub file in", output_file)

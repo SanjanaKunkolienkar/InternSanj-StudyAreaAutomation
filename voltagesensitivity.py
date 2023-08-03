@@ -88,19 +88,24 @@ def combine_csv(filename, studypath, benchpath):
     combine['Sensitivity'] = 100*(combine['Voltage_bench']-combine['Voltage_study'])/combine['Voltage_bench']
     combine.to_csv(os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Voltages\Combine.csv'))
 
+    print(combine)
     return combine
 
 
-def main(filename,voltage_cutoff, SA_county):
+def main(filename,voltage_cutoff, SA_county, buses):
     filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Voltages')
     if not os.path.exists(filepath):
         os.makedirs(filepath)
     studypath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Voltages\Study.csv')
     benchpath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Voltages\Bench.csv')
     read_psse_output_voltage(filename, studypath, benchpath)
-    combine = combine_csv(filename,studypath, benchpath)
+    combine = combine_csv(filename, studypath, benchpath)
+
+    #filter buses that are in convex hull counties
+    combine = combine.reindex(list(range(combine.index.min(), combine.index.max() + 1)), fill_value=0)
+    combine_convex_buses = combine.loc[buses, :]
     #filter combine dataframe for greater than 0.05%
-    filtered_combine = combine[combine['Sensitivity'].abs() > voltage_cutoff]
+    filtered_combine =combine_convex_buses[combine_convex_buses['Sensitivity'].abs() > voltage_cutoff]
     #get the list of buses with voltage sensitivity > 0.05
     buses = filtered_combine.index.tolist()
     county = gc.getcounty(buses, SA_county)
@@ -113,4 +118,4 @@ if __name__ == "__main__":
     filename = 'Brotherton'
     sacounty = 'Anderson'
     voltage_cutoff = 0.05
-    county = main(filename, voltage_cutoff, SA_county)
+    # county = main(filename, voltage_cutoff, SA_county, buses)

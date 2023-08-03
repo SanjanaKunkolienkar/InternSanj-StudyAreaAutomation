@@ -9,6 +9,8 @@ import mapcounty as mc
 import Test as tst
 import voltagesensitivity as vs
 import nlevels as nl
+import extractbuses as eb
+import warnings
 
 def tara_test():
     # This function checks if access to TARA is available on your computer
@@ -32,28 +34,50 @@ if __name__ == '__main__':
     tara_test()
     # input filename, loading percentage, contingency folder name, generator buses and dfax_cutoff
     # replaced with user input file as a .ini file
-    filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = tst.test()
+    filename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = tst.test()
+
+
+    #Get counties that are N-levels away
+    county_nlevels = nl.main(filename, POI_bus, level, SA_county)
+    county_final = set([SA_county.lower()]) | set(county_nlevels) #Combine study county with counties n-levels away
+    county = [*set(county_final)]
+
+    # map counties obtained from (previous step + convex hull of counties from previous step)
+    county_hull = mc.main(county, SA_county) #returns a list of counties
+
+    #get all buses in these counties
+    buses = eb.extract_from_counties(county_hull)
+
+    #### Create mon, con and sub files for running TARA ####
     # creates con file - function name: generatefiles.py
     gf.create_combined_confile(ROOT_DIR, filename, confolder)
     # creates mon file - function name: generatefiles.py
     gf.create_monfile(ROOT_DIR, filename)
     # creates sub file - function name: generatefiles.py
-    gf.create_subfile(ROOT_DIR, filename, buses)
+    gf.create_subfile(ROOT_DIR, filename, buses, genbuses)
+
+
     # reads con, mon, sub, sswg and create sub-directory to store results
     files = tfs.read_input_files(filename)
     # run TARA flowgate screening
     tfs.main(files, loading, dfax_cutoff)
-    # county1 = gc.main(filename, SA_county)
-    # county2 = vs.main(filename, voltage_cutoff, SA_county)
-    county3 = nl.main(filename, POI_bus, level, SA_county)
-    print("County 1, 2 and 3")
-    # print(county1)
-    # print(county2)
-    print(county3)
-    county_final = set([SA_county.lower()]) | set(county3)
-    county = [*set(county_final)]
-    print(county)
-    print(SA_county)
-    # merge county obtained from getcounty and extractGTC, then send to map county
-    mc.main(county, SA_county)
+    county_dfax = gc.main(filename, SA_county)
+    county_voltage = vs.main(filename, voltage_cutoff, SA_county, buses)
+
+    print(county_voltage)
+
+    county_flip = (set(county_dfax) | set(county_voltage)) - set(county)
+
+    print(county_flip)
+
+    mc.map_study_area(county, county_flip, SA_county)
+
+    # # county2 = vs.main(filename, voltage_cutoff, SA_county)
+    #
+    # # print("County 1, 2 and 3")
+    # # print(county1)
+    # # print(county2)
+    #
+    # # merge county obtained from getcounty and extractGTC, then send to map county
+
 
