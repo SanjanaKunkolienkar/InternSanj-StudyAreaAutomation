@@ -38,7 +38,7 @@ def read_input(filename):
         if file.endswith(".raw"):
             study_file = os.path.join(cwd, 'Study Case', file)
     for file in os.listdir(os.path.join(cwd, 'Bench Case')):
-        if file.endswith(".raw"):
+        if file.endswith(".raw") or file.endswith(".sav"):
             bench_file = os.path.join(cwd, 'Bench Case', file)
 
     return {'study': study_file, 'bench': bench_file}
@@ -56,7 +56,10 @@ def read_psse_output_voltage(filename, studypath, benchpath):
     psse_files = read_input(filename)
     redirect.psse2py()
     psspy.psseinit(150000)
-    psspy.read(0, psse_files['study'])
+    if psse_files['study'].endswith(".raw"):
+        psspy.read(0, psse_files['study'])
+    elif psse_files['study'].endswith(".sav"):
+        psspy.case(0, psse_files['study'])
     study_V, study_B = get_voltage()
 
     study_system = pd.DataFrame({'Bus Number_study': study_B, 'Voltage_study': study_V})
@@ -69,7 +72,10 @@ def read_psse_output_voltage(filename, studypath, benchpath):
     redirect.psse2py()
     ierr = psspy.psseinit(150000)
     psspy.lines_per_page_one_device(1, 100000)
-    psspy.read(0, psse_files['bench'])
+    if psse_files['bench'].endswith(".raw"):
+        psspy.read(0, psse_files['bench'])
+    elif psse_files['bench'].endswith(".sav"):
+        psspy.read(0, psse_files['bench'])
     bench_V, bench_B = get_voltage()
     bench_system = pd.DataFrame({'Bus Number_bench': bench_B, 'Voltage_bench': bench_V})
     bench_system.to_csv(benchpath)

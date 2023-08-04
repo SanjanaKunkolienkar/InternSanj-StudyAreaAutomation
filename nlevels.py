@@ -71,7 +71,10 @@ def main(filename, POI_bus, level, SA_county):
     for file in os.listdir(os.path.join(cwd, 'Study Case')):
         if file.endswith(".raw"):
             study_file = os.path.join(cwd, 'Study Case', file)
-    psspy.read(0, study_file)
+            psspy.read(0, study_file)
+        elif file.endswith(".sav"):
+            study_file = os.path.join(cwd, 'Study Case', file)
+            psspy.case(0, study_file)
     bus_list = get_n_levels_away(POI_bus, level)
     print("Buses N levels away")
     print(bus_list)

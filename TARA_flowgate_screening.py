@@ -100,7 +100,7 @@ def run_fgt_report(files, loading, dfax_cutoff):
     df = pd.read_csv(viol_screen_sum, skiprows=10, header=0)  # skips to the results to count the number of flowgates
     print(df)
     df = df.rename(columns=lambda x: x.strip())
-    value = 100#loading
+    value = loading
     df = df.rename(columns={"Loading%": "Loading"})
     df[['Loading']] = df[['Loading']].astype(int)
     df = df[df.Loading >= value]

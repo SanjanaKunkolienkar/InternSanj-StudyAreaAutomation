@@ -1,5 +1,4 @@
 
-import os
 from config.definitions import ROOT_DIR
 import pyPowerGEM.pyTARA as pt
 import generatefiles as gf
@@ -10,7 +9,8 @@ import Test as tst
 import voltagesensitivity as vs
 import nlevels as nl
 import extractbuses as eb
-import warnings
+import read_user_input as read
+
 
 def tara_test():
     # This function checks if access to TARA is available on your computer
@@ -32,15 +32,15 @@ def tara_test():
 if __name__ == '__main__':
     # check if TARA runs on your system
     tara_test()
-    # input filename, loading percentage, contingency folder name, generator buses and dfax_cutoff
-    # replaced with user input file as a .ini file
-    filename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = tst.test()
 
+    # replaced with user input file as a .ini file
+    filename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = read.main() #tst.test()
 
     #Get counties that are N-levels away
     county_nlevels = nl.main(filename, POI_bus, level, SA_county)
     county_final = set([SA_county.lower()]) | set(county_nlevels) #Combine study county with counties n-levels away
     county = [*set(county_final)]
+    print("Counties", county)
 
     # map counties obtained from (previous step + convex hull of counties from previous step)
     county_hull = mc.main(county, SA_county) #returns a list of counties
