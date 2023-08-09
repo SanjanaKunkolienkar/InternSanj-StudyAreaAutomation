@@ -32,6 +32,8 @@ def read_input_files(filename):
     for file in os.listdir(os.path.join(cwd, 'Study Case')):
         if file.endswith(".raw"):
             study_file = os.path.join(cwd, 'Study Case', file)
+        elif file.endswith(".sav"):
+            study_file = os.path.join(cwd, 'Study Case', file)
     for file in os.listdir(files_folder):
         if file.endswith(".sub"):
             sub_file = os.path.join(files_folder, file)

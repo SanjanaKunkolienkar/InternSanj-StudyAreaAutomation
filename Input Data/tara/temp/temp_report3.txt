@@ -1,0 +1,5 @@
+ List of defined subsystems. Client-EPE
+   Created - Fri Jul 21 13:12:30 2023. TARA Ver 2301.2.0.0 64-bit. LFCase-22SSWG_2025_SUM1_U1_04-study.raw. Rev-PTI35
+SubSysName                                                                                                              ,Buses,PrtBus,ScaleMethod,TotalLoad,TotalGen,MaxGenOn,MaxGenOff,
+Export                                                                                                                  ,     2,     2,Mbase              ,      0.0,      0.0,    365.7,    365.7,
+Import                                                                                                                  , 10073,  1111,Import             ,   1064.2, 110298.4, 156399.0, 175975.6,

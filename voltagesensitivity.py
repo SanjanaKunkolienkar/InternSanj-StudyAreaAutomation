@@ -109,7 +109,16 @@ def main(filename,voltage_cutoff, SA_county, buses):
 
     #filter buses that are in convex hull counties
     combine = combine.reindex(list(range(combine.index.min(), combine.index.max() + 1)), fill_value=0)
-    combine_convex_buses = combine.loc[buses, :]
+
+    print(combine)
+    existbuses = []
+    for b in buses:
+        if b in combine.index:
+            existbuses.append(b)
+        else:
+            pass
+    combine_convex_buses = combine.loc[existbuses, :]
+
     #filter combine dataframe for greater than 0.05%
     filtered_combine =combine_convex_buses[combine_convex_buses['Sensitivity'].abs() > voltage_cutoff]
     #get the list of buses with voltage sensitivity > 0.05
@@ -117,7 +126,7 @@ def main(filename,voltage_cutoff, SA_county, buses):
     county = gc.getcounty(buses, SA_county)
 
     county = [x.lower() for x in county]
-    return [*set(county)]
+    return [*set(county)], [*set(buses)]
 
 
 if __name__ == "__main__":

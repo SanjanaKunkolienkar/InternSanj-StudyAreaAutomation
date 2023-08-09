@@ -74,7 +74,7 @@ def main(filename, POI_bus, level, SA_county):
             psspy.read(0, study_file)
         elif file.endswith(".sav"):
             study_file = os.path.join(cwd, 'Study Case', file)
-            psspy.case(0, study_file)
+            psspy.case(study_file)
     bus_list = get_n_levels_away(POI_bus, level)
     print("Buses N levels away")
     print(bus_list)
@@ -85,7 +85,7 @@ def main(filename, POI_bus, level, SA_county):
     ierr_halt = psspy.pssehalt_2()
 
     county = [x.lower() for x in county]
-    return [*set(county)]
+    return [*set(county)], [*set(bus_list)]
 
 
 if __name__ == "__main__":

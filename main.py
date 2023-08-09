@@ -5,11 +5,12 @@ import generatefiles as gf
 import TARA_flowgate_screening as tfs
 import getcounty as gc
 import mapcounty as mc
-import Test as tst
+#import Test as tst
 import voltagesensitivity as vs
 import nlevels as nl
 import extractbuses as eb
 import read_user_input as read
+import generateDash as gd
 
 
 def tara_test():
@@ -37,7 +38,7 @@ if __name__ == '__main__':
     filename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = read.main() #tst.test()
 
     #Get counties that are N-levels away
-    county_nlevels = nl.main(filename, POI_bus, level, SA_county)
+    county_nlevels, buses_nlevels = nl.main(filename, POI_bus, level, SA_county)
     county_final = set([SA_county.lower()]) | set(county_nlevels) #Combine study county with counties n-levels away
     county = [*set(county_final)]
     print("Counties", county)
@@ -61,8 +62,8 @@ if __name__ == '__main__':
     files = tfs.read_input_files(filename)
     # run TARA flowgate screening
     tfs.main(files, loading, dfax_cutoff)
-    county_dfax = gc.main(filename, SA_county)
-    county_voltage = vs.main(filename, voltage_cutoff, SA_county, buses)
+    county_dfax, buses_dfax = gc.main(filename, SA_county)
+    county_voltage, buses_voltage = vs.main(filename, voltage_cutoff, SA_county, buses)
 
     print(county_voltage)
 
@@ -72,12 +73,9 @@ if __name__ == '__main__':
 
     mc.map_study_area(county, county_flip, SA_county)
 
-    # # county2 = vs.main(filename, voltage_cutoff, SA_county)
-    #
-    # # print("County 1, 2 and 3")
-    # # print(county1)
-    # # print(county2)
-    #
-    # # merge county obtained from getcounty and extractGTC, then send to map county
+    buses_nl_v_dfax = (set(buses_nlevels) | set(buses_dfax) | set(buses_voltage))
+
+    gd.generate_dashboard(SA_county, county_flip, county, buses_nl_v_dfax, filename)
+
 
 

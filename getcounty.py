@@ -18,7 +18,7 @@ def getcounty(buses, sa_county):
     check_bus = "All buses accounted for"
     county_list = []
     missing_list= []
-    print('STUDY County', sa_county)
+    #print('STUDY County', sa_county)
     for bus in buses:
         if bus in df['SSWG BUS NUMBER'].values:
             county = df.loc[df['SSWG BUS NUMBER'] == bus, 'PLANNING BUS COUNTY'].item()
@@ -40,7 +40,7 @@ def getcounty(buses, sa_county):
 def main(filename, SA_county):
     buses = eb.main(filename)
     cl = getcounty(buses, SA_county)
-    return cl
+    return cl, buses
 
 if __name__ == "__main__":
     filename = 'BRP Bonete'
