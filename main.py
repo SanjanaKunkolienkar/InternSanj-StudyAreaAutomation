@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     buses_nl_v_dfax = (set(buses_nlevels) | set(buses_dfax) | set(buses_voltage))
 
-    gd.generate_dashboard(SA_county, county_flip, county, buses_nl_v_dfax, filename)
+    gd.generate_dashboard(county_flip, county, buses_nl_v_dfax, filename)
 
 
 

@@ -111,7 +111,7 @@ def plot_polygons(all_polygons, selected_polygons, SA_county, county_flip):
     plt.ylabel('Latitude')
     plt.title('Counties and Convex Hull')
     plt.grid(True)
-    plt.show()
+    #plt.show()
 
     return x_hull, y_hull, combined_county
 

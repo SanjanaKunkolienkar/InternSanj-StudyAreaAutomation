@@ -7,7 +7,7 @@ from config.definitions import ROOT_DIR
 config = configparser.ConfigParser()
 
 # Read the settings.ini file
-filename = 'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
+filename = 'Brotherton'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
 filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\' , filename , 'settings.ini')
 config.read(filepath)
 
