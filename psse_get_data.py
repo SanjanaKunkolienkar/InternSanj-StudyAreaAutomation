@@ -40,18 +40,39 @@ def main(filename, buses):
     if study_file.endswith(".raw"):
         psspy.read(0, study_file)
 
-    bus_df = pd.DataFrame(columns =['Bus Number', 'Type', 'Bus MVA', 'Gen MVA'])
+    bus_df = pd.DataFrame(columns =['Bus Number', 'Type', 'Bus kV', 'Load MW', 'Gen MW'])
 
     for bus in buses:
         if psspy.busexs(bus) == 0:
             ierr, bus_type = psspy.busint(bus, 'TYPE')
-            ierr, bus_MVA = psspy.busdt1(bus, 'MVA', 'NOM')
-            ierr, gen_MVA = psspy.gendt1(bus)
+            ierr, bus_V = psspy.busdat(bus, 'BASE')
+            load_MW = 0
+            gen_MW = 0
+            if bus_type == 1:
+                load_mw = 0.0
+                ierr, load_mw = psspy.abusreal(bus, 1)
+                load_MW = load_mw
+                # ierr, load_count = psspy.busint(bus, 'NUMBER')
+                # if load_count is not None:
+                #     for load_index in range(1, load_count + 1):
+                #         ierr, load_id = psspy.lodint(bus, load_index, 'NUMBER')
+                #         ierr, load_MW_ind = psspy.load_data_6(bus, load_id, '', 1)
+                #         load_MW += load_MW_ind
+            if bus_type == 2:
+                mw = 0.0
+                ierr, mw = psspy.gendt1(bus)
+                gen_MW = mw
+                # ierr, gen_count = psspy.busint(bus, 'NUMBER')
+                # if gen_count is not None:
+                #     for gen_index in range(1, gen_count + 1):
+                #         ierr, gen_id = psspy.macint(bus, gen_index, 'NUMBER')
+                #         ierr, gen_MW_ind = psspy.macdat(bus, gen_id, 'PGENMAX')
+                #         gen_MW += gen_MW_ind
         if psspy.busexs(bus) == 1:
             bus_type = 0
-            bus_MVA = 0
-            gen_MVA = 0
-        df_temp = {'Bus Number': bus, 'Type': bus_type, 'Bus MVA': bus_MVA, 'Gen MVA': gen_MVA}
+            load_MW = 0
+            gen_MW = 0
+        df_temp = {'Bus Number': bus, 'Type': bus_type, 'Bus kV': bus_V, 'Load MW': load_MW, 'Gen MW': gen_MW}
         bus_df = bus_df._append(df_temp, ignore_index=True)
 
 

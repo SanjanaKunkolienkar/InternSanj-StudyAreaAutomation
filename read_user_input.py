@@ -7,7 +7,7 @@ from config.definitions import ROOT_DIR
 config = configparser.ConfigParser()
 
 # Read the settings.ini file
-filename = 'Brotherton'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
+filename = 'Eldora Solar'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
 filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\' , filename , 'settings.ini')
 config.read(filepath)
 
@@ -22,6 +22,7 @@ def main():
     voltage_cutoff = float(config.get('settings', 'voltage_cutoff'))
     POI_bus = str(config.get('settings', 'POI_bus'))
     level = int(config.get('settings', 'level'))
+    #number_of_genbuses = int(config.get('settings', 'number_of_genbuses'))
 
     #input validation
     #loading
@@ -72,7 +73,7 @@ def main():
 
     print(filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level)
 
-    return filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level
+    return filename, casename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level
 
 
 if __name__ == "__main__":

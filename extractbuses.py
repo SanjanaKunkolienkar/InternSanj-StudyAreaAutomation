@@ -7,7 +7,7 @@ import warnings
 def extract_from_fg_violations(filename):
 
     filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename , 'Temp\FilteredFlowgates.csv')
-    viol = (pd.read_csv(filepath, skiprows=10)).iloc[:,1]
+    viol = (pd.read_csv(filepath)).iloc[:,1]
     buses = []
     print(viol.head())
     for num in viol:

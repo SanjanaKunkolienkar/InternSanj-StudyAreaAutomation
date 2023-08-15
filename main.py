@@ -11,6 +11,7 @@ import nlevels as nl
 import extractbuses as eb
 import read_user_input as read
 import generateDash as gd
+import modifysswg as ms
 
 
 def tara_test():
@@ -34,8 +35,15 @@ if __name__ == '__main__':
     # check if TARA runs on your system
     tara_test()
 
-    # replaced with user input file as a .ini file
-    filename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = read.main() #tst.test()
+    to_do = input("Enter 1 if old SSWG needs to be modified else enter 2")
+    if to_do == '2':
+        # replaced with user input file as a .ini file
+        filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = read.main() #tst.test()
+    if to_do == '1':
+        # modify psse file to create study file
+        filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = ms.main(filename)
+
+
 
     #Get counties that are N-levels away
     county_nlevels, buses_nlevels = nl.main(filename, POI_bus, level, SA_county)
@@ -44,7 +52,7 @@ if __name__ == '__main__':
     print("Counties", county)
 
     # map counties obtained from (previous step + convex hull of counties from previous step)
-    county_hull = mc.main(county, SA_county) #returns a list of counties
+    county_hull = mc.main(county, SA_county, filename, final=False) #returns a list of counties
 
     #get all buses in these counties
     buses = eb.extract_from_counties(county_hull)
@@ -71,11 +79,13 @@ if __name__ == '__main__':
 
     print(county_flip)
 
-    mc.map_study_area(county, county_flip, SA_county)
+    mc.map_study_area(county, county_flip, SA_county, filename, final=True)
+    mc.map_study_area(county, county_flip, SA_county, filename, final=False)
 
     buses_nl_v_dfax = (set(buses_nlevels) | set(buses_dfax) | set(buses_voltage))
 
-    gd.generate_dashboard(county_flip, county, buses_nl_v_dfax, filename)
+    gd.generate_dashboard(county_flip, county, buses_nl_v_dfax, filename, SA_county, POI_bus)
+
 
 
 
