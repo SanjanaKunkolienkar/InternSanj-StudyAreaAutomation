@@ -7,7 +7,7 @@ from config.definitions import ROOT_DIR
 config = configparser.ConfigParser()
 
 # Read the settings.ini file
-filename = 'Eldora Solar'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
+filename = 'Brotherton'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
 filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\' , filename , 'settings.ini')
 config.read(filepath)
 
@@ -22,7 +22,14 @@ def main():
     voltage_cutoff = float(config.get('settings', 'voltage_cutoff'))
     POI_bus = str(config.get('settings', 'POI_bus'))
     level = int(config.get('settings', 'level'))
-    #number_of_genbuses = int(config.get('settings', 'number_of_genbuses'))
+    number_of_gens = 0 #int(config.get('settings', 'number_of_gens'))
+    option = 0 #int(config.get('settings', 'option'))
+    gen_MW = 0 #float(config.get('settings', 'gen_MW'))
+    gen_MVAR = 0 #float(config.get('settings', 'gen_MVAR'))
+
+    from_bus = 0 #int(config.get('settings', 'from_bus'))
+    to_bus = 0 #int(config.get('settings', 'to_bus'))
+    percent_from_frombus = 0 #float(config.get('settings', 'percent_from_frombus'))
 
     #input validation
     #loading
@@ -71,9 +78,8 @@ def main():
     else:
         print("Voltage cutoff value in settings file is not between 0 and 0.05")
 
-    print(filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level)
-
-    return filename, casename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level
+    return filename, casename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level, number_of_gens, \
+        option, gen_MW, gen_MVAR, from_bus, to_bus, percent_from_frombus
 
 
 if __name__ == "__main__":

@@ -5,10 +5,6 @@ import pandas as pd
 import getcounty as gc
 
 
-def bus_vals(bus):
-
-
-    return bus_type
 def main(filename, buses):
     cwd = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename)
     for file in os.listdir(os.path.join(cwd, 'Study Case')):
@@ -49,9 +45,9 @@ def main(filename, buses):
             load_MW = 0
             gen_MW = 0
             if bus_type == 1:
-                load_mw = 0.0
-                ierr, load_mw = psspy.abusreal(bus, 1)
-                load_MW = load_mw
+                load = 0
+                ierr, load = psspy.busdt2(bus, 'MVA', 'NOM')
+                load_MW = load.real
                 # ierr, load_count = psspy.busint(bus, 'NUMBER')
                 # if load_count is not None:
                 #     for load_index in range(1, load_count + 1):

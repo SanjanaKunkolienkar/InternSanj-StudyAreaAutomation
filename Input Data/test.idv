@@ -1,0 +1,4 @@
+# File:"C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\test.idv", generated on TUE, AUG 15 2023  16:08, PSS(R)E release 35.03.03
+psspy.plant_data_4(6937,0,[0,0],[ 1.0, 100.0])
+psspy.machine_data_4(6937,r"""1""",[1,455,0,0,0,0,0],[0.0,0.0, 9999.0,-9999.0, 9999.0,-9999.0, 100.0,0.0, 1.0,0.0,0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],"")
+psspy.machine_chng_4(6937,r"""1""",[_i,_i,_i,_i,_i,2,_i],[ 176.0, 87.0, 87.0,-87.0, 176.0,-176.0,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f,_f],_s)

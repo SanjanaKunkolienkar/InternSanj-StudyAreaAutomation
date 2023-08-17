@@ -1,0 +1,4 @@
+# File:"C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\test2.idv", generated on TUE, AUG 15 2023  16:11, PSS(R)E release 35.03.03
+psspy.ltap(6935,6937,r"""1""", 0.27,996937,"", 138.0)
+psspy.plant_data_4(996937,0,[0,0],[ 1.0, 100.0])
+psspy.machine_data_4(996937,r"""1""",[1,455,0,0,0,0,0],[0.0,0.0, 9999.0,-9999.0, 9999.0,-9999.0, 100.0,0.0, 1.0,0.0,0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0],"")

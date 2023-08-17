@@ -30,7 +30,7 @@ def generate_dashboard(county_flip, county, buses_nl_v_dfax, filename, SA_county
     tran_buses_s = bus_df_sensitive['Type'].value_counts()[float(1)]
     gen_buses_s =  bus_df_sensitive['Type'].value_counts()[float(2)]
 
-    dash_data_s = [['Total Generation "Capacity" (units)', total_gen_s], ['Total Load (units)', total_load_s],
+    dash_data_s = [['Total Generation "Capacity" (MW)', total_gen_s], ['Total Load (MW)', total_load_s],
                    ['Total Number of Transmission Buses', tran_buses_s],
                    ['Total Number of Generation Buses', gen_buses_s],
                    ['Study County Name', SA_county],
@@ -51,7 +51,7 @@ def generate_dashboard(county_flip, county, buses_nl_v_dfax, filename, SA_county
     tran_buses_a = bus_df_red_blue['Type'].value_counts()[float(1)]
     gen_buses_a = bus_df_red_blue['Type'].value_counts()[float(2)]
 
-    dash_data_a = [['Total Generation "Capacity" (units)', total_gen_a], ['Total Load (units)', total_load_a],
+    dash_data_a = [['Total Generation "Capacity" (MW)', total_gen_a], ['Total Load (MW)', total_load_a],
                    ['Total Number of Transmission Buses', tran_buses_a],
                    ['Total Number of Generation Buses', gen_buses_a],
                    ['Study County Name', SA_county],
@@ -65,7 +65,9 @@ def generate_dashboard(county_flip, county, buses_nl_v_dfax, filename, SA_county
 
 
 
-    filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Dashboard.xlsx')
+    if not os.path.exists(os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Outputs\\')):
+        os.makedirs(os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Outputs\\'))
+    filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Outputs\Dashboard.xlsx')
     with pd.ExcelWriter(filepath, engine='openpyxl') as writer:
         #sensitive buses
         transbus_df_sensitive.to_excel(writer, startcol=0, startrow=3, sheet_name='Sheet1', index=False)
@@ -154,12 +156,20 @@ def generate_dashboard(county_flip, county, buses_nl_v_dfax, filename, SA_county
                 cell.font = Font(color='FFFFFFFF')
             row_idx = row_idx + 1
 
-        image_path = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, image_name)
+        image_path = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Outputs\\', image_name)
         img = Image(image_path)  # Replace with the actual image file path
-        sheet.add_image(img, 'N4')  # Add the image to cell A1 or the desired cell
+        sheet.add_image(img, 'N5')  # Add the image to cell A1 or the desired cell
         # Adjust the size of the image
         img.width = 800  # Specify the width in pixels
         img.height = 600  # Specify the height in pixels
+
+        sheet['N1'].value = 'POI county'
+        sheet['N2'].value = 'Counties inside the convex hull with sensitive buses'
+        sheet['N3'].value = 'Counties that have buses N-levels away from POI'
+
+        sheet['O1'].fill = PatternFill(start_color='FF00008B', end_color='FF00008B', fill_type='solid')
+        sheet['O2'].fill = PatternFill(start_color='FF00FFFF', end_color='FF00FFFF', fill_type='solid')
+        sheet['O3'].fill = PatternFill(start_color='FFFF0000', end_color='FFFF0000', fill_type='solid')
 
 
     # Save the changes to the workbook

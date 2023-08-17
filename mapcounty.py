@@ -122,7 +122,9 @@ def plot_polygons(all_polygons, selected_polygons, SA_county, county_flip, filen
     plt.ylabel('Latitude')
     plt.title('Counties and Convex Hull')
     plt.grid(True)
-    savepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, image_name)
+    if not os.path.exists(os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Outputs\\')):
+        os.makedirs(os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Outputs\\'))
+    savepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'Outputs\\', image_name)
     plt.savefig(savepath, dpi=300)
     #plt.show()
 

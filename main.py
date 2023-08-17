@@ -35,13 +35,15 @@ if __name__ == '__main__':
     # check if TARA runs on your system
     tara_test()
 
-    to_do = input("Enter 1 if old SSWG needs to be modified else enter 2")
+    to_do = '2' #input("Enter 1 if old SSWG needs to be modified else enter 2")
     if to_do == '2':
         # replaced with user input file as a .ini file
-        filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = read.main() #tst.test()
+        filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level, number_of_gens, \
+            option, gen_MW, gen_MVAR, from_bus, to_bus, percent_from_frombus = read.main() #tst.test()
     if to_do == '1':
         # modify psse file to create study file
-        filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = ms.main(filename)
+        filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level, number_of_gens, \
+            option, gen_MW, gen_MVAR, from_bus, to_bus, percent_from_frombus = ms.main(filename)
 
 
 
