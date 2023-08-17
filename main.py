@@ -1,11 +1,12 @@
 
+
+# Press the green button in the gutter to run the script.
 from config.definitions import ROOT_DIR
 import pyPowerGEM.pyTARA as pt
 import generatefiles as gf
 import TARA_flowgate_screening as tfs
 import getcounty as gc
 import mapcounty as mc
-#import Test as tst
 import voltagesensitivity as vs
 import nlevels as nl
 import extractbuses as eb
@@ -29,13 +30,13 @@ def tara_test():
     for bus in tara.loopBuses():
         print(bus)
     print('TARA API running correctly')
-    # Press the green button in the gutter to run the script.
+
 
 if __name__ == '__main__':
     # check if TARA runs on your system
     tara_test()
 
-    to_do = '2' #input("Enter 1 if old SSWG needs to be modified else enter 2")
+    to_do = '2' #input("Enter 1 if you're running test")
     if to_do == '2':
         # replaced with user input file as a .ini file
         filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level, number_of_gens, \

@@ -1,0 +1,11 @@
+EPE  Detailed Report for Subsystem [Export]. Buses=1 Part.Buses=1. Type - Scale All by Mbase[TARA Ver 2301.2.0.0 64-bit - Wed Aug  9 10:02:34 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\Study Case\21SSWG_2023_SUM1_FINAL_06232021_OCUpdated_GIS_POIGen.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+  Bus#,Bus Name    ,Volt,Area,Zone, PartFact,     Load,   curGen,   minGen,   maxGen, RoomDown,   RoomUp,Study?,Pmax|PminOverride?,
+888000,BRP_BONETE  ,34.5,   1,   1, 231.6600,     0.00,     0.01,  -201.13,   201.13,   201.14,   201.12,

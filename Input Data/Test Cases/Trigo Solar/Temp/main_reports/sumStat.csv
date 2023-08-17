@@ -1,0 +1,35 @@
+EPE Summary statistic [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:04:06 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Trigo Solar\Study Case\21SSWG_2025_SUM1_U2_FINAL_02242022_Study_Case.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Trigo Solar\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Trigo Solar\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+ *** Flowgate Summary statistics ***
+ Total    Flowgates,     347,
+ Primary  Flowgates,      12,
+ Overload Flowgates,     347,
+ Differ MonBranches,      22,
+
+ *** Flowgate statistics by CongExposure***
+ Average helper/harmer loading=    60.0 , - unbiased dispatch
+ Max Stress     80.0 , - limits redispatch for larger pools
+ Max Redispatch  10000.0 , - never exceed
+ Min Redispatch   1000.0 , - always applied
+ Description, Primary, Secondary,
+  NoGens-Init OverLoad , 0, 0,
+  NoFix  - Cong Exp =1.0, 12, 259,
+  VHigh  - Cong Exp >0.8, 0, 7,
+   High  - Cong Exp >0.6, 0, 12,
+  Medium - Cong Exp >0.4, 0, 3,
+  LMedium- Cong Exp >0.2, 0, 16,
+  Unlikly- Cong Exp >0.1, 0, 10,
+  VerUnlk- Cong Exp >0.0, 0, 28,
+  NoOverl- Cong Exp =0  , 0, 0,
+
+ Study Subsystem [Export] summary:
+Area, AreaName    , numGens, numLoads,PLoadSum, PgenSum, PMaxSumOnline, PMaxSum,UtilOnline%,UtilOffl%,  
+     , ** Total **,    1,    0,        0.0,      147.8,      147.8,      147.8,    100.000,    100.000,
+   1, ONCOR_ED    ,    1,    0,        0.0,      147.8,      147.8,      147.8,    100.000,    100.000,

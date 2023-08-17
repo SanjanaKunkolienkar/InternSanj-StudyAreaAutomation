@@ -1,3 +1,8 @@
+# This code does the following:
+# 1. Create the confile which is a text file calling all N-1 contingencies from the ERCOT contingency folder.
+# 2. Create a monitor file.
+# 3. Create a sub file where Export: Study Generator or Generators
+
 import os
 def create_combined_confile(ROOT_DIR, filename, confolder):
     # Function to combine all ERCOT confiles : only includes N-1 contingencies: P1, P2, P4, P5 and P7

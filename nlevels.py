@@ -1,7 +1,6 @@
 from config.definitions import ROOT_DIR
 import os , sys
 import getcounty as gc
-import Test_voltage as tst
 
 if os.path.exists("C:\\Program Files\\PTI\\PSSE35\\35.3\\PSSBIN"):
     sys.path.insert(0, "C:\\Program Files\\PTI\\PSSE35\\35.3\\PSSBIN")

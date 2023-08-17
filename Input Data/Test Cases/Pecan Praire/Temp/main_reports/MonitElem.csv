@@ -1,0 +1,26 @@
+EPE List of monitored branches that may be overloaded. [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:02:07 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\Study Case\22SSWG_2025_SUM1_U1_04-study.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+Monitored,#FGates,#CongExpo>0,WorstCongExpo,MaxContFlow,FgIndMaxCongExpo,FgID, Cont Name                                                      ,    Flow,   Rating,HeadRoom,Loading%,
+44000 W_A_P__POI5A  345   44500 OBRIEN_B345A  345  98 ,     4,    4,    1.0000,  1891.823,     1,1,DB_ID_17961,    1891.8,   1450.0, -441.82,  130.47,
+44000 W_A_P__POI5A  345   44500 OBRIEN_B345A  345  99 ,     5,    5,    1.0000,  1891.018,     2,2,DB_ID_17960,    1891.0,   1450.0, -441.02,  130.42,
+110015 WAP_WAP_G5   20.0   49216 GENWAP5_05_8  138  G1,    13,   13,    1.0000,  1217.743,     5,5,DB_ID_9041,    1217.7,    800.0, -417.74,  152.22,
+3384 STJOHNS_5     345    3390 JEWETT_S5     345  1 Co,     9,    9,    1.0000,  1285.104,    13,13,DB_ID_41539,    1285.1,   1072.0, -213.10,  119.88,
+44020 ALIEF__S09_8  138   44310 HAYES___09B8  138  09 ,     3,    3,    1.0000,   381.452,    23,24,DB_ID_20782,     381.5,    227.0, -154.45,  168.04,
+44015 W_A_P__POI8B  138   44671 STAFRD_T09_8  138  09 ,     3,    3,    1.0000,   553.719,    25,26,DB_ID_20782,     553.7,    440.0, -113.72,  125.85,
+44310 HAYES___09B8  138   44120 BRITMR__B138  138  09 ,     3,    3,    1.0000,   322.504,    33,34,DB_ID_20782,     322.5,    227.0,  -95.50,  142.07,
+68090 SAMSW         345    1907 VENUS_N5      345  1 C,     2,    2,    1.0000,  1145.749,    36,37,DB_ID_29882,    1145.7,   1072.0,  -73.75,  106.88,
+44010 W_A_P__POI8A  138   44342 IMPERL05T3_8  138  05 ,     3,    3,    1.0000,   592.385,    38,40,DB_ID_17977,     592.4,    525.0,  -67.39,  112.84,
+49216 GENWAP5_05_8  138   44010 W_A_P__POI8A  138  GL ,     5,    5,    1.0000,  1217.718,    40,42,DB_ID_13204,    1217.7,   1154.0,  -63.72,  105.52,
+47155 H_O_C__C90_8  138   47151 H_O_C_90T1_8  138  90 ,     1,    1,    1.0000,   502.769,    45,47,DB_ID_18445,     502.8,    440.0,  -62.77,  114.27,
+47660 GARROT_B138A  138   47661 GARROT_B138B  138  90 ,     1,    1,    1.0000,   761.907,    46,48,DB_ID_21753,     761.9,    710.0,  -51.91,  107.31,
+47706 MIDTWN_90B8B  138   47705 MIDTWN_90B8A  138  90 ,     1,    1,    1.0000,   761.550,    47,49,DB_ID_21753,     761.6,    717.0,  -44.55,  106.21,
+3389 FORTSMITH_5   345    1906 VENUS_S5      345  1 Co,    10,   10,    1.0000,  1106.221,    49,51,DB_ID_46393,    1106.2,   1072.0,  -34.22,  103.19,
+47175 H_O_C__SB138  138   47155 H_O_C__C90_8  138  90 ,     1,    1,    1.0000,   502.933,    59,61,DB_ID_18445,     502.9,    478.0,  -24.93,  105.22,
+47705 MIDTWN_90B8A  138   47707 MIDTWN_90B8C  138  90 ,     1,    1,    1.0000,   740.676,    60,62,DB_ID_21753,     740.7,    717.0,  -23.68,  103.30,

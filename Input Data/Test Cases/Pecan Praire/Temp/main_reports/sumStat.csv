@@ -1,0 +1,35 @@
+EPE Summary statistic [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:02:07 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\Study Case\22SSWG_2025_SUM1_U1_04-study.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+ *** Flowgate Summary statistics ***
+ Total    Flowgates,      65,
+ Primary  Flowgates,       2,
+ Overload Flowgates,      65,
+ Differ MonBranches,      16,
+
+ *** Flowgate statistics by CongExposure***
+ Average helper/harmer loading=    60.0 , - unbiased dispatch
+ Max Stress     80.0 , - limits redispatch for larger pools
+ Max Redispatch  10000.0 , - never exceed
+ Min Redispatch   1000.0 , - always applied
+ Description, Primary, Secondary,
+  NoGens-Init OverLoad , 0, 0,
+  NoFix  - Cong Exp =1.0, 2, 60,
+  VHigh  - Cong Exp >0.8, 0, 0,
+   High  - Cong Exp >0.6, 0, 0,
+  Medium - Cong Exp >0.4, 0, 2,
+  LMedium- Cong Exp >0.2, 0, 1,
+  Unlikly- Cong Exp >0.1, 0, 0,
+  VerUnlk- Cong Exp >0.0, 0, 0,
+  NoOverl- Cong Exp =0  , 0, 0,
+
+ Study Subsystem [Export] summary:
+Area, AreaName    , numGens, numLoads,PLoadSum, PgenSum, PMaxSumOnline, PMaxSum,UtilOnline%,UtilOffl%,  
+     , ** Total **,    2,    0,        0.0,        0.0,        0.0,      365.7,      0.000,      0.000,
+   1, ONCOR_ED    ,    2,    0,        0.0,        0.0,        0.0,      365.7,      0.000,      0.000,

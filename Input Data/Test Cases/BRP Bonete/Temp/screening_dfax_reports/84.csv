@@ -1,0 +1,17 @@
+*********Distribution factors  EPE  Secd flowgate=84 == Prim=0*********************** [TARA Ver 2301.2.0.0 64-bit - Wed Aug  9 10:02:34 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\Study Case\21SSWG_2023_SUM1_FINAL_06232021_OCUpdated_GIS_POIGen.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+Snapshot = 21SSWG_2023_SUM1_FINAL_06232021_OCUpdated_GIS_POIGen.raw 
+Mon.Param= 888001 BONETE_SUB    138    8951 STEWART4A     138  1  
+Conting  = DB_ID_33067_Dup1                                                 
+
+ Rating ,   Flow , Load% , HeadRm ,CongExpo ,BaseCsFl ,
+   452.7,   845.3,  186.7,  -392.6,  1.00000,
+  Bus#,Bus Name    ,Volt,Area,Zone,    Pgen,    Pmax,   Pload, Dfax, GenType, CurGenImp, MaxGenImp, LoadType,LoadImp,
+888000,BRP_BONETE  ,34.5,   1,   1,     0.0,   201.1,    0.00,  1.0000, Harmer,    0.01,  201.13, NoLoad,    0.00,

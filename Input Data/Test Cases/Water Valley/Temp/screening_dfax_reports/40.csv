@@ -1,0 +1,17 @@
+*********Distribution factors  EPE  Secd flowgate=40 == Prim=4*********************** [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:25:50 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Study Case\22SSWG_2027_SUM1_U1_Final_10102022_OC_20230323_EPE_C_AGS_CS.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+Snapshot = 22SSWG_2027_SUM1_U1_Final_10102022_OC_20230323_EPE_C_AGS_CS.raw 
+Mon.Param= 76030 L_GASCCR5_1Y  345    1030 MRGNCRK_5     345  1 C 
+Conting  = DB_ID_34921                                                      
+
+ Rating ,   Flow , Load% , HeadRm ,CongExpo ,BaseCsFl ,
+  1434.0,  1240.3,   86.5,   193.7,  0.00000,
+  Bus#,Bus Name    ,Volt,Area,Zone,    Pgen,    Pmax,   Pload, Dfax, GenType, CurGenImp, MaxGenImp, LoadType,LoadImp,
+976014,GEN_BUS     ,0.69,   1,   1,   180.2,   180.2,    0.00,  0.2393, Harmer,   43.13,   43.13, NoLoad,    0.00,

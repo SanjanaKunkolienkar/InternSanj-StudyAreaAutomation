@@ -1,0 +1,13 @@
+EPE List of participating generators buses in subsystem Export[TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 14:59:55 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Study Case\22SUM_CHARGING_0 .raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+  Bus#,Bus Name    ,Volt,Area,Zone,    Pgen,    Pmax, PmaxOfl, Study?,   Pload, numFgateHarm, numFgateHelp, numFgHarmCongExpo, numFgHelpCongExpo,
+100001,PV1         ,0.63,   1, 999,     0.0,     0.0,   142.3,  - ,     0.0,  34,   2,  34,   2,
+100009,PV2         ,0.63,   1, 999,     0.0,     0.0,    71.1,  - ,     0.0,  34,   2,  34,   2,
+100011,BESS1       ,0.63,   1, 999,    -0.0,     0.0,     0.0,  - ,     0.0,  34,   2,  34,   2,

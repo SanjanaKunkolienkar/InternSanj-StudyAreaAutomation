@@ -1,0 +1,35 @@
+EPE Summary statistic [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 14:59:55 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Study Case\22SUM_CHARGING_0 .raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+ *** Flowgate Summary statistics ***
+ Total    Flowgates,      36,
+ Primary  Flowgates,      36,
+ Overload Flowgates,      36,
+ Differ MonBranches,       2,
+
+ *** Flowgate statistics by CongExposure***
+ Average helper/harmer loading=    60.0 , - unbiased dispatch
+ Max Stress     80.0 , - limits redispatch for larger pools
+ Max Redispatch  10000.0 , - never exceed
+ Min Redispatch   1000.0 , - always applied
+ Description, Primary, Secondary,
+  NoGens-Init OverLoad , 36, 0,
+  NoFix  - Cong Exp =1.0, 0, 0,
+  VHigh  - Cong Exp >0.8, 0, 0,
+   High  - Cong Exp >0.6, 0, 0,
+  Medium - Cong Exp >0.4, 0, 0,
+  LMedium- Cong Exp >0.2, 0, 0,
+  Unlikly- Cong Exp >0.1, 0, 0,
+  VerUnlk- Cong Exp >0.0, 0, 0,
+  NoOverl- Cong Exp =0  , 0, 0,
+
+ Study Subsystem [Export] summary:
+Area, AreaName    , numGens, numLoads,PLoadSum, PgenSum, PMaxSumOnline, PMaxSum,UtilOnline%,UtilOffl%,  
+     , ** Total **,    3,    0,        0.0,       -0.0,        0.0,        0.0,      0.000,      0.000,
+   1, ONCOR_ED    ,    3,    0,        0.0,       -0.0,        0.0,        0.0,      0.000,      0.000,

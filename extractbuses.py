@@ -1,3 +1,7 @@
+# This code does the following:
+# 1. extract_from_fg_violations : The violations csv file generated from TARA_flowgate_screening is read and bus numbers are extracted from all the monitored facilities.
+# 2. extract_from_counties - Take in a list of counties and provides all the buses in those counties. This reads the Planning Data Dictionary file.
+
 import os
 import pandas as pd
 from config.definitions import ROOT_DIR

@@ -1,0 +1,1660 @@
+chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+%trace "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\taralog.txt" %txt
+lfopt adj 
+ areaInterAdjustEdit    1 //Adjust area interchange when editing generation and load. 0-no,1-ties,2-ties and external load
+0 0
+opt cont 
+ monBranRatingBase      1 //Base case   rating (1-A;2-B;3-C;4-D)
+ monBranRatingCont      2 //Contingency rating (1-A;2-B;3-C;4-D)
+ monBranRatingMultBase  100 //Base case rating multipliers
+ monBranRatingMultCont  100 //Contingency rating multipliers
+ monBranRatingEnAdd1    0 //Enable additional rating reporting 1(0-no,1-yes)
+ monBranRatingEnAdd2    0 //Enable additional rating reporting 2(0-no,1-yes)
+ contChanCutOffMW       5 //MW cutoff to ignore constraints if cont.flow doesn't changes from the base case more than
+ contChanCutOffPercent  2 //Rating %% cutoff to ignore if cont.flow changes from the base case is less than
+ MonConMode             1 //1-Regular, 2-Flowgate, 3-Voltgate,4-Both
+ PAR_AdjEnabledContAnal 1 //Phase shifter model for the base case (0-fixed angle,1-control flow)
+ adjustRatingMVA        0 //Adjust branch MW rating based on MVAR flow (DC analysis)
+ limitTypeLine          0 //Use AMP (=0) or MVA (1) limit to check lines violation in AC mode
+ limitTypeTran          1 //Use AMP (=0) or MVA (1) limit to check transformer violation in AC mode
+ voltMinChange          0.005 //Voltage change cutoff in PU to ignore voltage violations when change from the base case is smaller than
+ numContMaxAlloc        15000 //Max number of contingencies
+ maxEvPerCont           60 //Max events per contingency
+ numEventsAlloc         35000 //Max number of contingency events
+ numDispEventAlloc      60000 //Max number of generation redispatch events
+ numLFgatesMaxAlloc     10000 //Max number of flowgates
+ mulSecPrintMode        0 //Multi-section line modelling (0-ignore;1-honor)
+ MAXOUTAGES             15000 //Maximum number of outages
+ maxORAFlowResults      2000000 //Maximum number of ORA or N-1-1 results to report
+ maxFgateBranches       100 //Max Number of Mon Events per Flowgate
+ maxFgEventTotal        30000 //Total Max Number of Mon Events among all Flowgates
+ useContingencyComments 0 //Use Trailing Contingency Comments in Contingency Reporting
+0 0
+opt N-1-1 
+ consPerMonBran         5 //Number of top contingencies to show per monitored branch
+ consPerMonBus          5 //Number of top contingencies to show per monitored bus
+0 0
+opt EMS 
+ emsNamingMethod  1 //Method for naming EMS equipment (1-PJM, 2-MISO, 3-ISO-NE)
+ useAUXMonStatus  0 //Use Monitored Branch Status field in AUX file (0-No, 1-Yes)
+ reduceCaseMode   0 //Case Reduction(0-no reduction,1-basic,2-remove radial cont/out events(TBD)
+ reduceAtRuntime  0 //Keep full node-breaker model but do topology reduction at run-time for analysis performance improvement[0-No,1-Yes]
+ neOverrideFormat 0 //Format of NE Override Data (0-AUX, 1-CSV)
+0 0
+lfopt solve 
+ ApplyBreakerImpOverride 0 //Apply breaker zero impedance override?(0-no,1-yes)If disabled, breaker impedance in case will be used
+ BreakerZeroImp          0.000001 //Low impedance value in PU to use for breakers and switches
+0 0
+lfopt misc 
+ maxBuses       110000 //Maximum number of buses
+ maxBranches    190000 //Maximum number of buses (includes 2W and 3W transf)
+ maxLoads       190000 //Maximum number of loads
+ maxShunts      15000 //Maximum number of shunts
+ maxTransfor    40000 //Maximum number of 2W and 3W transformers total
+ maxGenerators  25000 //Maximum number of generators and plants
+0 0
+opt sced options 
+ CPNODEMAX      10 //Maximum number of cp nodes for MISO ASM
+ CPNODEPERBUS   10 //Maximum number of cp nodes per bus for MISO ASM
+0 0 0
+lfopt solve 
+ busMismToler        1 //Bus Mismatch tolerance
+ MaxIterLF           50 //Max N of iterations in DC LF
+ useFlatStart        0 //Use flat start during LF
+ ZeroImpThr          0.0001 //Zero impedance threshhold in PU
+ lowVoltCutOffLoad   0.8 //Scale load down if voltage becomes low
+ maxVoltChangeInit   0.2 //Max volt magnit change in PU per iteration - init stage
+ maxAngleChangeInit  3 //Max volt angle change in radians per iteration - init stage
+ maxVoltChangeFinal  0.15 //Max volt magnit change in PU per iteration - final stage
+ maxAngleChangeFinal 1 //Max volt angle change in radians per iteration - final stage
+ numIterInit         3 //Max iteration for initial stage
+ MemFactor           5 //Sparse methods fill in allocation factor
+ voltTolnUser        0 //Voltage magnitude tolerance for volt. contr. buses(if 0.00 will be computed automat.)
+ lowVoltAddQGen      0 //Add Q at generator buses with low voltage(0-no,1-yes)
+ lowVoltCutOffQGen   0.7 //Low voltage cutoff to add Qgen if voltage becomes low
+ highVoltReduceQGen  0 //Reduce Q at generator buses with high voltage below Qmin (0-no,1-yes)
+ highVoltCutOffQGen  1.3 //High Voltage cutoff to reduce Q gen for high voltage
+ fixedQGenRelax      0 //Relax Q at generators with Qmin=Qmax (0-no,1-yes)
+ lowVoltAddShunt     0 //Add Shunts at buses with low voltage(0-no,1-yes)
+ lowVoltCutOffShunt  0.7 //Low voltage cutoff to add shunts if voltage becomes low
+ highVoltReduceShunt 0 //Remove fixed Shunt with high voltage(0-no,1-yes)
+ highVoltCutOffShunt 1.25 //High Voltage cutoff to limit fixed shunts injection
+ 0 0
+lfopt adj 
+ iterCheckVarLimitHotStart  0 //Iteration to start generator VAR limit checking - hot start
+ iterCheckVarLimitFlat      3 //Iteration to start generator VAR limit checking - flat start
+ PAR_AdjEnabledLF           1 //Enable Phase Shifter Adjustment
+ areaInterAdjustEnabled     0 //Area interchange control
+ TAP_AdjEnabledLF           1 //Enable TAP adjustment
+ shuntAdjEnabled            2 //Enable shunt adjustment
+ fixedToSwitched            0 //Convert all fixed shunts to discrete mode switched shunts
+ DCLineAdjEnabled           1 //Enable DC lines adjustment
+ showParAdj                 1 //Report PAR adjustments per iteration
+ showTapAdj                 1 //Report TAP adjustments per iteration
+ showShuntAdj               1 //Report shunt adjustments per iteration
+ showAreaInterAdj           1 //Area interchange reporting level
+ busMismTolerAreaInter      5 //Bus Mismatch tolerance to start area adjustments
+ maxVarLimitsBusTypeChanges 6 //Max times voltage controlled bus can change type
+ iterCheckVarLimitLast      40 //Iteration to stop checking var limits
+ maxAdjustIterVolt          30 //Iteration to stop TAP and Shunt adjustments
+ deacFactRTap               1 //Voltage adjustment deacceleration factor
+ maxTapChange               0.02 //Max tap ratio change per iteration
+ voltAdjTrigger             0.05 //Max voltage magnitude change to activate TAP and Shunt adjustments
+ angleAdjTrigger            0.2 //Max voltage angle change (in degrees) to activate PAR and area interchange adjustments
+ showBusTypeChan            0 //Show voltage controlled buses type changes
+ deOscilFactor              0.7 //De-oscillation factor (if 1.0-not activated)
+0 0
+lfopt misc 
+ useCaseNameFullPath   0 //Use LF case name (0) only or full path as scenario name(1)
+ branNamePrefix        "/* [" //Branch Names Prefix
+ branNameSuffix        "]" //Branch Names Suffix
+ readEquipNamesFromRAW 0 //Read equipment names(bus,gen,load,branches,shunts) from RAW file?
+ reportBusAreaName     0 //Add area names to LF data reports(bus,gen,load,branches,shunts)
+ reportBusZoneName     0 //Add zone names to LF data reports(bus, gen,load,branches, shunts)
+ busNameQuotes         0 //Add single quotes around Bus Names and CKT/ID in reports(most users should not enable)
+ NoStarBusNumbers      0 //Don't print bus numbers of 3-wind star buses in mon branch reports [1=don’t print]
+0 0
+opt cont 
+ ignoreEnd2Exit        0 //Ignore END statement to exit reading sub mon con exc files (0-No,1-Yes)
+0 0
+opt screen 
+ limitFgateName40       0 //Limit flowgate name created by screening to 40 characters?
+0 0
+opt cont StudyFiles 1 0 0 0
+READ PSSE 35 "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Study Case\22SSWG_2027_SUM1_U1_Final_10102022_OC_20230323_EPE_C_AGS_CS.raw" 0 0 
+opt cont StudyFiles 1 0 0 0
+lfopt misc 
+ busOutputMode 2 0 0 //Default Bus output mode  (1-names; 2-numbers)
+solve 
+ fdec 0 0 
+ READ SUBSYS "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\files\SUB.sub"
+ MONIT "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\1_flowgates.fgt"
+ 0
+opt cont StudyFiles 0 0 0 0
+lfreview  %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\temp_report3.txt" %csv subsys 0
+lfreview  %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\temp_report1.txt" %csv larea 0
+lfreview  %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\temp_report5.txt" %csv tzone 1 0
+opt cont StudyFiles 1 0 0 0
+lfreview %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\CaseSum.csv"  %csv sum 0 0
+warn %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\Warn_Sum_Term.csv"  %csv term 0 0
+warn %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\Warn_Sum.csv"  %csv sum 0 0
+warn %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\Warn_List.csv"  %csv list 0 0
+chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt analys 
+ wdSubSysName           Export //Generators under study
+ wdSubSysRefName        Import //Reference Subsystem
+ SensCutOff             0.03 //Generator Distribut. factors cutoff
+ ignoreZeroCongExpo     0 //Ignore constraints with zero Congestion Exposure(1-yes; 0-no)
+ ignoreSecondary        0 //Ignore Secondary Constraints(0-no;1-yes)
+ ApplyLoadCutOff        0 //Apply load dfact cutoff for prim/secd classif(0-no; 1-yes)
+ StressLevelBad         80 //Maximum loading stress test level
+ systemAverageLoading   60 //Harmer/helper average un-biased dispatch
+ MaxGenChange           10000 //Max MW change in Likely Dispatch and Stress test
+ MinGenChange           1000 //Min MW change in Likely Dispatch
+ ignoreInitViolNoImpact 0 //Ignore N-1 violations not impacted by study generators
+0
+report 
+ MWCutOff            0 //Minimum generator MW impact to report for det. reports
+ LimitCutOff         0 //Detailed report cutoff based on % of rating
+ maxGenDetReport     20 //Maximum number of generators on det. report
+ SortDetailedRep     2 //Sorting detailed report (1-by sens factor;2- by impact)
+ SensCutOffLoad      0.03 //Detailed report Load Distribut.factors cutoff [0-1]
+ MWCutOffLoad        0 //MW impact Load cutoff for detailed report
+ monCutOff           50 //Max number times to report the same branch conting violations
+ MaxNumGenInPool     30 //Max number of gens for Dhelp/Dharm reports
+ MaxGenInPool        5000 //MW cutoff to skip reporting gens for Dhelp/Dharm reports for big gen pools
+0 0
+sum %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\DFAXHarmersHelpers.csv" %csv DGEN 0 0 
+sum %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\DFAXHelpers.csv" %csv Dhelpers 0 0 
+sum %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\DFAXHarmers.csv" %csv Dharmer 0 0 
+sum %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\StudyBuses.csv" %csv buses 0 0 
+sum %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\StudyGens.csv" %csv gener 0 0 
+sum  %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\MonitElem.csv" %csv monit 0 0 
+sum  %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\sumStat.csv" %csv stat 0 0 
+det %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\main_reports\FgateSummary.csv" %csv viol 0 0 
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\1.csv" %csv Dfax 1 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\2.csv" %csv Dfax 2 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\3.csv" %csv Dfax 3 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\4.csv" %csv Dfax 4 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\5.csv" %csv Dfax 5 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\6.csv" %csv Dfax 6 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\7.csv" %csv Dfax 7 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\8.csv" %csv Dfax 8 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\9.csv" %csv Dfax 9 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\10.csv" %csv Dfax 10 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\11.csv" %csv Dfax 11 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\12.csv" %csv Dfax 12 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\13.csv" %csv Dfax 13 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\14.csv" %csv Dfax 14 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\15.csv" %csv Dfax 15 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\16.csv" %csv Dfax 16 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\17.csv" %csv Dfax 17 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\18.csv" %csv Dfax 18 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\19.csv" %csv Dfax 19 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\20.csv" %csv Dfax 20 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\21.csv" %csv Dfax 21 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\22.csv" %csv Dfax 22 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\23.csv" %csv Dfax 23 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\24.csv" %csv Dfax 24 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\25.csv" %csv Dfax 25 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\26.csv" %csv Dfax 26 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\27.csv" %csv Dfax 27 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\28.csv" %csv Dfax 28 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\29.csv" %csv Dfax 29 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\30.csv" %csv Dfax 30 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\31.csv" %csv Dfax 31 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\32.csv" %csv Dfax 32 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\33.csv" %csv Dfax 33 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\34.csv" %csv Dfax 34 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\35.csv" %csv Dfax 35 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\36.csv" %csv Dfax 36 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\37.csv" %csv Dfax 37 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\38.csv" %csv Dfax 38 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\39.csv" %csv Dfax 39 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\40.csv" %csv Dfax 40 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\41.csv" %csv Dfax 41 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\42.csv" %csv Dfax 42 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\43.csv" %csv Dfax 43 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\44.csv" %csv Dfax 44 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\45.csv" %csv Dfax 45 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\46.csv" %csv Dfax 46 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\47.csv" %csv Dfax 47 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\48.csv" %csv Dfax 48 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\49.csv" %csv Dfax 49 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\50.csv" %csv Dfax 50 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\51.csv" %csv Dfax 51 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\52.csv" %csv Dfax 52 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\53.csv" %csv Dfax 53 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\54.csv" %csv Dfax 54 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\55.csv" %csv Dfax 55 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\56.csv" %csv Dfax 56 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\57.csv" %csv Dfax 57 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\58.csv" %csv Dfax 58 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\59.csv" %csv Dfax 59 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\60.csv" %csv Dfax 60 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\61.csv" %csv Dfax 61 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\62.csv" %csv Dfax 62 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\63.csv" %csv Dfax 63 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\64.csv" %csv Dfax 64 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\65.csv" %csv Dfax 65 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\66.csv" %csv Dfax 66 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\67.csv" %csv Dfax 67 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\68.csv" %csv Dfax 68 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\69.csv" %csv Dfax 69 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\70.csv" %csv Dfax 70 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\71.csv" %csv Dfax 71 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\72.csv" %csv Dfax 72 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\73.csv" %csv Dfax 73 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\74.csv" %csv Dfax 74 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\75.csv" %csv Dfax 75 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\76.csv" %csv Dfax 76 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\77.csv" %csv Dfax 77 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\78.csv" %csv Dfax 78 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\79.csv" %csv Dfax 79 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\80.csv" %csv Dfax 80 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\81.csv" %csv Dfax 81 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\82.csv" %csv Dfax 82 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\83.csv" %csv Dfax 83 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\84.csv" %csv Dfax 84 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\85.csv" %csv Dfax 85 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\86.csv" %csv Dfax 86 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\87.csv" %csv Dfax 87 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\88.csv" %csv Dfax 88 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\89.csv" %csv Dfax 89 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\90.csv" %csv Dfax 90 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\91.csv" %csv Dfax 91 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\92.csv" %csv Dfax 92 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\93.csv" %csv Dfax 93 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\94.csv" %csv Dfax 94 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\95.csv" %csv Dfax 95 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\96.csv" %csv Dfax 96 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\97.csv" %csv Dfax 97 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\98.csv" %csv Dfax 98 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+opt report
+      MWCutOff        2 //MW impact cutoff for detatiled report
+      LimitCutOff     1 //Detailed report cutoff based on % of rating
+      maxGenDetReport 20 //Max number of generators on detailed report
+      SortDetailedRep 2 //Sorting detailed report
+      SensCutOffLoad  0.03 //Detailed report load distribut. factors cutoff [0-1]
+      MWCutOffLoad    0 //MW impact load cutoff for detailed report
+      SensCutOff      0.03 //Generator Distribut. factors cutoff
+    0 0
+    opt analys
+      wdSubSysName    Export
+      wdSubSysRefName Import
+    0 0
+    Detailed %save "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp\screening_dfax_reports\99.csv" %csv Dfax 99 0
+    chdir "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Water Valley\Temp"
+0 0 0 STOP

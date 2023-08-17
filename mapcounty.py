@@ -1,12 +1,7 @@
 import os
 from config.definitions import ROOT_DIR
-import getcounty as gc
 import nlevels as nl
-import geopandas
-import Test as tst
-
 import json
-import random
 import matplotlib.pyplot as plt
 from shapely.geometry import shape, Polygon, MultiPolygon
 
@@ -149,6 +144,7 @@ def main(target_polygon_names,SA_county, filename, final):
     return combined_county
 
 if __name__ == "__main__":
-    filename, loading, confolder, buses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level = tst.test()
+    filename, casename, loading, confolder, genbuses, SA_county, dfax_cutoff, voltage_cutoff, POI_bus, level, number_of_gens, \
+        option, gen_MW, gen_MVAR, from_bus, to_bus, percent_from_frombus = read.main()
     target_polygon_names = nl.main(filename, POI_bus, level, SA_county)
     combined_county = main(target_polygon_names, SA_county)

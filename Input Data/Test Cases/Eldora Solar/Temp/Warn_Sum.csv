@@ -1,0 +1,20 @@
+EPE  Warnings Summary[TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:21:12 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Eldora Solar\Study Case\2025SUM_CHARGING_0  (1).raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Eldora Solar\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Eldora Solar\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+ Severity Level: 1-info; 2-error; 3-potentially critical; 4-critical error,
+WarnID, #Warn, Sever,Message,
+  1009,   104,2-error !  , Bus number not found, File C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Eldora Solar\files\SUB.sub
+  1100,     3,0-comment  , Number of completed input files. See warnings details for # of lines read in,
+  1863,    38,1-info     , TAP Desired voltage range is too small comparing to step. Expanded,
+  1867,    11,1-info     , Transformer is radial.  Disabling tap adjustments,
+  1878,     2,0-comment  , Transformer remote control bus is connected to its terminal via low impedance line - controlling terminal instead,
+  4040,     1,1-info     , Subsystem has total zero participation factor,
+  5702,     2,1-info     , No participating buses can be scaled. Using uniform distr ,
+  6159,     2,1-info     , Branch has high suspicious R/X ratio - make R smaller and X bigger to improve case convergence, File 2025SUM_CHARGING_0  (1).raw
+  6160,     1,1-info     , Transformer has high suspicious R/X ratio - make R smaller and X bigger to improve case convergence, File 2025SUM_CHARGING_0  (1).raw

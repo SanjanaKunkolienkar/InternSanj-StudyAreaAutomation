@@ -1,0 +1,17 @@
+*********Distribution factors  EPE  Secd flowgate=317 == Prim=212*********************** [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:04:06 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Trigo Solar\Study Case\21SSWG_2025_SUM1_U2_FINAL_02242022_Study_Case.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Trigo Solar\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Trigo Solar\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+Snapshot = 21SSWG_2025_SUM1_U2_FINAL_02242022_Study_Case.raw 
+Mon.Param= 5705 FOWLERTNSUB8  138    5723 LOSANGLESUB8  138  1 Co 
+Conting  = DB_ID_32729_Dup1                                                 
+
+ Rating ,   Flow , Load% , HeadRm ,CongExpo ,BaseCsFl ,
+   237.0,   243.9,  102.9,    -6.9,  0.38617,
+  Bus#,Bus Name    ,Volt,Area,Zone,    Pgen,    Pmax,   Pload, Dfax, GenType, CurGenImp, MaxGenImp, LoadType,LoadImp,
+555705,GEN 1       ,0.60,   1,   1,   147.8,   147.8,    0.00,  0.1204, Harmer,   17.79,   17.79, NoLoad,    0.00,

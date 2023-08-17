@@ -1,0 +1,17 @@
+*********Distribution factors  EPE  Prim flowgate=23 == *********************** [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:21:12 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Eldora Solar\Study Case\2025SUM_CHARGING_0  (1).raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Eldora Solar\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Eldora Solar\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+Snapshot = 2025SUM_CHARGING_0  (1).raw 
+Mon.Param= 5475 VON_ROSE      345    5231 HOWARD_5      345  1 Co 
+Conting  = DB_ID_23648                                                      
+
+ Rating ,   Flow , Load% , HeadRm ,CongExpo ,BaseCsFl ,
+  1195.0,  1269.0,  106.2,   -74.0,  1.00000,
+  Bus#,Bus Name    ,Volt,Area,Zone,    Pgen,    Pmax,   Pload, Dfax, GenType, CurGenImp, MaxGenImp, LoadType,LoadImp,
+888001,DOGWOOD     , 345,   1,   1,     0.0,     0.0,    0.00, -0.0413, NoGen,   -0.00,   -0.00, NoLoad,   -0.00,

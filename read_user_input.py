@@ -7,9 +7,14 @@ from config.definitions import ROOT_DIR
 config = configparser.ConfigParser()
 
 # Read the settings.ini file
-filename = 'Brotherton'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
+##This can be used if you have multiple folders in the SSWGCase folder. When using this comment like 16 and line 17.
+##If not using the next three lines, uncomment like 16 and 17
+filename = 'Water Valley'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
 filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\' , filename , 'settings.ini')
 config.read(filepath)
+
+# filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\settings.ini')
+# config.read(filepath)
 
 def main():
     filename = config.get('settings', 'filename')

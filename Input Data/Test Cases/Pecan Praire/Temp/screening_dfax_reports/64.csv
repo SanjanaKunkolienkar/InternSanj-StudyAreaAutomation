@@ -1,0 +1,18 @@
+*********Distribution factors  EPE  Secd flowgate=64 == Prim=23*********************** [TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 15:02:07 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\Study Case\22SSWG_2025_SUM1_U1_04-study.raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Pecan Praire\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+Snapshot = 22SSWG_2025_SUM1_U1_04-study.raw 
+Mon.Param= 44000 W_A_P__POI5A  345   44500 OBRIEN_B345A  345  99  
+Conting  = DB_ID_21753                                                      
+
+ Rating ,   Flow , Load% , HeadRm ,CongExpo ,BaseCsFl ,
+  1450.0,  1460.7,  100.7,   -10.7,  0.46309,
+  Bus#,Bus Name    ,Volt,Area,Zone,    Pgen,    Pmax,   Pload, Dfax, GenType, CurGenImp, MaxGenImp, LoadType,LoadImp,
+994967,21INR0428S2 ,34.5,   1,   1,     0.0,   140.9,    0.00, -0.0630, Helper,   -0.00,   -8.87, NoLoad,   -0.00,
+995967,21INR0428S1 ,34.5,   1,   1,     0.0,   224.8,    0.00, -0.0630, Helper,   -0.00,  -14.16, NoLoad,   -0.00,

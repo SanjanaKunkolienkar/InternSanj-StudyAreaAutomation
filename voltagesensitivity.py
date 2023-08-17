@@ -1,3 +1,11 @@
+# This code does the following:
+# 1. Get bus voltages using psse api for sswg case without study generator.
+# 2. Get bus voltages using psse api for sswg case with study generator
+# 3. Calculate sensitivity and convert to percentage.
+# 4. Extract buses with this sensitivity > 0.05%
+# 5. Call the getcounty code to get the counties of these buses extracted in step 4.
+# 6. Return a unique list of counties from the list obtained from getcounty.
+
 from config.definitions import ROOT_DIR
 import os, sys
 import numpy as np
@@ -25,14 +33,9 @@ _s = psspy.getdefaultchar()
 redirect.psse2py()
 ierr = psspy.psseinit(150000)
 psspy.lines_per_page_one_device(1, 100000)
-def bus_vals(bus):
-    ierr, volt_base = psspy.busdat(bus, 'BASE')
-    ierr, volt_pu = psspy.busdat(bus, 'PU')
-    ierr, volt_angle = psspy.busdat(bus, 'ANGLED')
-
-    return volt_base, volt_pu, volt_angle
 
 def read_input(filename):
+    #Reads the sswg case
     cwd = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename)
     for file in os.listdir(os.path.join(cwd, 'Study Case')):
         if file.endswith(".raw"):
@@ -44,6 +47,7 @@ def read_input(filename):
     return {'study': study_file, 'bench': bench_file}
 
 def get_voltage():
+    #Use psse functions to get votlage and bus number
     _, (voltages,) = psspy.abusreal(string='PU')
     _, (buses,) = psspy.abusint(string='NUMBER')
     voltages = np.array(voltages)
@@ -52,7 +56,7 @@ def get_voltage():
     return voltages, buses
 
 def read_psse_output_voltage(filename, studypath, benchpath):
-
+    #Get voltage for both cases
     psse_files = read_input(filename)
     redirect.psse2py()
     psspy.psseinit(150000)

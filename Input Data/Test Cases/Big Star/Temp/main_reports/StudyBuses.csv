@@ -1,0 +1,13 @@
+EPE  Detailed Report for Subsystem [Export]. Buses=3 Part.Buses=3. Type - Scale All by Mbase[TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 14:59:55 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Study Case\22SUM_CHARGING_0 .raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+  Bus#,Bus Name    ,Volt,Area,Zone, PartFact,     Load,   curGen,   minGen,   maxGen, RoomDown,   RoomUp,Study?,Pmax|PminOverride?,
+100001,PV1         ,0.63,   1, 999,   0.0000,     0.00,     0.00,     0.00,   142.27,     0.00,   142.27,
+100009,PV2         ,0.63,   1, 999,   0.0000,     0.00,     0.00,     0.00,    71.14,     0.00,    71.14,
+100011,BESS1       ,0.63,   1, 999,  88.9200,     0.00,    -0.01,   -84.47,     0.00,    84.46,     0.01,

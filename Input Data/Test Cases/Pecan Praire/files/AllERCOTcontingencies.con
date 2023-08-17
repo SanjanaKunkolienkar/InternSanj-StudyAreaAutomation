@@ -1,0 +1,62 @@
+DEFAULT DISPATCH
+  SUBSYSTEM 'Export'
+END
+/ *Contingencies in P1
+CONTINGENCY_TYPE
+  SET TYPES Type
+  SET VALUES P1
+END
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P1.1__10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P1.1__ERCOTCCT_10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P1.2__10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P1.2__ERCOTNonBES_10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P1.3__10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P1.3__ERCOTNonBES_10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P1.4__10312022.con"
+/ *Contingencies in P2
+CONTINGENCY_TYPE
+  SET TYPES Type
+  SET VALUES P2
+END
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P2.1__10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P2.2_EHV_10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P2.2_HV_10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P2.3_EHV_10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P2.3_HV_10312022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P2.4__11012022.con"
+/ *Contingencies in P4
+CONTINGENCY_TYPE
+  SET TYPES Type
+  SET VALUES P4
+END
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.1_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.1_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.2_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.2_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.3_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.3_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.4_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.4_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.5_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.5_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P4.6__11012022.con"
+/ *Contingencies in P5
+CONTINGENCY_TYPE
+  SET TYPES Type
+  SET VALUES P5
+END
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P5.1_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P5.1_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P5.2_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P5.2_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P5.3_HV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P5.5_EHV_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P5.5_HV_11012022.con"
+/ *Contingencies in P7
+CONTINGENCY_TYPE
+  SET TYPES Type
+  SET VALUES P7
+END
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P7.1__11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P7.1__ERCOT1_11012022.con"
+INCLUDE "C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\ERCOTcontingencies\22SSWG_2025_SUM1\22SSWG_2025_SUM1_PSSE_P7.1__ERCOT98_11012022.con"

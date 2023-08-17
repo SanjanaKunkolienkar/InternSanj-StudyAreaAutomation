@@ -1,0 +1,2400 @@
+// C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\Temp\1_flowgates.fgt  Created - Wed Aug  9 10:02:34 2023. TARA Ver 2301.2.0.0 64-bit. 
+// ===================== Flowgate Screening Summary =====================
+// LFCase: 21SSWG_2023_SUM1_FINAL_06232021_OCUpdated_GIS_POIGen.raw
+// Subsystem File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\files\SUB.sub
+// Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\files\MON.mon
+// Contingency File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\BRP Bonete\files\AllERCOTcontingencies.con [24309 contingencies]
+// Exclude File: 
+// Study Subsystem: Export
+// Reference Subsystem: Import
+// Max Test Level =   10000 MW
+// Dfax Cutoff=0.0300
+// # of flowgates found by TARA Flowgate Screening (sorted by MW redispatch needed): 191
+// ======================================================================
+BUSNUMBERS
+ default dispatch / 1 buses
+     system Export
+ end 
+ monitor flowgate 1 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   2392.85 InitViol=     -1940 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_35151" / 18343 P5 
+     open branch from bus   1436 to bus   1900 ckt 1  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1436 to bus   1900 ckt 2  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  2   
+     open branch from bus   1440 to bus   1900 ckt 1  /   1440 COMCHESS1_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus   1902 ckt 1  /   1900 COMCHPKW_5    345    1902 JHNSONSW_P5   345  1   
+     open branch from bus   1900 to bus   1981 ckt 1  /   1900 COMCHPKW_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1900 to bus  11886 ckt 1  /   1900 COMCHPKW_5    345   11886 TIMBERVW_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+     open branch from bus   1900 to bus 150112 ckt 1  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  1   
+     open branch from bus   1900 to bus 150112 ckt 2  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  2   
+  end
+ end
+
+ monitor flowgate 2 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1766.32 InitViol=     -1314 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_35654" / 18370 P5 
+     open branch from bus   2432 to bus   2437 ckt 1  /   2432 TRICRN1_5     345    2437 FRNY1_5       345  1   
+     open branch from bus   2433 to bus   2437 ckt 1  /   2433 SGVLSW1_5     345    2437 FRNY1_5       345  1   
+     open branch from bus   2437 to bus   2453 ckt 1  /   2437 FRNY1_5       345    2453 CNVLSW1_5     345  1   
+     open branch from bus   2437 to bus   2474 ckt 1  /   2437 FRNY1_5       345    2474 ROYSE1_T5     345  1   
+     open branch from bus   2437 to bus   2478 ckt 1  /   2437 FRNY1_5       345    2478 ROYSE_S5      345  1   
+     open branch from bus   2437 to bus 150189 ckt 1  /   2437 FRNY1_5       345  150189 FRNYPP_1_5    345  1   
+     open branch from bus   2437 to bus 150190 ckt 1  /   2437 FRNY1_5       345  150190 FRNYPP_2_5    345  1   
+     open threewinding at bus   2437 to bus   2438 to bus  12438 ckt 1   / 
+  end
+ end
+
+ monitor flowgate 3 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1697.18 InitViol=     -1244 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_36398" / 18397 P5 
+     open branch from bus    967 to bus   3400 ckt 1  /    967 GIBN_CREK_5   345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus    975 to bus   3400 ckt 1  /    975 JKCREEK1      345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3391 to bus   3400 ckt 1  /   3391 JEWETT_N5     345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3400 to bus  39950 ckt 1  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  1   
+     open branch from bus   3400 to bus  39950 ckt 2  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  2   
+     open branch from bus   3400 to bus  46020 ckt 1  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  1   
+     open branch from bus   3400 to bus  46020 ckt 2  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  2   
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+  end
+ end
+
+ monitor flowgate 4 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1416.77 InitViol=      -964 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_36407" / 18402 P5 
+     open branch from bus   3413 to bus   3414 ckt 1  /   3413 KNOBCRKSS_5   345    3414 TEMP_SS__5    345  1   
+     open branch from bus   3413 to bus   3699 ckt 1  /   3413 KNOBCRKSS_5   345    3699 SALADOSS_5    345  1   
+     open branch from bus   3413 to bus 150907 ckt 1  /   3413 KNOBCRKSS_5   345  150907 PANDA_TL      345  1   
+     open branch from bus   3413 to bus 150908 ckt 1  /   3413 KNOBCRKSS_5   345  150908 PANDA_T2_5    345  1   
+     open branch from bus 150907 to bus 150901 ckt 1  / 150907 PANDA_TL      345  150901 PTMPL_CT1    18.0  1   
+     open branch from bus 150907 to bus 150902 ckt 1  / 150907 PANDA_TL      345  150902 PTMPL_CT2    18.0  1   
+     open branch from bus 150907 to bus 150903 ckt 1  / 150907 PANDA_TL      345  150903 PTMPL_ST1    19.0  1   
+     open branch from bus 150908 to bus 150904 ckt 1  / 150908 PANDA_T2_5    345  150904 PTMPL2_CT1   18.0  1   
+     open branch from bus 150908 to bus 150905 ckt 1  / 150908 PANDA_T2_5    345  150905 PTMPL2_CT2   18.0  1   
+     open branch from bus 150908 to bus 150906 ckt 1  / 150908 PANDA_T2_5    345  150906 PTMPL2_ST1   19.0  1   
+  end
+ end
+
+ monitor flowgate 5 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1390.29 InitViol=      -938 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41212" / 24199 P7 
+     open branch from bus   1906 to bus   1939 ckt 1  /   1906 VENUS_S5      345    1939 MDLTHELP_S5   345  1   
+     open branch from bus   1907 to bus   1940 ckt 1  /   1907 VENUS_N5      345    1940 MDLTHELP_N5   345  1   
+  end
+ end
+
+ monitor flowgate 6 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1390.29 InitViol=      -938 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_35183" / 18355 P5 
+// already opened     open branch from bus   1936 to bus   1939 ckt 1  /   1936 MDLTHELP_5    345    1939 MDLTHELP_S5   345  1   
+     open branch from bus   1936 to bus   1939 ckt BC /   1936 MDLTHELP_5    345    1939 MDLTHELP_S5   345  BC  
+     open branch from bus   1936 to bus   1940 ckt 1  /   1936 MDLTHELP_5    345    1940 MDLTHELP_N5   345  1   
+// already opened     open branch from bus   1936 to bus   1940 ckt BO /   1936 MDLTHELP_5    345    1940 MDLTHELP_N5   345  BO  
+     open branch from bus   1936 to bus 150155 ckt 5  /   1936 MDLTHELP_5    345  150155 MDANP_CT5    21.0  5   
+     open branch from bus   1936 to bus 150156 ckt 6  /   1936 MDLTHELP_5    345  150156 MDANP_CT6    21.0  6   
+     open branch from bus   1906 to bus   1939 ckt 1  /   1906 VENUS_S5      345    1939 MDLTHELP_S5   345  1   
+// already opened     open branch from bus   1939 to bus   1940 ckt 1  /   1939 MDLTHELP_S5   345    1940 MDLTHELP_N5   345  1   
+     open branch from bus   1939 to bus 150151 ckt 1  /   1939 MDLTHELP_S5   345  150151 MDANP_CT1    21.0  1   
+     open branch from bus   1939 to bus 150152 ckt 2  /   1939 MDLTHELP_S5   345  150152 MDANP_CT2    21.0  2   
+     open branch from bus   1907 to bus   1940 ckt 1  /   1907 VENUS_N5      345    1940 MDLTHELP_N5   345  1   
+     open branch from bus   1940 to bus 150153 ckt 3  /   1940 MDLTHELP_N5   345  150153 MDANP_CT3    21.0  3   
+     open branch from bus   1940 to bus 150154 ckt 4  /   1940 MDLTHELP_N5   345  150154 MDANP_CT4    21.0  4   
+  end
+ end
+
+ monitor flowgate 7 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32729" / 9536 P2 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+     open branch from bus  11699 to bus 143062 ckt 1  /  11699 WOODARD_5     345  143062 IMPACT_5      345  1   
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+  end
+ end
+
+ monitor flowgate 8 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32801" / 14812 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11688 ckt 1  /   1695 MOSES_5       345   11688 THORNTRE_5    345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 9 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32834" / 14814 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 10 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32743" / 14809 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 11 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32775" / 14811 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 12 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32818" / 14813 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 13 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32877" / 14816 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 14 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32729_Dup1" / 20872 P5 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+     open branch from bus  11699 to bus 143062 ckt 1  /  11699 WOODARD_5     345  143062 IMPACT_5      345  1   
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+  end
+ end
+
+ monitor flowgate 15 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32860" / 14815 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11688 ckt 2  /   1695 MOSES_5       345   11688 THORNTRE_5    345  2   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 16 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32893" / 14817 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 17 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1353.40 InitViol=      -901 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_32759" / 14810 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 18 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1293.21 InitViol=      -840 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16687" / 9981 P2 
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+ // !!! Failed to map 1 events reported below
+  //    REMOVE SHUNT R2 FROM BUS 5915                                 /* SO_TEX__345A(345) /! Bus shunt offline             
+  end
+ end
+
+ monitor flowgate 19 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1293.21 InitViol=      -840 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_13491" / 221 P1 
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 20 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1293.21 InitViol=      -840 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_619" / 15 P1 
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 21 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1292.47 InitViol=      -840 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_1291" / 9834 P2 
+     open branch from bus   5915 to bus  44200 ckt 1  /   5915 SO_TEX__345A  345   44200 HILLJE__B345  345  1   
+     open branch from bus   5915 to bus 110351 ckt G1 /   5915 SO_TEX__345A  345  110351 STP_STP_G1   25.0  G1  
+     open branch from bus   5915 to bus 110351 ckt G2 /   5915 SO_TEX__345A  345  110351 STP_STP_G1   25.0  G2  
+  end
+ end
+
+ monitor flowgate 22 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1280.01 InitViol=      -827 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16705" / 9988 P2 
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+ // !!! Failed to map 1 events reported below
+  //    REMOVE SHUNT R1 FROM BUS 5915                                 /* SO_TEX__345A(345) /! Bus shunt offline             
+  end
+ end
+
+ monitor flowgate 23 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1280.01 InitViol=      -827 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_620" / 16 P1 
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 24 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1280.01 InitViol=      -827 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16707" / 9989 P2 
+     open branch from bus   5915 to bus  44200 ckt 64 /   5915 SO_TEX__345A  345   44200 HILLJE__B345  345  64  
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 25 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1280.01 InitViol=      -827 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_13492" / 222 P1 
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 26 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1279.25 InitViol=      -827 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_1300" / 9837 P2 
+     open branch from bus   5915 to bus  44200 ckt 64 /   5915 SO_TEX__345A  345   44200 HILLJE__B345  345  64  
+     open branch from bus   5915 to bus 110352 ckt G1 /   5915 SO_TEX__345A  345  110352 STP_STP_G2   25.0  G1  
+     open branch from bus   5915 to bus 110352 ckt G2 /   5915 SO_TEX__345A  345  110352 STP_STP_G2   25.0  G2  
+  end
+ end
+
+ monitor flowgate 27 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1278.34 InitViol=      -826 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16685" / 9980 P2 
+     open branch from bus   5915 to bus  47531 ckt 18 /   5915 SO_TEX__345A  345   47531 JONCRK18LR    345  18  
+     open branch from bus  42530 to bus  47531 ckt 18 /  42530 JONCRK__B345  345   47531 JONCRK18LR    345  18  
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 28 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1277.12 InitViol=      -824 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_34519" / 21150 P5 
+     open branch from bus   1685 to bus  11688 ckt 1  /   1685 FARMVLSW_5    345   11688 THORNTRE_5    345  1   
+     open branch from bus   1695 to bus  11688 ckt 1  /   1695 MOSES_5       345   11688 THORNTRE_5    345  1   
+     open branch from bus   1695 to bus  11688 ckt 2  /   1695 MOSES_5       345   11688 THORNTRE_5    345  2   
+     open branch from bus  11688 to bus  11689 ckt 1  /  11688 THORNTRE_5    345   11689 CYCLONE_5     345  1   
+     open branch from bus  11688 to bus 143575 ckt 1  /  11688 THORNTRE_5    345  143575 SAMSON3_5     345  1   
+     open branch from bus  11688 to bus 143625 ckt 1  /  11688 THORNTRE_5    345  143625 SAMSON_5      345  1   
+     open branch from bus  11688 to bus 143705 ckt 1  /  11688 THORNTRE_5    345  143705 DELILAH_5     345  1   
+     open branch from bus  11688 to bus 143751 ckt 1  /  11688 THORNTRE_5    345  143751 DELILAH_S2    345  1   
+     open branch from bus  11688 to bus 143801 ckt 1  /  11688 THORNTRE_5    345  143801 DELILAH3_S1   345  1   
+     open branch from bus  11688 to bus 143851 ckt 1  /  11688 THORNTRE_5    345  143851 DELILAH4_S1   345  1   
+     open branch from bus  11688 to bus 143911 ckt 1  /  11688 THORNTRE_5    345  143911 SAMSON2_S1    345  1   
+  end
+ end
+
+ monitor flowgate 29 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1203.20 InitViol=      -750 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_27755" / 15570 P4 
+     open branch from bus   1436 to bus   1900 ckt 2  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  2   
+     open branch from bus   1877 to bus   1899 ckt 1  /   1877 MITCHBND_5    345    1899 MITCHBND6_5   345  1   
+     open branch from bus   1898 to bus   1899 ckt 1  /   1898 MITCHBND5_5   345    1899 MITCHBND6_5   345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus  11886 ckt 1  /   1900 COMCHPKW_5    345   11886 TIMBERVW_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+  end
+ end
+
+ monitor flowgate 30 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1203.14 InitViol=      -750 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_27828" / 15577 P4 
+     open branch from bus   1436 to bus   1900 ckt 1  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1440 to bus   1900 ckt 1  /   1440 COMCHESS1_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus   1902 ckt 1  /   1900 COMCHPKW_5    345    1902 JHNSONSW_P5   345  1   
+     open branch from bus   1900 to bus   1981 ckt 1  /   1900 COMCHPKW_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+     open branch from bus   1980 to bus   1981 ckt 1  /   1980 WLFHOLW2_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1981 to bus   1982 ckt 1  /   1981 WLFHOLW3_5    345    1982 WLFHOLW4_5    345  1   
+  end
+ end
+
+ monitor flowgate 31 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1203.14 InitViol=      -750 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_27820" / 15576 P4 
+     open branch from bus   1436 to bus   1900 ckt 1  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1440 to bus   1900 ckt 1  /   1440 COMCHESS1_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus   1902 ckt 1  /   1900 COMCHPKW_5    345    1902 JHNSONSW_P5   345  1   
+     open branch from bus   1900 to bus   1981 ckt 1  /   1900 COMCHPKW_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+     open branch from bus   1980 to bus   1981 ckt 1  /   1980 WLFHOLW2_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1981 to bus   1982 ckt 1  /   1981 WLFHOLW3_5    345    1982 WLFHOLW4_5    345  1   
+  end
+ end
+
+ monitor flowgate 32 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1193.23 InitViol=      -740 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_27769" / 15571 P4 
+     open branch from bus   1436 to bus   1900 ckt 2  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  2   
+     open branch from bus   1877 to bus   1899 ckt 1  /   1877 MITCHBND_5    345    1899 MITCHBND6_5   345  1   
+     open branch from bus   1898 to bus   1899 ckt 1  /   1898 MITCHBND5_5   345    1899 MITCHBND6_5   345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus  11886 ckt 1  /   1900 COMCHPKW_5    345   11886 TIMBERVW_5    345  1   
+     open branch from bus   1900 to bus 150112 ckt 1  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  1   
+     open branch from bus   1900 to bus 150112 ckt 2  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  2   
+  end
+ end
+
+ monitor flowgate 33 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.32 InitViol=      -735 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41066" / 3844 P1 
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+  end
+ end
+
+ monitor flowgate 34 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.32 InitViol=      -735 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_34951" / 18330 P5 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+  end
+ end
+
+ monitor flowgate 35 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.16 InitViol=      -734 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41003" / 9554 P2 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+     open threewinding at bus   1691 to bus   1690 to bus  17017 ckt 1   / 
+     open threewinding at bus  17017 to bus   1690 to bus   1691 ckt 1   / 
+  end
+ end
+
+ monitor flowgate 36 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.16 InitViol=      -734 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41081" / 14917 P4 
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+     open threewinding at bus   1691 to bus   1690 to bus  17017 ckt 1   / 
+     open threewinding at bus  17017 to bus   1690 to bus   1691 ckt 1   / 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+      remove machine C1 from bus 140071 /* 140071 KMCHI_1CT101 18.0  Default dispatch
+      remove machine C2 from bus 140072 /* 140072 KMCHI_1CT201 18.0  Default dispatch
+      remove machine C0 from bus 140073 /* 140073 KMCHI_1ST    18.0  Default dispatch
+      remove machine C4 from bus 140074 /* 140074 KMCHI_2CT101 18.0  Default dispatch
+      remove machine C5 from bus 140075 /* 140075 KMCHI_2CT201 18.0  Default dispatch
+      remove machine C0 from bus 140076 /* 140076 KMCHI_2ST    18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 37 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.16 InitViol=      -734 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41103" / 14919 P4 
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+     open threewinding at bus   1691 to bus   1690 to bus  17017 ckt 1   / 
+     open threewinding at bus  17017 to bus   1690 to bus   1691 ckt 1   / 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+      remove machine C1 from bus 140071 /* 140071 KMCHI_1CT101 18.0  Default dispatch
+      remove machine C2 from bus 140072 /* 140072 KMCHI_1CT201 18.0  Default dispatch
+      remove machine C0 from bus 140073 /* 140073 KMCHI_1ST    18.0  Default dispatch
+      remove machine C4 from bus 140074 /* 140074 KMCHI_2CT101 18.0  Default dispatch
+      remove machine C5 from bus 140075 /* 140075 KMCHI_2CT201 18.0  Default dispatch
+      remove machine C0 from bus 140076 /* 140076 KMCHI_2ST    18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 38 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.16 InitViol=      -734 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41092" / 14918 P4 
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+     open threewinding at bus   1691 to bus   1690 to bus  17017 ckt 1   / 
+     open threewinding at bus  17017 to bus   1690 to bus   1691 ckt 1   / 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+      remove machine C1 from bus 140071 /* 140071 KMCHI_1CT101 18.0  Default dispatch
+      remove machine C2 from bus 140072 /* 140072 KMCHI_1CT201 18.0  Default dispatch
+      remove machine C0 from bus 140073 /* 140073 KMCHI_1ST    18.0  Default dispatch
+      remove machine C4 from bus 140074 /* 140074 KMCHI_2CT101 18.0  Default dispatch
+      remove machine C5 from bus 140075 /* 140075 KMCHI_2CT201 18.0  Default dispatch
+      remove machine C0 from bus 140076 /* 140076 KMCHI_2ST    18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 39 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.16 InitViol=      -734 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41070_Dup1" / 22615 P5 
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+     open threewinding at bus   1691 to bus   1690 to bus  17017 ckt 1   / 
+     open threewinding at bus  17017 to bus   1690 to bus   1691 ckt 1   / 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+      remove machine C1 from bus 140071 /* 140071 KMCHI_1CT101 18.0  Default dispatch
+      remove machine C2 from bus 140072 /* 140072 KMCHI_1CT201 18.0  Default dispatch
+      remove machine C0 from bus 140073 /* 140073 KMCHI_1ST    18.0  Default dispatch
+      remove machine C4 from bus 140074 /* 140074 KMCHI_2CT101 18.0  Default dispatch
+      remove machine C5 from bus 140075 /* 140075 KMCHI_2CT201 18.0  Default dispatch
+      remove machine C0 from bus 140076 /* 140076 KMCHI_2ST    18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 40 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.16 InitViol=      -734 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41070" / 9555 P2 
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+     open threewinding at bus   1691 to bus   1690 to bus  17017 ckt 1   / 
+     open threewinding at bus  17017 to bus   1690 to bus   1691 ckt 1   / 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+      remove machine C1 from bus 140071 /* 140071 KMCHI_1CT101 18.0  Default dispatch
+      remove machine C2 from bus 140072 /* 140072 KMCHI_1CT201 18.0  Default dispatch
+      remove machine C0 from bus 140073 /* 140073 KMCHI_1ST    18.0  Default dispatch
+      remove machine C4 from bus 140074 /* 140074 KMCHI_2CT101 18.0  Default dispatch
+      remove machine C5 from bus 140075 /* 140075 KMCHI_2CT201 18.0  Default dispatch
+      remove machine C0 from bus 140076 /* 140076 KMCHI_2ST    18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 41 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1187.16 InitViol=      -734 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_41114" / 14920 P4 
+     open threewinding at bus   1690 to bus   1691 to bus  17017 ckt 1   / 
+     open threewinding at bus   1691 to bus   1690 to bus  17017 ckt 1   / 
+     open threewinding at bus  17017 to bus   1690 to bus   1691 ckt 1   / 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1690 to bus   1729 ckt 1  /   1690 VALLYSES1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1690 to bus   2373 ckt 1  /   1690 VALLYSES1_5   345    2373 ANNASW_5      345  1   
+     open branch from bus   1690 to bus 140078 ckt 1  /   1690 VALLYSES1_5   345  140078 KMCHI_2_5     345  1   
+      remove machine C1 from bus 140071 /* 140071 KMCHI_1CT101 18.0  Default dispatch
+      remove machine C2 from bus 140072 /* 140072 KMCHI_1CT201 18.0  Default dispatch
+      remove machine C0 from bus 140073 /* 140073 KMCHI_1ST    18.0  Default dispatch
+      remove machine C4 from bus 140074 /* 140074 KMCHI_2CT101 18.0  Default dispatch
+      remove machine C5 from bus 140075 /* 140075 KMCHI_2CT201 18.0  Default dispatch
+      remove machine C0 from bus 140076 /* 140076 KMCHI_2ST    18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 42 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1142.70 InitViol=      -690 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_20478" / 343 P1 
+      remove machine C1 from bus 111141 /* 111141 CBECII_CT7   25.0  Default dispatch
+      remove machine C2 from bus 111142 /* 111142 CBECII_CT8   25.0  Default dispatch
+      remove machine C0 from bus 111143 /* 111143 CBECII_STG9  23.5  Default dispatch
+  end
+ end
+
+ monitor flowgate 43 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1115.41 InitViol=      -663 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_20660" / 396 P1 
+      remove machine C1 from bus 151081 /* 151081 WHCCS2_G4    25.0  Default dispatch
+      remove machine C2 from bus 151082 /* 151082 WHCCS2_G5    25.0  Default dispatch
+      remove machine C0 from bus 151083 /* 151083 WHCCS2_G6    23.5  Default dispatch
+  end
+ end
+
+ monitor flowgate 44 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1102.98 InitViol=      -650 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_35129" / 21565 P5 
+     open branch from bus   1877 to bus   1878 ckt 1  /   1877 MITCHBND_5    345    1878 WHCCS2_4      345  1   
+     open branch from bus   1877 to bus   1895 ckt 1  /   1877 MITCHBND_5    345    1895 MITCHBND2_5   345  1   
+     open branch from bus   1877 to bus   1899 ckt 1  /   1877 MITCHBND_5    345    1899 MITCHBND6_5   345  1   
+     open branch from bus   1877 to bus   2285 ckt 1  /   1877 MITCHBND_5    345    2285 CARMICHL_5    345  1   
+     open branch from bus   1878 to bus 151081 ckt 1  /   1878 WHCCS2_4      345  151081 WHCCS2_G4    25.0  1   
+     open branch from bus   1879 to bus   1896 ckt 1  /   1879 WHCCS2_5      345    1896 MITCHBND3_5   345  1   
+     open branch from bus   1879 to bus 151082 ckt 1  /   1879 WHCCS2_5      345  151082 WHCCS2_G5    25.0  1   
+     open branch from bus   1879 to bus 151083 ckt 1  /   1879 WHCCS2_5      345  151083 WHCCS2_G6    23.5  1   
+     open branch from bus   1895 to bus   1896 ckt 1  /   1895 MITCHBND2_5   345    1896 MITCHBND3_5   345  1   
+     open branch from bus   1896 to bus   1897 ckt 1  /   1896 MITCHBND3_5   345    1897 MITCHBND4_5   345  1   
+     open branch from bus   1876 to bus   1897 ckt 1  /   1876 WLFHOLW_5     345    1897 MITCHBND4_5   345  1   
+     open branch from bus   1897 to bus   1898 ckt 1  /   1897 MITCHBND4_5   345    1898 MITCHBND5_5   345  1   
+     open branch from bus   1880 to bus   1898 ckt 1  /   1880 ROCKYCRK_5    345    1898 MITCHBND5_5   345  1   
+     open branch from bus   1898 to bus   1899 ckt 1  /   1898 MITCHBND5_5   345    1899 MITCHBND6_5   345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+  end
+ end
+
+ monitor flowgate 45 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=   1055.46 InitViol=      -603 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_34181" / 18299 P5 
+     open branch from bus   1016 to bus   1028 ckt 1  /   1016 ODEHV3T_5     345    1028 ODEHVC_5      345  1   
+     open branch from bus   1016 to bus   1029 ckt 1  /   1016 ODEHV3T_5     345    1029 ODEHVD_5      345  1   
+     open threewinding at bus   1016 to bus   1027 to bus  18530 ckt 3   / 
+     open branch from bus   1020 to bus   1028 ckt 1  /   1020 ODEHV1T_5     345    1028 ODEHVC_5      345  1   
+     open branch from bus   1020 to bus   1029 ckt 1  /   1020 ODEHV1T_5     345    1029 ODEHVD_5      345  1   
+     open branch from bus   1020 to bus 130327 ckt 1  /   1020 ODEHV1T_5     345  130327 OECCS_1_5     345  1   
+     open branch from bus   1026 to bus   1028 ckt 1  /   1026 ODEHV2T_5     345    1028 ODEHVC_5      345  1   
+     open branch from bus   1026 to bus   1029 ckt 1  /   1026 ODEHV2T_5     345    1029 ODEHVD_5      345  1   
+     open branch from bus   1026 to bus 130328 ckt 1  /   1026 ODEHV2T_5     345  130328 OECCS_2_5     345  1   
+     open branch from bus   1028 to bus  11028 ckt 1  /   1028 ODEHVC_5      345   11028 ODESEHV2_5    345  1   
+     open threewinding at bus   1028 to bus   1027 to bus  18528 ckt 2   / 
+     open branch from bus   1029 to bus  11028 ckt 1  /   1029 ODEHVD_5      345   11028 ODESEHV2_5    345  1   
+     open threewinding at bus   1029 to bus   1027 to bus  18529 ckt 1   / 
+     open branch from bus    842 to bus  11028 ckt 1  /    842 GPL_KINGMTSW  345   11028 ODESEHV2_5    345  1   
+     open branch from bus   1018 to bus  11028 ckt 1  /   1018 MOSS_5        345   11028 ODESEHV2_5    345  1   
+     open branch from bus   1125 to bus  11028 ckt 1  /   1125 MIDESSAS_5    345   11028 ODESEHV2_5    345  1   
+     open branch from bus  11010 to bus  11028 ckt 1  /  11010 WOLFSS_5      345   11028 ODESEHV2_5    345  1   
+     open branch from bus  11016 to bus  11028 ckt 1  /  11016 QUAILSW_5     345   11028 ODESEHV2_5    345  1   
+     open branch from bus  11028 to bus  59901 ckt 1  /  11028 ODESEHV2_5    345   59901 GRELTON       345  1   
+     open branch from bus 130327 to bus 130321 ckt 1  / 130327 OECCS_1_5     345  130321 OECCS_CT11   18.1  1   
+     open branch from bus 130327 to bus 130322 ckt 2  / 130327 OECCS_1_5     345  130322 OECCS_CT12   18.1  2   
+     open branch from bus 130327 to bus 130323 ckt 5  / 130327 OECCS_1_5     345  130323 OECCS_UNIT1  18.1  5   
+     open branch from bus 130328 to bus 130324 ckt 3  / 130328 OECCS_2_5     345  130324 OECCS_CT21   18.1  3   
+     open branch from bus 130328 to bus 130325 ckt 4  / 130328 OECCS_2_5     345  130325 OECCS_CT22   18.1  4   
+     open branch from bus 130328 to bus 130326 ckt 6  / 130328 OECCS_2_5     345  130326 OECCS_UNIT2  18.1  6   
+  end
+ end
+
+ monitor flowgate 46 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    999.26 InitViol=      -547 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_34953" / 18331 P5 
+     open branch from bus   1690 to bus   1692 ckt 1  /   1690 VALLYSES1_5   345    1692 PARIS_SW1_5   345  1   
+     open branch from bus   1692 to bus   1729 ckt 1  /   1692 PARIS_SW1_5   345    1729 VAL_STH_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus 140067 ckt 1  /   1692 PARIS_SW1_5   345  140067 LPCCS_1_5     345  1   
+     open branch from bus   1692 to bus 140067 ckt 2  /   1692 PARIS_SW1_5   345  140067 LPCCS_1_5     345  2   
+     open threewinding at bus   1692 to bus   1693 to bus   1686 ckt 1   / 
+  end
+ end
+
+ monitor flowgate 47 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    949.66 InitViol=      -497 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_38162" / 24122 P7 
+     open branch from bus    559 to bus  12033 ckt 1  /    559 HERITAGE      138   12033 HRTAG1_T8     138  1   
+     open branch from bus    566 to bus   2035 ckt 1  /    566 CHERRYGROV    138    2035 BEARCK3_8     138  1   
+     open branch from bus    566 to bus   2037 ckt 1  /    566 CHERRYGROV    138    2037 WPKELLR1_8    138  1   
+     open branch from bus    679 to bus   1857 ckt 1  /    679 MCPHERSON     138    1857 MCPHERSN_P8   138  1   
+     open branch from bus    679 to bus  11857 ckt 1  /    679 MCPHERSON     138   11857 MCPHERSN2_P8  138  1   
+     open branch from bus   1852 to bus  15100 ckt 1  /   1852 ROANOKE2_8    138   15100 PARKVISTA1_8  138  1   
+     open branch from bus   1854 to bus  15101 ckt 1  /   1854 ROANOKE1_8    138   15101 PARKVISTA2_8  138  1   
+     open branch from bus   1856 to bus   2034 ckt 1  /   1856 KELLER1T_8    138    2034 KLR_MAG2_T8   138  1   
+     open branch from bus   1856 to bus  11857 ckt 1  /   1856 KELLER1T_8    138   11857 MCPHERSN2_P8  138  1   
+     open branch from bus   2016 to bus   2052 ckt 1  /   2016 EULESS_8      138    2052 BD_WDSN2_T8   138  1   
+     open branch from bus   2026 to bus   2027 ckt 1  /   2026 CLYVIL1_T8    138    2027 BEARCK1_8     138  1   
+     open branch from bus   2026 to bus   2050 ckt 1  /   2026 CLYVIL1_T8    138    2050 BEDFORD1_8    138  1   
+     open branch from bus   2026 to bus  12026 ckt 1  /   2026 CLYVIL1_T8    138   12026 CLYVIL1_8     138  1   
+     open branch from bus   2027 to bus   2038 ckt 1  /   2027 BEARCK1_8     138    2038 WPKELLR2_8    138  1   
+     open branch from bus   2028 to bus   2035 ckt 1  /   2028 CLYVIL2_T8    138    2035 BEARCK3_8     138  1   
+     open branch from bus   2028 to bus   2042 ckt 1  /   2028 CLYVIL2_T8    138    2042 SMITHFD2_8    138  1   
+     open branch from bus   2028 to bus  12028 ckt 1  /   2028 CLYVIL2_T8    138   12028 CLYVIL2_8     138  1   
+     open branch from bus   2033 to bus   2036 ckt 1  /   2033 KLR_MAG1_T8   138    2036 KELLER2_T8    138  1   
+     open branch from bus   2033 to bus   2037 ckt 1  /   2033 KLR_MAG1_T8   138    2037 WPKELLR1_8    138  1   
+     open branch from bus   2033 to bus  12033 ckt 1  /   2033 KLR_MAG1_T8   138   12033 HRTAG1_T8     138  1   
+     open branch from bus   2034 to bus   2038 ckt 1  /   2034 KLR_MAG2_T8   138    2038 WPKELLR2_8    138  1   
+     open branch from bus   2034 to bus  12034 ckt 1  /   2034 KLR_MAG2_T8   138   12034 HRTAG2_T8     138  1   
+     open branch from bus   2039 to bus   2042 ckt 1  /   2039 MEADPRK1_8    138    2042 SMITHFD2_8    138  1   
+     open branch from bus   2039 to bus   2043 ckt 1  /   2039 MEADPRK1_8    138    2043 WATAGAN_T8    138  1   
+     open branch from bus   2043 to bus   2046 ckt 1  /   2043 WATAGAN_T8    138    2046 WATAGA2_8     138  1   
+     open branch from bus   2050 to bus   2052 ckt 1  /   2050 BEDFORD1_8    138    2052 BD_WDSN2_T8   138  1   
+     open branch from bus   2052 to bus  12051 ckt 1  /   2052 BD_WDSN2_T8   138   12051 BD_WDSN1_8    138  1   
+     open branch from bus   2043 to bus   2074 ckt 1  /   2043 WATAGAN_T8    138    2074 DEENSW_8      138  1   
+ // !!! Failed to map 2 events reported below
+  //    OPEN BRANCH FROM BUS 15100 TO BUS 2036 CKT 1                  /* () - KELLER2_T8(138) /! Branch not found              
+  //    OPEN BRANCH FROM BUS 15101 TO BUS 1857 CKT 1                  /* () - MCPHERSN_P8(138) /! Branch not found              
+  end
+ end
+
+ monitor flowgate 48 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    931.19 InitViol=      -478 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_43147" / 4714 P1 
+     open branch from bus   3397 to bus 150741 ckt 01 /   3397 SANDYCRK_5    345  150741 SCES_UNIT1   24.5  01  
+  end
+ end
+
+ monitor flowgate 49 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    931.18 InitViol=      -478 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_31408" / 3398 P1 
+     open branch from bus   3397 to bus 150741 ckt 01 /   3397 SANDYCRK_5    345  150741 SCES_UNIT1   24.5  01  
+     open branch from bus   3397 to bus   3399 ckt 1  /   3397 SANDYCRK_5    345    3399 RAT_SNAKE_5   345  1   
+     open branch from bus   3399 to bus   3409 ckt 1  /   3399 RAT_SNAKE_5   345    3409 LAKE_CRK1_5   345  1   
+  end
+ end
+
+ monitor flowgate 50 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    931.18 InitViol=      -478 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_37601" / 3620 P1 
+     open branch from bus   3397 to bus   3399 ckt 1  /   3397 SANDYCRK_5    345    3399 RAT_SNAKE_5   345  1   
+  end
+ end
+
+ monitor flowgate 51 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    930.98 InitViol=      -478 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_36396" / 18396 P5 
+     open branch from bus   3397 to bus   3399 ckt 1  /   3397 SANDYCRK_5    345    3399 RAT_SNAKE_5   345  1   
+     open branch from bus   3397 to bus 150741 ckt 01 /   3397 SANDYCRK_5    345  150741 SCES_UNIT1   24.5  01  
+     open branch from bus   3384 to bus   3399 ckt 1  /   3384 STJOHNS_5     345    3399 RAT_SNAKE_5   345  1   
+     open branch from bus   3399 to bus   3409 ckt 1  /   3399 RAT_SNAKE_5   345    3409 LAKE_CRK1_5   345  1   
+  end
+ end
+
+ monitor flowgate 52 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    922.34 InitViol=      -470 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_1687" / 6885 P2 
+     open branch from bus   8028 to bus   8458 ckt 3  /   8028 VALADEZ4A     138    8458 B_DAVIS4A     138  3   
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8458 to bus   8493 ckt 1  /   8458 B_DAVIS4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8458 to bus   8515 ckt 1  /   8458 B_DAVIS4A     138    8515 ALAZAN4A      138  1   
+     open branch from bus   8458 to bus   8883 ckt 1  /   8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1   
+     open branch from bus   8458 to bus   8997 ckt 1  /   8458 B_DAVIS4A     138    8997 NAVALBS4B     138  1   
+     open branch from bus   8458 to bus 160105 ckt 1  /   8458 B_DAVIS4A     138  160105 B_DAVIS_1_8   138  1   
+     open branch from bus   8458 to bus 160106 ckt 1  /   8458 B_DAVIS4A     138  160106 B_DAVIS_2_8   138  1   
+     open branch from bus   8458 to bus 160107 ckt 1  /   8458 B_DAVIS4A     138  160107 B_DAVIS_3_9   138  1   
+     open branch from bus   8458 to bus 160108 ckt 1  /   8458 B_DAVIS4A     138  160108 B_DAVIS_4_9   138  1   
+  end
+ end
+
+ monitor flowgate 53 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    922.34 InitViol=      -470 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_1687_Dup1" / 10360 P2 
+     open branch from bus   8028 to bus   8458 ckt 3  /   8028 VALADEZ4A     138    8458 B_DAVIS4A     138  3   
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8458 to bus   8493 ckt 1  /   8458 B_DAVIS4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8458 to bus   8515 ckt 1  /   8458 B_DAVIS4A     138    8515 ALAZAN4A      138  1   
+     open branch from bus   8458 to bus   8883 ckt 1  /   8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1   
+     open branch from bus   8458 to bus   8997 ckt 1  /   8458 B_DAVIS4A     138    8997 NAVALBS4B     138  1   
+     open branch from bus   8458 to bus 160105 ckt 1  /   8458 B_DAVIS4A     138  160105 B_DAVIS_1_8   138  1   
+     open branch from bus   8458 to bus 160106 ckt 1  /   8458 B_DAVIS4A     138  160106 B_DAVIS_2_8   138  1   
+     open branch from bus   8458 to bus 160107 ckt 1  /   8458 B_DAVIS4A     138  160107 B_DAVIS_3_9   138  1   
+     open branch from bus   8458 to bus 160108 ckt 1  /   8458 B_DAVIS4A     138  160108 B_DAVIS_4_9   138  1   
+  end
+ end
+
+ monitor flowgate 54 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    922.34 InitViol=      -470 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_10600" / 20140 P5 
+     open branch from bus   8028 to bus   8458 ckt 3  /   8028 VALADEZ4A     138    8458 B_DAVIS4A     138  3   
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8458 to bus   8493 ckt 1  /   8458 B_DAVIS4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8458 to bus   8515 ckt 1  /   8458 B_DAVIS4A     138    8515 ALAZAN4A      138  1   
+     open branch from bus   8458 to bus   8883 ckt 1  /   8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1   
+     open branch from bus   8458 to bus   8997 ckt 1  /   8458 B_DAVIS4A     138    8997 NAVALBS4B     138  1   
+     open branch from bus   8458 to bus 160105 ckt 1  /   8458 B_DAVIS4A     138  160105 B_DAVIS_1_8   138  1   
+     open branch from bus   8458 to bus 160106 ckt 1  /   8458 B_DAVIS4A     138  160106 B_DAVIS_2_8   138  1   
+     open branch from bus   8458 to bus 160107 ckt 1  /   8458 B_DAVIS4A     138  160107 B_DAVIS_3_9   138  1   
+     open branch from bus   8458 to bus 160108 ckt 1  /   8458 B_DAVIS4A     138  160108 B_DAVIS_4_9   138  1   
+     open branch from bus 160105 to bus 160101 ckt 4  / 160105 B_DAVIS_1_8   138  160101 B_D_B_DAVIG1 24.0  4   
+     open branch from bus 160106 to bus 160102 ckt 3  / 160106 B_DAVIS_2_8   138  160102 B_D_B_DAVIG2 22.0  3   
+     open branch from bus 160107 to bus 160103 ckt 1  / 160107 B_DAVIS_3_9   138  160103 B_D_B_DAVIG3 18.0  1   
+     open branch from bus 160108 to bus 160104 ckt 2  / 160108 B_DAVIS_4_9   138  160104 B_D_B_DAVIG4 18.0  2   
+  end
+ end
+
+ monitor flowgate 55 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    922.34 InitViol=      -470 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_10550" / 20099 P5 
+     open branch from bus   8028 to bus   8458 ckt 3  /   8028 VALADEZ4A     138    8458 B_DAVIS4A     138  3   
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8458 to bus   8493 ckt 1  /   8458 B_DAVIS4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8458 to bus   8515 ckt 1  /   8458 B_DAVIS4A     138    8515 ALAZAN4A      138  1   
+     open branch from bus   8458 to bus   8883 ckt 1  /   8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1   
+     open branch from bus   8458 to bus   8997 ckt 1  /   8458 B_DAVIS4A     138    8997 NAVALBS4B     138  1   
+     open branch from bus   8458 to bus 160105 ckt 1  /   8458 B_DAVIS4A     138  160105 B_DAVIS_1_8   138  1   
+     open branch from bus   8458 to bus 160106 ckt 1  /   8458 B_DAVIS4A     138  160106 B_DAVIS_2_8   138  1   
+     open branch from bus   8458 to bus 160107 ckt 1  /   8458 B_DAVIS4A     138  160107 B_DAVIS_3_9   138  1   
+     open branch from bus   8458 to bus 160108 ckt 1  /   8458 B_DAVIS4A     138  160108 B_DAVIS_4_9   138  1   
+  end
+ end
+
+ monitor flowgate 56 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    922.34 InitViol=      -470 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_1687_Dup3" / 18665 P5 
+     open branch from bus   8028 to bus   8458 ckt 3  /   8028 VALADEZ4A     138    8458 B_DAVIS4A     138  3   
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8458 to bus   8493 ckt 1  /   8458 B_DAVIS4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8458 to bus   8515 ckt 1  /   8458 B_DAVIS4A     138    8515 ALAZAN4A      138  1   
+     open branch from bus   8458 to bus   8883 ckt 1  /   8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1   
+     open branch from bus   8458 to bus   8997 ckt 1  /   8458 B_DAVIS4A     138    8997 NAVALBS4B     138  1   
+     open branch from bus   8458 to bus 160105 ckt 1  /   8458 B_DAVIS4A     138  160105 B_DAVIS_1_8   138  1   
+     open branch from bus   8458 to bus 160106 ckt 1  /   8458 B_DAVIS4A     138  160106 B_DAVIS_2_8   138  1   
+     open branch from bus   8458 to bus 160107 ckt 1  /   8458 B_DAVIS4A     138  160107 B_DAVIS_3_9   138  1   
+     open branch from bus   8458 to bus 160108 ckt 1  /   8458 B_DAVIS4A     138  160108 B_DAVIS_4_9   138  1   
+  end
+ end
+
+ monitor flowgate 57 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    922.34 InitViol=      -470 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_1687_Dup2" / 15924 P4 
+     open branch from bus   8028 to bus   8458 ckt 3  /   8028 VALADEZ4A     138    8458 B_DAVIS4A     138  3   
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8458 to bus   8493 ckt 1  /   8458 B_DAVIS4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8458 to bus   8515 ckt 1  /   8458 B_DAVIS4A     138    8515 ALAZAN4A      138  1   
+     open branch from bus   8458 to bus   8883 ckt 1  /   8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1   
+     open branch from bus   8458 to bus   8997 ckt 1  /   8458 B_DAVIS4A     138    8997 NAVALBS4B     138  1   
+     open branch from bus   8458 to bus 160105 ckt 1  /   8458 B_DAVIS4A     138  160105 B_DAVIS_1_8   138  1   
+     open branch from bus   8458 to bus 160106 ckt 1  /   8458 B_DAVIS4A     138  160106 B_DAVIS_2_8   138  1   
+     open branch from bus   8458 to bus 160107 ckt 1  /   8458 B_DAVIS4A     138  160107 B_DAVIS_3_9   138  1   
+     open branch from bus   8458 to bus 160108 ckt 1  /   8458 B_DAVIS4A     138  160108 B_DAVIS_4_9   138  1   
+  end
+ end
+
+ monitor flowgate 58 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    911.04 InitViol=      -458 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_35604" / 21906 P5 
+// already opened     open branch from bus   2401 to bus   2402 ckt 1  /   2401 LKHB_W8       138    2402 LKHB_E8       138  1   
+     open branch from bus   2401 to bus   2403 ckt 1  /   2401 LKHB_W8       138    2403 LKHB_1T8      138  1   
+     open branch from bus   2401 to bus   2450 ckt 1  /   2401 LKHB_W8       138    2450 CNVLSW_E8     138  1   
+     open branch from bus   2401 to bus   2918 ckt 1  /   2401 LKHB_W8       138    2918 CNVL2_8       138  1   
+     open branch from bus   2401 to bus  12401 ckt 1  /   2401 LKHB_W8       138   12401 LKHB_3T8      138  1   
+     open branch from bus   2401 to bus  12402 ckt 1  /   2401 LKHB_W8       138   12402 LKHB_4T8      138  1   
+     open branch from bus   2401 to bus  12403 ckt 1  /   2401 LKHB_W8       138   12403 LKHB_2T8      138  1   
+     open branch from bus   2402 to bus   2403 ckt 1  /   2402 LKHB_E8       138    2403 LKHB_1T8      138  1   
+     open branch from bus   2402 to bus   2439 ckt 1  /   2402 LKHB_E8       138    2439 CNVLSW_W8     138  1   
+     open branch from bus   2402 to bus   2917 ckt 1  /   2402 LKHB_E8       138    2917 CNVL1_8       138  1   
+     open branch from bus   2402 to bus   2934 ckt 1  /   2402 LKHB_E8       138    2934 DUCKCK1T_8    138  1   
+     open branch from bus   2402 to bus  12401 ckt 1  /   2402 LKHB_E8       138   12401 LKHB_3T8      138  1   
+     open branch from bus   2402 to bus  12402 ckt 1  /   2402 LKHB_E8       138   12402 LKHB_4T8      138  1   
+     open branch from bus   2402 to bus  12403 ckt 1  /   2402 LKHB_E8       138   12403 LKHB_2T8      138  1   
+     open branch from bus   2403 to bus 150091 ckt 1  /   2403 LKHB_1T8      138  150091 LHSES_UNIT1  24.0  1   
+     open branch from bus   2939 to bus  12401 ckt 1  /   2939 STAUG1T_8     138   12401 LKHB_3T8      138  1   
+     open branch from bus   2441 to bus  12402 ckt 1  /   2441 PRCKSW1_8     138   12402 LKHB_4T8      138  1   
+     open branch from bus  12403 to bus 150092 ckt 2  /  12403 LKHB_2T8      138  150092 LH2SES_UNIT2 22.0  2   
+  end
+ end
+
+ monitor flowgate 59 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    885.01 InitViol=      -432 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_20531" / 357 P1 
+      remove machine C1 from bus 150181 /* 150181 FRNYPP_GT11  18.0  Default dispatch
+      remove machine C2 from bus 150182 /* 150182 FRNYPP_GT12  18.0  Default dispatch
+      remove machine C3 from bus 150183 /* 150183 FRNYPP_GT13  18.0  Default dispatch
+      remove machine C0 from bus 150184 /* 150184 FRNYPP_ST10  18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 60 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    885.01 InitViol=      -432 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_20535" / 358 P1 
+      remove machine C1 from bus 150185 /* 150185 FRNYPP_GT21  18.0  Default dispatch
+      remove machine C2 from bus 150186 /* 150186 FRNYPP_GT22  18.0  Default dispatch
+      remove machine C3 from bus 150187 /* 150187 FRNYPP_GT23  18.0  Default dispatch
+      remove machine C0 from bus 150188 /* 150188 FRNYPP_ST20  18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 61 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    882.83 InitViol=      -430 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_29665" / 18097 P4 
+     open branch from bus   2432 to bus   2437 ckt 1  /   2432 TRICRN1_5     345    2437 FRNY1_5       345  1   
+     open threewinding at bus   2437 to bus   2438 to bus  12438 ckt 1   / 
+     open threewinding at bus   2438 to bus   2437 to bus  12438 ckt 1   / 
+     open threewinding at bus  12438 to bus   2437 to bus   2438 ckt 1   / 
+     open branch from bus   2437 to bus   2478 ckt 1  /   2437 FRNY1_5       345    2478 ROYSE_S5      345  1   
+     open branch from bus   2437 to bus 150189 ckt 1  /   2437 FRNY1_5       345  150189 FRNYPP_1_5    345  1   
+     open branch from bus 150189 to bus 150181 ckt 1  / 150189 FRNYPP_1_5    345  150181 FRNYPP_GT11  18.0  1   
+     open branch from bus 150189 to bus 150182 ckt 2  / 150189 FRNYPP_1_5    345  150182 FRNYPP_GT12  18.0  2   
+     open branch from bus 150189 to bus 150183 ckt 3  / 150189 FRNYPP_1_5    345  150183 FRNYPP_GT13  18.0  3   
+     open branch from bus 150189 to bus 150184 ckt 7  / 150189 FRNYPP_1_5    345  150184 FRNYPP_ST10  18.0  7   
+      remove machine C1 from bus 150181 /* 150181 FRNYPP_GT11  18.0  Default dispatch
+      remove machine C2 from bus 150182 /* 150182 FRNYPP_GT12  18.0  Default dispatch
+      remove machine C3 from bus 150183 /* 150183 FRNYPP_GT13  18.0  Default dispatch
+      remove machine C0 from bus 150184 /* 150184 FRNYPP_ST10  18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 62 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    882.83 InitViol=      -430 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_29677" / 18098 P4 
+     open branch from bus   2432 to bus   2437 ckt 1  /   2432 TRICRN1_5     345    2437 FRNY1_5       345  1   
+     open threewinding at bus   2437 to bus   2438 to bus  12438 ckt 1   / 
+     open threewinding at bus   2438 to bus   2437 to bus  12438 ckt 1   / 
+     open threewinding at bus  12438 to bus   2437 to bus   2438 ckt 1   / 
+     open branch from bus   2437 to bus   2478 ckt 1  /   2437 FRNY1_5       345    2478 ROYSE_S5      345  1   
+     open branch from bus   2437 to bus 150190 ckt 1  /   2437 FRNY1_5       345  150190 FRNYPP_2_5    345  1   
+     open branch from bus 150190 to bus 150185 ckt 4  / 150190 FRNYPP_2_5    345  150185 FRNYPP_GT21  18.0  4   
+     open branch from bus 150190 to bus 150186 ckt 5  / 150190 FRNYPP_2_5    345  150186 FRNYPP_GT22  18.0  5   
+     open branch from bus 150190 to bus 150187 ckt 6  / 150190 FRNYPP_2_5    345  150187 FRNYPP_GT23  18.0  6   
+     open branch from bus 150190 to bus 150188 ckt 8  / 150190 FRNYPP_2_5    345  150188 FRNYPP_ST20  18.0  8   
+      remove machine C1 from bus 150185 /* 150185 FRNYPP_GT21  18.0  Default dispatch
+      remove machine C2 from bus 150186 /* 150186 FRNYPP_GT22  18.0  Default dispatch
+      remove machine C3 from bus 150187 /* 150187 FRNYPP_GT23  18.0  Default dispatch
+      remove machine C0 from bus 150188 /* 150188 FRNYPP_ST20  18.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 63 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40888" / 18193 P4 
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove swshunt from bus   3400 /*   3400 TWIN_OAK_N5   345 
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 64 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40859" / 18187 P4 
+     open branch from bus    975 to bus   3400 ckt 1  /    975 JKCREEK1      345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove swshunt from bus   3400 /*   3400 TWIN_OAK_N5   345 
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 65 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40915" / 3826 P1 
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120135 to bus 120132 ckt 3  / 120135 OAKGROV2_5    345  120132 OGSES_UNIT2  24.0  3   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 66 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40923" / 6606 P2 
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 67 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40878" / 18191 P4 
+     open branch from bus   3400 to bus  39950 ckt 1  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  1   
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove swshunt from bus   3400 /*   3400 TWIN_OAK_N5   345 
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 68 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40869" / 18189 P4 
+     open branch from bus   3400 to bus  46020 ckt 1  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  1   
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove swshunt from bus   3400 /*   3400 TWIN_OAK_N5   345 
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 69 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40864" / 18188 P4 
+     open branch from bus   3391 to bus   3400 ckt 1  /   3391 JEWETT_N5     345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove swshunt from bus   3400 /*   3400 TWIN_OAK_N5   345 
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 70 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40874" / 18190 P4 
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove swshunt from bus   3400 /*   3400 TWIN_OAK_N5   345 
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 71 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.78 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40883" / 18192 P4 
+     open branch from bus   3400 to bus  39950 ckt 2  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  2   
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+     open branch from bus 120133 to bus 120135 ckt BC / 120133 OAKGROVE_5    345  120135 OAKGROV2_5    345  BC  
+      remove swshunt from bus   3400 /*   3400 TWIN_OAK_N5   345 
+      remove machine L2 from bus 120132 /* 120132 OGSES_UNIT2  24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 72 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40908" / 18198 P4 
+     open branch from bus   3400 to bus  39950 ckt 2  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  2   
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 73 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40919" / 3827 P1 
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120134 to bus 120131 ckt 2  / 120134 OAKGROV1_5    345  120131 OGSES_UNIT1A 24.0  2   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 74 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40892" / 18194 P4 
+     open branch from bus    975 to bus   3400 ckt 1  /    975 JKCREEK1      345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 75 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40904" / 18197 P4 
+     open branch from bus   3400 to bus  39950 ckt 1  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  1   
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 76 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40927" / 6607 P2 
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 77 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40900" / 18196 P4 
+     open branch from bus   3400 to bus  46020 ckt 2  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  2   
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 78 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40896" / 18195 P4 
+     open branch from bus    967 to bus   3400 ckt 1  /    967 GIBN_CREK_5   345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 79 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    852.69 InitViol=      -400 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_40912" / 18199 P4 
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus 120133 to bus 120134 ckt BC / 120133 OAKGROVE_5    345  120134 OAKGROV1_5    345  BC  
+      remove machine L1 from bus 120131 /* 120131 OGSES_UNIT1A 24.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 80 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    846.01 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_20627" / 387 P1 
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 81 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.49 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_10839" / 20338 P5 
+     open branch from bus   5771 to bus   8380 ckt 1  /   5771 WEDINBURGSB8  138    8380 NEDIN4A       138  1   
+     open branch from bus   5771 to bus   8380 ckt 2  /   5771 WEDINBURGSB8  138    8380 NEDIN4A       138  2   
+     open branch from bus   8380 to bus   8632 ckt 2  /   8380 NEDIN4A       138    8632 NMCALLEN4C    138  2   
+     open branch from bus   8380 to bus   8908 ckt 1  /   8380 NEDIN4A       138    8908 MCOLL_RD4A    138  1   
+     open branch from bus   8380 to bus   8963 ckt 1  /   8380 NEDIN4A       138    8963 HEC4A         138  1   
+     open branch from bus   8380 to bus   8963 ckt 2  /   8380 NEDIN4A       138    8963 HEC4A         138  2   
+     open branch from bus   8380 to bus  80117 ckt 1  /   8380 NEDIN4A       138   80117 MOORE_FL4A    138  1   
+     open branch from bus   8380 to bus  88380 ckt 1  /   8380 NEDIN4A       138   88380 RGTAP4A       138  1   
+     open branch from bus   8380 to bus  88381 ckt S1 /   8380 NEDIN4A       138   88381 NEDIN4B       138  S1  
+     open branch from bus   8380 to bus  88382 ckt S2 /   8380 NEDIN4A       138   88382 NEDIN4C       138  S2  
+     open branch from bus   8380 to bus 160234 ckt 1  /   8380 NEDIN4A       138  160234 NEDIN_1_8     138  1   
+     open branch from bus   8380 to bus 160235 ckt 1  /   8380 NEDIN4A       138  160235 NEDIN_2_8     138  1   
+     open branch from bus   8380 to bus 160236 ckt 1  /   8380 NEDIN4A       138  160236 NEDIN_3_8     138  1   
+     open branch from bus   8380 to bus 161031 ckt 1  /   8380 NEDIN4A       138  161031 REDGATE_5     138  1   
+     open branch from bus   8377 to bus   8380 ckt 1  /   8377 NEDIN2A      69.0    8380 NEDIN4A       138  1   
+     open branch from bus   8532 to bus   8380 ckt 2  /   8532 NEDIN2B      69.0    8380 NEDIN4A       138  2   
+  end
+ end
+
+ monitor flowgate 82 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.49 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_10543" / 20096 P5 
+     open branch from bus   5771 to bus   8380 ckt 1  /   5771 WEDINBURGSB8  138    8380 NEDIN4A       138  1   
+     open branch from bus   5771 to bus   8380 ckt 2  /   5771 WEDINBURGSB8  138    8380 NEDIN4A       138  2   
+     open branch from bus   8380 to bus   8632 ckt 2  /   8380 NEDIN4A       138    8632 NMCALLEN4C    138  2   
+     open branch from bus   8380 to bus   8908 ckt 1  /   8380 NEDIN4A       138    8908 MCOLL_RD4A    138  1   
+     open branch from bus   8380 to bus   8963 ckt 1  /   8380 NEDIN4A       138    8963 HEC4A         138  1   
+     open branch from bus   8380 to bus   8963 ckt 2  /   8380 NEDIN4A       138    8963 HEC4A         138  2   
+     open branch from bus   8380 to bus  80117 ckt 1  /   8380 NEDIN4A       138   80117 MOORE_FL4A    138  1   
+     open branch from bus   8380 to bus  88380 ckt 1  /   8380 NEDIN4A       138   88380 RGTAP4A       138  1   
+     open branch from bus   8380 to bus  88381 ckt S1 /   8380 NEDIN4A       138   88381 NEDIN4B       138  S1  
+     open branch from bus   8380 to bus  88382 ckt S2 /   8380 NEDIN4A       138   88382 NEDIN4C       138  S2  
+     open branch from bus   8380 to bus 160234 ckt 1  /   8380 NEDIN4A       138  160234 NEDIN_1_8     138  1   
+     open branch from bus   8380 to bus 160235 ckt 1  /   8380 NEDIN4A       138  160235 NEDIN_2_8     138  1   
+     open branch from bus   8380 to bus 160236 ckt 1  /   8380 NEDIN4A       138  160236 NEDIN_3_8     138  1   
+     open branch from bus   8380 to bus 161031 ckt 1  /   8380 NEDIN4A       138  161031 REDGATE_5     138  1   
+     open branch from bus   8377 to bus   8380 ckt 1  /   8377 NEDIN2A      69.0    8380 NEDIN4A       138  1   
+     open branch from bus   8532 to bus   8380 ckt 2  /   8532 NEDIN2B      69.0    8380 NEDIN4A       138  2   
+  end
+ end
+
+ monitor flowgate 83 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33077_Dup1" / 15165 P4 
+     open branch from bus   3116 to bus   3124 ckt 1  /   3116 MTENTRPR_5    345    3124 TRINDAD2_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 84 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33067_Dup1" / 15164 P4 
+     open branch from bus   3100 to bus   3116 ckt 1  /   3100 MARTINLK_5    345    3116 MTENTRPR_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 85 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33026_Dup1" / 15162 P4 
+     open branch from bus   3100 to bus   3116 ckt 1  /   3100 MARTINLK_5    345    3116 MTENTRPR_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 86 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33045_Dup1" / 15163 P4 
+     open branch from bus   3116 to bus   3124 ckt 1  /   3116 MTENTRPR_5    345    3124 TRINDAD2_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 87 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33045" / 13999 P4 
+     open branch from bus   3116 to bus   3124 ckt 1  /   3116 MTENTRPR_5    345    3124 TRINDAD2_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 88 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33067" / 14000 P4 
+     open branch from bus   3100 to bus   3116 ckt 1  /   3100 MARTINLK_5    345    3116 MTENTRPR_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 89 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33026" / 13998 P4 
+     open branch from bus   3100 to bus   3116 ckt 1  /   3100 MARTINLK_5    345    3116 MTENTRPR_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 90 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33058" / 6598 P2 
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 91 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    845.33 InitViol=      -393 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_33077" / 14001 P4 
+     open branch from bus   3116 to bus   3124 ckt 1  /   3116 MTENTRPR_5    345    3124 TRINDAD2_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+      remove machine C1 from bus 120101 /* 120101 TGCCS_CT1    18.0  Default dispatch
+      remove machine C2 from bus 120102 /* 120102 TGCCS_CT2    18.0  Default dispatch
+      remove machine C3 from bus 120103 /* 120103 TGCCS_CT3    18.0  Default dispatch
+      remove machine C0 from bus 120104 /* 120104 TGCCS_UNIT4  22.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 92 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    844.72 InitViol=      -392 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_36194" / 18382 P5 
+     open branch from bus   3100 to bus   3116 ckt 1  /   3100 MARTINLK_5    345    3116 MTENTRPR_5    345  1   
+     open branch from bus   3116 to bus   3119 ckt 1  /   3116 MTENTRPR_5    345    3119 NACOGDSE_5    345  1   
+     open branch from bus   3116 to bus   3124 ckt 1  /   3116 MTENTRPR_5    345    3124 TRINDAD2_5    345  1   
+     open branch from bus   3116 to bus  13115 ckt 1  /   3116 MTENTRPR_5    345   13115 MTENTRPR_5G   345  1   
+     open branch from bus  13115 to bus 120101 ckt 1  /  13115 MTENTRPR_5G   345  120101 TGCCS_CT1    18.0  1   
+     open branch from bus  13115 to bus 120102 ckt 2  /  13115 MTENTRPR_5G   345  120102 TGCCS_CT2    18.0  2   
+     open branch from bus  13115 to bus 120103 ckt 3  /  13115 MTENTRPR_5G   345  120103 TGCCS_CT3    18.0  3   
+     open branch from bus  13115 to bus 120104 ckt 4  /  13115 MTENTRPR_5G   345  120104 TGCCS_UNIT4  22.0  4   
+  end
+ end
+
+ monitor flowgate 93 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    836.01 InitViol=      -383 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_13430" / 160 P1 
+      remove machine L2 from bus 150102 /* 150102 LEG_LEG_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 94 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    836.01 InitViol=      -383 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16047" / 12281 P2 
+     open threewinding at bus  46020 to bus  46025 to bus  49060 ckt A2  / 
+     open threewinding at bus  46025 to bus  46020 to bus  49060 ckt A2  / 
+     open threewinding at bus  49060 to bus  46020 to bus  46025 ckt A2  / 
+      remove machine L2 from bus 150102 /* 150102 LEG_LEG_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 95 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    836.01 InitViol=      -383 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16045" / 9948 P2 
+     open branch from bus   3400 to bus  46020 ckt 1  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  1   
+      remove machine L2 from bus 150102 /* 150102 LEG_LEG_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 96 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    827.36 InitViol=      -375 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_35186" / 21580 P5 
+// already opened     open branch from bus   1950 to bus   1951 ckt 1  /   1950 HANDLEYC_8    138    1951 HANDLEYD_8    138  1   
+     open branch from bus   1950 to bus   1951 ckt BC /   1950 HANDLEYC_8    138    1951 HANDLEYD_8    138  BC  
+     open branch from bus   1950 to bus   2104 ckt 1  /   1950 HANDLEYC_8    138    2104 RANDL_E_T8    138  1   
+     open branch from bus   1950 to bus   2110 ckt 1  /   1950 HANDLEYC_8    138    2110 WHITE2_T8     138  1   
+     open branch from bus   1950 to bus   2167 ckt 1  /   1950 HANDLEYC_8    138    2167 AYERS1_8      138  1   
+     open branch from bus   1950 to bus   2219 ckt 1  /   1950 HANDLEYC_8    138    2219 BWN_TAT_T8    138  1   
+     open branch from bus   1950 to bus   2247 ckt 1  /   1950 HANDLEYC_8    138    2247 PANTEGO1_8    138  1   
+// already opened     open branch from bus   1950 to bus  11950 ckt 1  /   1950 HANDLEYC_8    138   11950 HANDLEYS1_8   138  1   
+     open branch from bus   1950 to bus 150051 ckt 1  /   1950 HANDLEYC_8    138  150051 HLSES_UNIT3  19.0  1   
+     open branch from bus   1950 to bus 150053 ckt 3  /   1950 HANDLEYC_8    138  150053 HLSES_UNIT5  26.0  3   
+  end
+ end
+
+ monitor flowgate 97 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    824.01 InitViol=      -371 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_13429" / 159 P1 
+      remove machine L1 from bus 150101 /* 150101 LEG_LEG_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 98 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    824.01 InitViol=      -371 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16039" / 9947 P2 
+     open branch from bus   3400 to bus  46020 ckt 2  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  2   
+      remove machine L1 from bus 150101 /* 150101 LEG_LEG_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 99 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    824.01 InitViol=      -371 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_16037" / 12278 P2 
+     open threewinding at bus  46020 to bus  46025 to bus  49060 ckt A2  / 
+     open threewinding at bus  46025 to bus  46020 to bus  49060 ckt A2  / 
+     open threewinding at bus  49060 to bus  46020 to bus  46025 ckt A2  / 
+      remove machine L1 from bus 150101 /* 150101 LEG_LEG_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 100 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    813.42 InitViol=      -361 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_13278" / 29 P1 
+      remove machine C2 from bus 111142 /* 111142 CBECII_CT8   25.0  Default dispatch
+      remove machine C0 from bus 111143 /* 111143 CBECII_STG9  23.5  Default dispatch
+  end
+ end
+
+ monitor flowgate 101 "888001 BONETE_SUB    138    8951 STEWART4A     138  1 " rating     452.73 / Flow=    807.73 InitViol=      -355 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus 888001 to bus   8951 ckt 1  /       0.01
+  contingency "DB_ID_13276" / 28 P1 
+      remove machine C1 from bus 111141 /* 111141 CBECII_CT7   25.0  Default dispatch
+      remove machine C0 from bus 111143 /* 111143 CBECII_STG9  23.5  Default dispatch
+  end
+ end
+
+ monitor flowgate 102 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    731.06 InitViol=      -278 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_25459" / 23828 P7 
+     open branch from bus   2341 to bus   2374 ckt 1  /   2341 TRINITYFL_T8  138    2374 ANNASW_8      138  1   
+     open branch from bus   2341 to bus   6880 ckt 1  /   2341 TRINITYFL_T8  138    6880 TRNFLSRC      138  1   
+     open branch from bus   2509 to bus   2531 ckt 1  /   2509 ALLENSW_W8    138    2531 ALLEN1_8      138  1   
+     open branch from bus   2510 to bus   2549 ckt 1  /   2510 ALLENSW_E8    138    2549 ALLEN2_8      138  1   
+     open branch from bus   2529 to bus   6876 ckt 1  /   2529 MCKNY1_8      138    6876 MCKINERC      138  1   
+     open branch from bus   2530 to bus   2560 ckt 1  /   2530 MCKNY_SW1_8   138    2560 MCKNY_TI_T8   138  1   
+     open branch from bus   2530 to bus   6870 ckt 1  /   2530 MCKNY_SW1_8   138    6870 MCKINWRC      138  1   
+     open branch from bus   2531 to bus   2548 ckt 1  /   2531 ALLEN1_8      138    2548 ALLEN_N2_8    138  1   
+     open branch from bus   2533 to bus   2556 ckt 1  /   2533 ALLEN_N1_8    138    2556 CRGRNCH2_8    138  1   
+     open branch from bus   2533 to bus   6936 ckt 1  /   2533 ALLEN_N1_8    138    6936 STCYRDRC      138  1   
+     open branch from bus   2534 to bus   2554 ckt 1  /   2534 CRGRNCH1_8    138    2554 MCKNY_S1_8    138  1   
+     open branch from bus   2374 to bus   2544 ckt 1  /   2374 ANNASW_8      138    2544 CHAMBVLE_P8   138  1   
+     open branch from bus   2544 to bus   6875 ckt 1  /   2544 CHAMBVLE_P8   138    6875 CHAMB_RC      138  1   
+     open branch from bus   2547 to bus   2561 ckt 1  /   2547 MCKNY_SW2_8   138    2561 MCKNYWHT_T8   138  1   
+     open branch from bus   2548 to bus   2585 ckt 1  /   2548 ALLEN_N2_8    138    2585 RIDGVIEW_8    138  1   
+     open branch from bus   2548 to bus   6874 ckt 1  /   2548 ALLEN_N2_8    138    6874 MCK121RC      138  1   
+     open branch from bus   2548 to bus   6909 ckt 1  /   2548 ALLEN_N2_8    138    6909 ALNN_RC       138  1   
+     open branch from bus   2533 to bus   2549 ckt 1  /   2533 ALLEN_N1_8    138    2549 ALLEN2_8      138  1   
+     open branch from bus   2530 to bus   2554 ckt 1  /   2530 MCKNY_SW1_8   138    2554 MCKNY_S1_8    138  1   
+     open branch from bus    625 to bus   2556 ckt 1  /    625 CRAIGRANCH    138    2556 CRGRNCH2_8    138  1   
+     open branch from bus   2556 to bus   2557 ckt 1  /   2556 CRGRNCH2_8    138    2557 MCKNY_S2_8    138  1   
+     open branch from bus   2547 to bus   2557 ckt 1  /   2547 MCKNY_SW2_8   138    2557 MCKNY_S2_8    138  1   
+     open branch from bus   2529 to bus   2560 ckt 1  /   2529 MCKNY1_8      138    2560 MCKNY_TI_T8   138  1   
+     open branch from bus   2532 to bus   2560 ckt 1  /   2532 MCKNY_TI_8    138    2560 MCKNY_TI_T8   138  1   
+     open branch from bus   2546 to bus   2561 ckt 1  /   2546 MCKNY2_8      138    2561 MCKNYWHT_T8   138  1   
+     open branch from bus   2553 to bus   2561 ckt 1  /   2553 MCKNYWHT_8    138    2561 MCKNYWHT_T8   138  1   
+     open branch from bus   2534 to bus   2585 ckt 1  /   2534 CRGRNCH1_8    138    2585 RIDGVIEW_8    138  1   
+ // !!! Failed to map 4 events reported below
+  //    OPEN BRANCH FROM BUS 1978 TO BUS 2546 CKT 1                   /* () - MCKNY2_8(138) /! Branch not found              
+  //    OPEN BRANCH FROM BUS 1979 TO BUS 2529 CKT 1                   /* () - MCKNY1_8(138) /! Branch not found              
+  //    OPEN BRANCH FROM BUS 2341 TO BUS 1979 CKT 1                   /* () - () /! Branch not found              
+  //    OPEN BRANCH FROM BUS 2544 TO BUS 1978 CKT 1                   /* CHAMBVLE_P8(138) - () /! Branch not found              
+  end
+ end
+
+ monitor flowgate 103 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    656.66 InitViol=      -204 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_15185" / 12042 P2 
+     open branch from bus  42540 to bus  42541 ckt 48 /  42540 JONCRK__B138  138   42541 JONCRK_C48_8  138  48  
+     open branch from bus  42547 to bus  43440 ckt 48 /  42547 JONCRK48T2_8  138   43440 CORTEZ_X48B8  138  48  
+     open branch from bus  43155 to bus  43440 ckt 48 /  43155 MARINE_X48B8  138   43440 CORTEZ_X48B8  138  48  
+  end
+ end
+
+ monitor flowgate 104 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    656.66 InitViol=      -204 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_17749" / 23394 P7 
+     open branch from bus  42540 to bus  42541 ckt 48 /  42540 JONCRK__B138  138   42541 JONCRK_C48_8  138  48  
+     open branch from bus  42547 to bus  43440 ckt 48 /  42547 JONCRK48T2_8  138   43440 CORTEZ_X48B8  138  48  
+     open branch from bus  43155 to bus  43440 ckt 48 /  43155 MARINE_X48B8  138   43440 CORTEZ_X48B8  138  48  
+  end
+ end
+
+ monitor flowgate 105 "8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1 Co" rating     320.00 / Flow=    495.02 InitViol=      -175 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8458 to bus   8883 ckt 1  /     192.33
+  contingency "DB_ID_10549" / 20098 P5 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8492 ckt 3  /   8490 AIRLINE4A     138    8492 WOOLRIDG4A    138  3   
+     open branch from bus   8490 to bus   8493 ckt 1  /   8490 AIRLINE4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8490 to bus   8517 ckt 1  /   8490 AIRLINE4A     138    8517 HOLLY4B       138  1   
+     open branch from bus   8490 to bus   8548 ckt 2  /   8490 AIRLINE4A     138    8548 LAGUNA4A      138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus  78560 ckt 1  /   8490 AIRLINE4A     138   78560 L_HEINES8_1Y  138  1   
+     open branch from bus   8487 to bus   8490 ckt 2  /   8487 AIRLINE2A    69.0    8490 AIRLINE4A     138  2   
+  end
+ end
+
+ monitor flowgate 106 "8458 B_DAVIS4A     138    8883 RODD_FLD4A    138  1 Co" rating     320.00 / Flow=    495.02 InitViol=      -175 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8458 to bus   8883 ckt 1  /     192.33
+  contingency "DB_ID_10582" / 20126 P5 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8492 ckt 3  /   8490 AIRLINE4A     138    8492 WOOLRIDG4A    138  3   
+     open branch from bus   8490 to bus   8493 ckt 1  /   8490 AIRLINE4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8490 to bus   8517 ckt 1  /   8490 AIRLINE4A     138    8517 HOLLY4B       138  1   
+     open branch from bus   8490 to bus   8548 ckt 2  /   8490 AIRLINE4A     138    8548 LAGUNA4A      138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus  78560 ckt 1  /   8490 AIRLINE4A     138   78560 L_HEINES8_1Y  138  1   
+     open branch from bus   8487 to bus   8490 ckt 2  /   8487 AIRLINE2A    69.0    8490 AIRLINE4A     138  2   
+     open branch from bus   8578 to bus  78577 ckt 1  /   8578 HOCHHE2A     69.0   78577 L_HOCHTA9_1Y 69.0  1   
+  end
+ end
+
+ monitor flowgate 107 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1222.20 InitViol=      -165 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_35151" / 18343 P5 
+     open branch from bus   1436 to bus   1900 ckt 1  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1436 to bus   1900 ckt 2  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  2   
+     open branch from bus   1440 to bus   1900 ckt 1  /   1440 COMCHESS1_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus   1902 ckt 1  /   1900 COMCHPKW_5    345    1902 JHNSONSW_P5   345  1   
+     open branch from bus   1900 to bus   1981 ckt 1  /   1900 COMCHPKW_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1900 to bus  11886 ckt 1  /   1900 COMCHPKW_5    345   11886 TIMBERVW_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+     open branch from bus   1900 to bus 150112 ckt 1  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  1   
+     open branch from bus   1900 to bus 150112 ckt 2  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  2   
+  end
+ end
+
+ monitor flowgate 108 "8951 STEWART4A     138   80137 STEWART7A     345  3 Co" rating     675.00 / Flow=    829.94 InitViol=      -155 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus  80137 ckt 3  /     -49.08
+  contingency "DB_ID_35151" / 18343 P5 
+     open branch from bus   1436 to bus   1900 ckt 1  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1436 to bus   1900 ckt 2  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  2   
+     open branch from bus   1440 to bus   1900 ckt 1  /   1440 COMCHESS1_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus   1902 ckt 1  /   1900 COMCHPKW_5    345    1902 JHNSONSW_P5   345  1   
+     open branch from bus   1900 to bus   1981 ckt 1  /   1900 COMCHPKW_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1900 to bus  11886 ckt 1  /   1900 COMCHPKW_5    345   11886 TIMBERVW_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+     open branch from bus   1900 to bus 150112 ckt 1  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  1   
+     open branch from bus   1900 to bus 150112 ckt 2  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  2   
+  end
+ end
+
+ monitor flowgate 109 "8951 STEWART4A     138   80137 STEWART7A     345  2 Co" rating     675.00 / Flow=    821.38 InitViol=      -146 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus  80137 ckt 2  /     -48.31
+  contingency "DB_ID_35151" / 18343 P5 
+     open branch from bus   1436 to bus   1900 ckt 1  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1436 to bus   1900 ckt 2  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  2   
+     open branch from bus   1440 to bus   1900 ckt 1  /   1440 COMCHESS1_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus   1902 ckt 1  /   1900 COMCHPKW_5    345    1902 JHNSONSW_P5   345  1   
+     open branch from bus   1900 to bus   1981 ckt 1  /   1900 COMCHPKW_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1900 to bus  11886 ckt 1  /   1900 COMCHPKW_5    345   11886 TIMBERVW_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+     open branch from bus   1900 to bus 150112 ckt 1  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  1   
+     open branch from bus   1900 to bus 150112 ckt 2  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  2   
+  end
+ end
+
+ monitor flowgate 110 "8689 TANGO7A       345    5725 PAWNEESW5     345  1 Co" rating    1057.00 / Flow=   1194.11 InitViol=      -137 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8689 to bus   5725 ckt 1  /     663.93
+  contingency "DB_ID_35151" / 18343 P5 
+     open branch from bus   1436 to bus   1900 ckt 1  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1436 to bus   1900 ckt 2  /   1436 PARKER_5      345    1900 COMCHPKW_5    345  2   
+     open branch from bus   1440 to bus   1900 ckt 1  /   1440 COMCHESS1_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1899 to bus   1900 ckt 1  /   1899 MITCHBND6_5   345    1900 COMCHPKW_5    345  1   
+     open branch from bus   1900 to bus   1902 ckt 1  /   1900 COMCHPKW_5    345    1902 JHNSONSW_P5   345  1   
+     open branch from bus   1900 to bus   1981 ckt 1  /   1900 COMCHPKW_5    345    1981 WLFHOLW3_5    345  1   
+     open branch from bus   1900 to bus  11886 ckt 1  /   1900 COMCHPKW_5    345   11886 TIMBERVW_5    345  1   
+     open branch from bus   1900 to bus 150111 ckt 1  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  1   
+     open branch from bus   1900 to bus 150111 ckt 2  /   1900 COMCHPKW_5    345  150111 CPSES_UNIT1  22.0  2   
+     open branch from bus   1900 to bus 150112 ckt 1  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  1   
+     open branch from bus   1900 to bus 150112 ckt 2  /   1900 COMCHPKW_5    345  150112 CPSES_UNIT2  22.0  2   
+  end
+ end
+
+ monitor flowgate 111 "8883 RODD_FLD4A    138    8517 HOLLY4B       138  1 Co" rating     320.00 / Flow=    447.23 InitViol=      -127 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8883 to bus   8517 ckt 1  /     144.54
+  contingency "DB_ID_10549" / 20098 P5 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8492 ckt 3  /   8490 AIRLINE4A     138    8492 WOOLRIDG4A    138  3   
+     open branch from bus   8490 to bus   8493 ckt 1  /   8490 AIRLINE4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8490 to bus   8517 ckt 1  /   8490 AIRLINE4A     138    8517 HOLLY4B       138  1   
+     open branch from bus   8490 to bus   8548 ckt 2  /   8490 AIRLINE4A     138    8548 LAGUNA4A      138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus  78560 ckt 1  /   8490 AIRLINE4A     138   78560 L_HEINES8_1Y  138  1   
+     open branch from bus   8487 to bus   8490 ckt 2  /   8487 AIRLINE2A    69.0    8490 AIRLINE4A     138  2   
+  end
+ end
+
+ monitor flowgate 112 "8883 RODD_FLD4A    138    8517 HOLLY4B       138  1 Co" rating     320.00 / Flow=    447.23 InitViol=      -127 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8883 to bus   8517 ckt 1  /     144.54
+  contingency "DB_ID_10582" / 20126 P5 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8492 ckt 3  /   8490 AIRLINE4A     138    8492 WOOLRIDG4A    138  3   
+     open branch from bus   8490 to bus   8493 ckt 1  /   8490 AIRLINE4A     138    8493 PHARAOH4A     138  1   
+     open branch from bus   8490 to bus   8517 ckt 1  /   8490 AIRLINE4A     138    8517 HOLLY4B       138  1   
+     open branch from bus   8490 to bus   8548 ckt 2  /   8490 AIRLINE4A     138    8548 LAGUNA4A      138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus  78560 ckt 1  /   8490 AIRLINE4A     138   78560 L_HEINES8_1Y  138  1   
+     open branch from bus   8487 to bus   8490 ckt 2  /   8487 AIRLINE2A    69.0    8490 AIRLINE4A     138  2   
+     open branch from bus   8578 to bus  78577 ckt 1  /   8578 HOCHHE2A     69.0   78577 L_HOCHTA9_1Y 69.0  1   
+  end
+ end
+
+ monitor flowgate 113 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    562.03 InitViol=      -109 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_29235" / 23940 P7 
+     open branch from bus    565 to bus   1856 ckt 1  /    565 KELLER        138    1856 KELLER1T_8    138  1   
+     open branch from bus    679 to bus   1857 ckt 1  /    679 MCPHERSON     138    1857 MCPHERSN_P8   138  1   
+     open branch from bus    679 to bus  11857 ckt 1  /    679 MCPHERSON     138   11857 MCPHERSN2_P8  138  1   
+     open branch from bus   1854 to bus  15101 ckt 1  /   1854 ROANOKE1_8    138   15101 PARKVISTA2_8  138  1   
+     open branch from bus   1856 to bus   2034 ckt 1  /   1856 KELLER1T_8    138    2034 KLR_MAG2_T8   138  1   
+     open branch from bus   1856 to bus  11857 ckt 1  /   1856 KELLER1T_8    138   11857 MCPHERSN2_P8  138  1   
+     open branch from bus   2016 to bus   2051 ckt 1  /   2016 EULESS_8      138    2051 BD_WDSN1_T8   138  1   
+     open branch from bus   2016 to bus   2052 ckt 1  /   2016 EULESS_8      138    2052 BD_WDSN2_T8   138  1   
+     open branch from bus   2026 to bus   2027 ckt 1  /   2026 CLYVIL1_T8    138    2027 BEARCK1_8     138  1   
+     open branch from bus   2026 to bus   2050 ckt 1  /   2026 CLYVIL1_T8    138    2050 BEDFORD1_8    138  1   
+     open branch from bus   2026 to bus  12026 ckt 1  /   2026 CLYVIL1_T8    138   12026 CLYVIL1_8     138  1   
+     open branch from bus   2027 to bus   2038 ckt 1  /   2027 BEARCK1_8     138    2038 WPKELLR2_8    138  1   
+     open branch from bus   2034 to bus   2038 ckt 1  /   2034 KLR_MAG2_T8   138    2038 WPKELLR2_8    138  1   
+     open branch from bus   2034 to bus  12034 ckt 1  /   2034 KLR_MAG2_T8   138   12034 HRTAG2_T8     138  1   
+     open branch from bus   2040 to bus   2041 ckt 1  /   2040 MEADPRK2_8    138    2041 SMITHFD1_8    138  1   
+     open branch from bus   2040 to bus   2044 ckt 1  /   2040 MEADPRK2_8    138    2044 WATAGAS_T8    138  1   
+     open branch from bus   2041 to bus  12050 ckt 1  /   2041 SMITHFD1_8    138   12050 BEDFORD2_8    138  1   
+     open branch from bus   2044 to bus   2045 ckt 1  /   2044 WATAGAS_T8    138    2045 WATAGA1_8     138  1   
+     open branch from bus   2044 to bus   2047 ckt 1  /   2044 WATAGAS_T8    138    2047 HALTOM1_8     138  1   
+     open branch from bus   2050 to bus   2052 ckt 1  /   2050 BEDFORD1_8    138    2052 BD_WDSN2_T8   138  1   
+     open branch from bus   2051 to bus  12050 ckt 1  /   2051 BD_WDSN1_T8   138   12050 BEDFORD2_8    138  1   
+     open branch from bus   2051 to bus  12052 ckt 1  /   2051 BD_WDSN1_T8   138   12052 BD_WDSN2_8    138  1   
+     open branch from bus   2052 to bus  12051 ckt 1  /   2052 BD_WDSN2_T8   138   12051 BD_WDSN1_8    138  1   
+     open branch from bus   2047 to bus   2074 ckt 1  /   2047 HALTOM1_8     138    2074 DEENSW_8      138  1   
+ // !!! Failed to map 1 events reported below
+  //    OPEN BRANCH FROM BUS 15101 TO BUS 1857 CKT 1                  /* () - MCPHERSN_P8(138) /! Branch not found              
+  end
+ end
+
+ monitor flowgate 114 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    545.80 InitViol=       -93 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_28362" / 23919 P7 
+     open branch from bus    559 to bus  12033 ckt 1  /    559 HERITAGE      138   12033 HRTAG1_T8     138  1   
+     open branch from bus    566 to bus   2035 ckt 1  /    566 CHERRYGROV    138    2035 BEARCK3_8     138  1   
+     open branch from bus    566 to bus   2037 ckt 1  /    566 CHERRYGROV    138    2037 WPKELLR1_8    138  1   
+     open branch from bus   1852 to bus  15100 ckt 1  /   1852 ROANOKE2_8    138   15100 PARKVISTA1_8  138  1   
+     open branch from bus   2016 to bus   2051 ckt 1  /   2016 EULESS_8      138    2051 BD_WDSN1_T8   138  1   
+     open branch from bus   2028 to bus   2035 ckt 1  /   2028 CLYVIL2_T8    138    2035 BEARCK3_8     138  1   
+     open branch from bus   2028 to bus   2042 ckt 1  /   2028 CLYVIL2_T8    138    2042 SMITHFD2_8    138  1   
+     open branch from bus   2028 to bus  12028 ckt 1  /   2028 CLYVIL2_T8    138   12028 CLYVIL2_8     138  1   
+     open branch from bus   2033 to bus   2036 ckt 1  /   2033 KLR_MAG1_T8   138    2036 KELLER2_T8    138  1   
+     open branch from bus   2033 to bus   2037 ckt 1  /   2033 KLR_MAG1_T8   138    2037 WPKELLR1_8    138  1   
+     open branch from bus   2033 to bus  12033 ckt 1  /   2033 KLR_MAG1_T8   138   12033 HRTAG1_T8     138  1   
+     open branch from bus   2039 to bus   2042 ckt 1  /   2039 MEADPRK1_8    138    2042 SMITHFD2_8    138  1   
+     open branch from bus   2039 to bus   2043 ckt 1  /   2039 MEADPRK1_8    138    2043 WATAGAN_T8    138  1   
+     open branch from bus   2040 to bus   2041 ckt 1  /   2040 MEADPRK2_8    138    2041 SMITHFD1_8    138  1   
+     open branch from bus   2040 to bus   2044 ckt 1  /   2040 MEADPRK2_8    138    2044 WATAGAS_T8    138  1   
+     open branch from bus   2041 to bus  12050 ckt 1  /   2041 SMITHFD1_8    138   12050 BEDFORD2_8    138  1   
+     open branch from bus   2043 to bus   2046 ckt 1  /   2043 WATAGAN_T8    138    2046 WATAGA2_8     138  1   
+     open branch from bus   2044 to bus   2045 ckt 1  /   2044 WATAGAS_T8    138    2045 WATAGA1_8     138  1   
+     open branch from bus   2044 to bus   2047 ckt 1  /   2044 WATAGAS_T8    138    2047 HALTOM1_8     138  1   
+     open branch from bus   2051 to bus  12050 ckt 1  /   2051 BD_WDSN1_T8   138   12050 BEDFORD2_8    138  1   
+     open branch from bus   2051 to bus  12052 ckt 1  /   2051 BD_WDSN1_T8   138   12052 BD_WDSN2_8    138  1   
+     open branch from bus   2043 to bus   2074 ckt 1  /   2043 WATAGAN_T8    138    2074 DEENSW_8      138  1   
+     open branch from bus   2047 to bus   2074 ckt 1  /   2047 HALTOM1_8     138    2074 DEENSW_8      138  1   
+ // !!! Failed to map 1 events reported below
+  //    OPEN BRANCH FROM BUS 15100 TO BUS 2036 CKT 1                  /* () - KELLER2_T8(138) /! Branch not found              
+  end
+ end
+
+ monitor flowgate 115 "8618 SSIDE4D       138    8496 ARCADIA4A     138  1 Co" rating     206.00 / Flow=    287.51 InitViol=       -82 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8618 to bus   8496 ckt 1  /      90.77
+  contingency "DB_ID_1703_Dup1" / 10376 P2 
+     open branch from bus   8474 to bus   8485 ckt 1  /   8474 MORRIS4A      138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8482 to bus   8485 ckt 1  /   8482 WEIL_TRC4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8484 to bus   8485 ckt 1  /   8484 WEST_OSO4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8485 to bus   8486 ckt 1  /   8485 WESTSIDE4A    138    8486 HOLLY4A       138  1   
+     open branch from bus   8485 to bus   8496 ckt 1  /   8485 WESTSIDE4A    138    8496 ARCADIA4A     138  1   
+     open branch from bus   8485 to bus   8858 ckt 1  /   8485 WESTSIDE4A    138    8858 MCKENZIE4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 116 "8618 SSIDE4D       138    8496 ARCADIA4A     138  1 Co" rating     206.00 / Flow=    287.51 InitViol=       -82 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8618 to bus   8496 ckt 1  /      90.77
+  contingency "DB_ID_1703" / 6901 P2 
+     open branch from bus   8474 to bus   8485 ckt 1  /   8474 MORRIS4A      138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8482 to bus   8485 ckt 1  /   8482 WEIL_TRC4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8484 to bus   8485 ckt 1  /   8484 WEST_OSO4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8485 to bus   8486 ckt 1  /   8485 WESTSIDE4A    138    8486 HOLLY4A       138  1   
+     open branch from bus   8485 to bus   8496 ckt 1  /   8485 WESTSIDE4A    138    8496 ARCADIA4A     138  1   
+     open branch from bus   8485 to bus   8858 ckt 1  /   8485 WESTSIDE4A    138    8858 MCKENZIE4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 117 "8618 SSIDE4D       138    8496 ARCADIA4A     138  1 Co" rating     206.00 / Flow=    287.51 InitViol=       -82 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8618 to bus   8496 ckt 1  /      90.77
+  contingency "DB_ID_10976" / 20467 P5 
+     open branch from bus   8474 to bus   8485 ckt 1  /   8474 MORRIS4A      138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8482 to bus   8485 ckt 1  /   8482 WEIL_TRC4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8484 to bus   8485 ckt 1  /   8484 WEST_OSO4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8485 to bus   8486 ckt 1  /   8485 WESTSIDE4A    138    8486 HOLLY4A       138  1   
+     open branch from bus   8485 to bus   8496 ckt 1  /   8485 WESTSIDE4A    138    8496 ARCADIA4A     138  1   
+     open branch from bus   8485 to bus   8858 ckt 1  /   8485 WESTSIDE4A    138    8858 MCKENZIE4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 118 "8618 SSIDE4D       138    8496 ARCADIA4A     138  1 Co" rating     206.00 / Flow=    287.51 InitViol=       -82 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8618 to bus   8496 ckt 1  /      90.77
+  contingency "DB_ID_10977" / 20468 P5 
+     open branch from bus   8474 to bus   8485 ckt 1  /   8474 MORRIS4A      138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8482 to bus   8485 ckt 1  /   8482 WEIL_TRC4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8484 to bus   8485 ckt 1  /   8484 WEST_OSO4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8485 to bus   8486 ckt 1  /   8485 WESTSIDE4A    138    8486 HOLLY4A       138  1   
+     open branch from bus   8485 to bus   8496 ckt 1  /   8485 WESTSIDE4A    138    8496 ARCADIA4A     138  1   
+     open branch from bus   8485 to bus   8858 ckt 1  /   8485 WESTSIDE4A    138    8858 MCKENZIE4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 119 "8618 SSIDE4D       138    8496 ARCADIA4A     138  1 Co" rating     206.00 / Flow=    287.51 InitViol=       -82 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8618 to bus   8496 ckt 1  /      90.77
+  contingency "DB_ID_10577" / 20121 P5 
+     open branch from bus   8474 to bus   8485 ckt 1  /   8474 MORRIS4A      138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8482 to bus   8485 ckt 1  /   8482 WEIL_TRC4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8484 to bus   8485 ckt 1  /   8484 WEST_OSO4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8485 to bus   8486 ckt 1  /   8485 WESTSIDE4A    138    8486 HOLLY4A       138  1   
+     open branch from bus   8485 to bus   8496 ckt 1  /   8485 WESTSIDE4A    138    8496 ARCADIA4A     138  1   
+     open branch from bus   8485 to bus   8858 ckt 1  /   8485 WESTSIDE4A    138    8858 MCKENZIE4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 120 "8618 SSIDE4D       138    8496 ARCADIA4A     138  1 Co" rating     206.00 / Flow=    287.51 InitViol=       -82 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8618 to bus   8496 ckt 1  /      90.77
+  contingency "DB_ID_1703_Dup2" / 15940 P4 
+     open branch from bus   8474 to bus   8485 ckt 1  /   8474 MORRIS4A      138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8482 to bus   8485 ckt 1  /   8482 WEIL_TRC4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8484 to bus   8485 ckt 1  /   8484 WEST_OSO4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8485 to bus   8486 ckt 1  /   8485 WESTSIDE4A    138    8486 HOLLY4A       138  1   
+     open branch from bus   8485 to bus   8496 ckt 1  /   8485 WESTSIDE4A    138    8496 ARCADIA4A     138  1   
+     open branch from bus   8485 to bus   8858 ckt 1  /   8485 WESTSIDE4A    138    8858 MCKENZIE4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 121 "8618 SSIDE4D       138    8496 ARCADIA4A     138  1 Co" rating     206.00 / Flow=    287.51 InitViol=       -82 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8618 to bus   8496 ckt 1  /      90.77
+  contingency "DB_ID_1703_Dup3" / 18681 P5 
+     open branch from bus   8474 to bus   8485 ckt 1  /   8474 MORRIS4A      138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8482 to bus   8485 ckt 1  /   8482 WEIL_TRC4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8484 to bus   8485 ckt 1  /   8484 WEST_OSO4A    138    8485 WESTSIDE4A    138  1   
+     open branch from bus   8485 to bus   8486 ckt 1  /   8485 WESTSIDE4A    138    8486 HOLLY4A       138  1   
+     open branch from bus   8485 to bus   8496 ckt 1  /   8485 WESTSIDE4A    138    8496 ARCADIA4A     138  1   
+     open branch from bus   8485 to bus   8858 ckt 1  /   8485 WESTSIDE4A    138    8858 MCKENZIE4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 122 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1128.10 InitViol=       -71 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_36398" / 18397 P5 
+     open branch from bus    967 to bus   3400 ckt 1  /    967 GIBN_CREK_5   345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus    975 to bus   3400 ckt 1  /    975 JKCREEK1      345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3391 to bus   3400 ckt 1  /   3391 JEWETT_N5     345    3400 TWIN_OAK_N5   345  1   
+     open branch from bus   3400 to bus  39950 ckt 1  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  1   
+     open branch from bus   3400 to bus  39950 ckt 2  /   3400 TWIN_OAK_N5   345   39950 TNTNP_ONE_3   345  2   
+     open branch from bus   3400 to bus  46020 ckt 1  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  1   
+     open branch from bus   3400 to bus  46020 ckt 2  /   3400 TWIN_OAK_N5   345   46020 LIMEST_POI_5  345  2   
+     open branch from bus   3400 to bus 120134 ckt 1  /   3400 TWIN_OAK_N5   345  120134 OAKGROV1_5    345  1   
+     open branch from bus   3400 to bus 120135 ckt 1  /   3400 TWIN_OAK_N5   345  120135 OAKGROV2_5    345  1   
+  end
+ end
+
+ monitor flowgate 123 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    518.55 InitViol=       -66 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_27543" / 23904 P7 
+     open branch from bus    651 to bus  10010 ckt 1  /    651 LEBANON       138   10010 PRSTMDWS1_8   138  1   
+     open branch from bus    651 to bus   2368 ckt 1  /    651 LEBANON       138    2368 ROLATER2_8    138  1   
+     open branch from bus   2369 to bus   2516 ckt 1  /   2369 ROLATER1_8    138    2516 MCDERMT_8     138  1   
+     open branch from bus   2370 to bus   2566 ckt 1  /   2370 COLLINSS1_8   138    2566 CUSTER1_P8    138  1   
+     open branch from bus   2370 to bus   2567 ckt 1  /   2370 COLLINSS1_8   138    2567 CUSTER2_P8    138  1   
+     open branch from bus   2516 to bus  10011 ckt 1  /   2516 MCDERMT_8     138   10011 PRSTMDWS2_8   138  1   
+     open branch from bus   2509 to bus   2525 ckt 1  /   2509 ALLENSW_W8    138    2525 PL_CUSTR1_8   138  1   
+     open branch from bus    655 to bus   2566 ckt 1  /    655 CUSTER        138    2566 CUSTER1_P8    138  1   
+     open branch from bus   2368 to bus   2566 ckt 1  /   2368 ROLATER2_8    138    2566 CUSTER1_P8    138  1   
+     open branch from bus    653 to bus   2567 ckt 1  /    653 CUSTER2       138    2567 CUSTER2_P8    138  1   
+     open branch from bus   2369 to bus   2567 ckt 1  /   2369 ROLATER1_8    138    2567 CUSTER2_P8    138  1   
+     open branch from bus   2525 to bus  10010 ckt 1  /   2525 PL_CUSTR1_8   138   10010 PRSTMDWS1_8   138  1   
+     open branch from bus   2523 to bus  10011 ckt 1  /   2523 PL_TENNY_8    138   10011 PRSTMDWS2_8   138  1   
+  end
+ end
+
+ monitor flowgate 124 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1112.50 InitViol=       -55 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_35654" / 18370 P5 
+     open branch from bus   2432 to bus   2437 ckt 1  /   2432 TRICRN1_5     345    2437 FRNY1_5       345  1   
+     open branch from bus   2433 to bus   2437 ckt 1  /   2433 SGVLSW1_5     345    2437 FRNY1_5       345  1   
+     open branch from bus   2437 to bus   2453 ckt 1  /   2437 FRNY1_5       345    2453 CNVLSW1_5     345  1   
+     open branch from bus   2437 to bus   2474 ckt 1  /   2437 FRNY1_5       345    2474 ROYSE1_T5     345  1   
+     open branch from bus   2437 to bus   2478 ckt 1  /   2437 FRNY1_5       345    2478 ROYSE_S5      345  1   
+     open branch from bus   2437 to bus 150189 ckt 1  /   2437 FRNY1_5       345  150189 FRNYPP_1_5    345  1   
+     open branch from bus   2437 to bus 150190 ckt 1  /   2437 FRNY1_5       345  150190 FRNYPP_2_5    345  1   
+     open threewinding at bus   2437 to bus   2438 to bus  12438 ckt 1   / 
+  end
+ end
+
+ monitor flowgate 125 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    529.51 InitViol=       -52 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2736_Dup2" / 15666 P4 
+     open branch from bus   8455 to bus   8956 ckt 1  /   8455 LONHILL7A     345    8956 WHITEPT7A     345  1   
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 126 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    529.51 InitViol=       -52 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2736_Dup1" / 9851 P2 
+     open branch from bus   8455 to bus   8956 ckt 1  /   8455 LONHILL7A     345    8956 WHITEPT7A     345  1   
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 127 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    529.51 InitViol=       -52 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2736_Dup3" / 18241 P5 
+     open branch from bus   8455 to bus   8956 ckt 1  /   8455 LONHILL7A     345    8956 WHITEPT7A     345  1   
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 128 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    529.51 InitViol=       -52 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2736" / 6456 P2 
+     open branch from bus   8455 to bus   8956 ckt 1  /   8455 LONHILL7A     345    8956 WHITEPT7A     345  1   
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 129 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    523.15 InitViol=       -45 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_7854_Dup1" / 6527 P2 
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 130 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    523.15 InitViol=       -45 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_7854" / 611 P1 
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 131 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    520.34 InitViol=       -42 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2734_Dup2" / 16578 P4 
+     open threewinding at bus   8455 to bus  84521 to bus   8499 ckt 1   / 
+     open threewinding at bus  84521 to bus   8455 to bus   8499 ckt 1   / 
+     open threewinding at bus   8499 to bus   8455 to bus  84521 ckt 1   / 
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 132 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    520.34 InitViol=       -42 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2734_Dup1" / 11014 P2 
+     open threewinding at bus   8455 to bus  84521 to bus   8499 ckt 1   / 
+     open threewinding at bus  84521 to bus   8455 to bus   8499 ckt 1   / 
+     open threewinding at bus   8499 to bus   8455 to bus  84521 ckt 1   / 
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 133 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    520.34 InitViol=       -42 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2734" / 7539 P2 
+     open threewinding at bus   8455 to bus  84521 to bus   8499 ckt 1   / 
+     open threewinding at bus  84521 to bus   8455 to bus   8499 ckt 1   / 
+     open threewinding at bus   8499 to bus   8455 to bus  84521 ckt 1   / 
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 134 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    520.34 InitViol=       -42 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2734_Dup3" / 19319 P5 
+     open threewinding at bus   8455 to bus  84521 to bus   8499 ckt 1   / 
+     open threewinding at bus  84521 to bus   8455 to bus   8499 ckt 1   / 
+     open threewinding at bus   8499 to bus   8455 to bus  84521 ckt 1   / 
+     open branch from bus   8455 to bus  85000 ckt 1  /   8455 LONHILL7A     345   85000 N_SHARPE7A    345  1   
+  end
+ end
+
+ monitor flowgate 135 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1094.67 InitViol=       -38 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_13491" / 221 P1 
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 136 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1094.67 InitViol=       -38 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_619" / 15 P1 
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 137 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1094.67 InitViol=       -38 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_16687" / 9981 P2 
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+ // !!! Failed to map 1 events reported below
+  //    REMOVE SHUNT R2 FROM BUS 5915                                 /* SO_TEX__345A(345) /! Bus shunt offline             
+  end
+ end
+
+ monitor flowgate 138 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1093.44 InitViol=       -36 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_1291" / 9834 P2 
+     open branch from bus   5915 to bus  44200 ckt 1  /   5915 SO_TEX__345A  345   44200 HILLJE__B345  345  1   
+     open branch from bus   5915 to bus 110351 ckt G1 /   5915 SO_TEX__345A  345  110351 STP_STP_G1   25.0  G1  
+     open branch from bus   5915 to bus 110351 ckt G2 /   5915 SO_TEX__345A  345  110351 STP_STP_G1   25.0  G2  
+  end
+ end
+
+ monitor flowgate 139 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1091.70 InitViol=       -35 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_13492" / 222 P1 
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 140 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1091.70 InitViol=       -35 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_620" / 16 P1 
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 141 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1091.70 InitViol=       -35 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_16705" / 9988 P2 
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+ // !!! Failed to map 1 events reported below
+  //    REMOVE SHUNT R1 FROM BUS 5915                                 /* SO_TEX__345A(345) /! Bus shunt offline             
+  end
+ end
+
+ monitor flowgate 142 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1090.64 InitViol=       -34 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_16707" / 9989 P2 
+     open branch from bus   5915 to bus  44200 ckt 64 /   5915 SO_TEX__345A  345   44200 HILLJE__B345  345  64  
+      remove machine U2 from bus 110352 /* 110352 STP_STP_G2   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 143 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1090.46 InitViol=       -33 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_1300" / 9837 P2 
+     open branch from bus   5915 to bus  44200 ckt 64 /   5915 SO_TEX__345A  345   44200 HILLJE__B345  345  64  
+     open branch from bus   5915 to bus 110352 ckt G1 /   5915 SO_TEX__345A  345  110352 STP_STP_G2   25.0  G1  
+     open branch from bus   5915 to bus 110352 ckt G2 /   5915 SO_TEX__345A  345  110352 STP_STP_G2   25.0  G2  
+  end
+ end
+
+ monitor flowgate 144 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    482.94 InitViol=       -30 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_37904" / 3651 P1 
+     open branch from bus    679 to bus  11857 ckt 1  /    679 MCPHERSON     138   11857 MCPHERSN2_P8  138  1   
+     open branch from bus   1854 to bus  15101 ckt 1  /   1854 ROANOKE1_8    138   15101 PARKVISTA2_8  138  1   
+     open branch from bus   1856 to bus   2034 ckt 1  /   1856 KELLER1T_8    138    2034 KLR_MAG2_T8   138  1   
+     open branch from bus    679 to bus   1857 ckt 1  /    679 MCPHERSON     138    1857 MCPHERSN_P8   138  1   
+     open branch from bus   2026 to bus   2050 ckt 1  /   2026 CLYVIL1_T8    138    2050 BEDFORD1_8    138  1   
+     open branch from bus   2026 to bus   2027 ckt 1  /   2026 CLYVIL1_T8    138    2027 BEARCK1_8     138  1   
+     open branch from bus   2034 to bus   2038 ckt 1  /   2034 KLR_MAG2_T8   138    2038 WPKELLR2_8    138  1   
+     open branch from bus   2027 to bus   2038 ckt 1  /   2027 BEARCK1_8     138    2038 WPKELLR2_8    138  1   
+     open branch from bus   2050 to bus   2052 ckt 1  /   2050 BEDFORD1_8    138    2052 BD_WDSN2_T8   138  1   
+     open branch from bus   2016 to bus   2052 ckt 1  /   2016 EULESS_8      138    2052 BD_WDSN2_T8   138  1   
+     open branch from bus   1856 to bus  11857 ckt 1  /   1856 KELLER1T_8    138   11857 MCPHERSN2_P8  138  1   
+ // !!! Failed to map 1 events reported below
+  //    OPEN BRANCH FROM BUS 15101 TO BUS 1857 CKT 1                  /* () - MCPHERSN_P8(138) /! Branch not found              
+  end
+ end
+
+ monitor flowgate 145 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1078.96 InitViol=       -22 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_16685" / 9980 P2 
+     open branch from bus   5915 to bus  47531 ckt 18 /   5915 SO_TEX__345A  345   47531 JONCRK18LR    345  18  
+     open branch from bus  42530 to bus  47531 ckt 18 /  42530 JONCRK__B345  345   47531 JONCRK18LR    345  18  
+      remove machine U1 from bus 110351 /* 110351 STP_STP_G1   25.0  Default dispatch
+  end
+ end
+
+ monitor flowgate 146 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    471.60 InitViol=       -19 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_1760" / 6950 P2 
+     open branch from bus   8422 to bus   8580 ckt 1  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  1   
+     open branch from bus   8422 to bus   8580 ckt 2  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  2   
+     open branch from bus   8565 to bus   8580 ckt 1  /   8565 HECKER4A      138    8580 RESNIK4A      138  1   
+     open branch from bus   8580 to bus  80470 ckt 1  /   8580 RESNIK4A      138   80470 MCCAMPB4A     138  1   
+  end
+ end
+
+ monitor flowgate 147 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    471.60 InitViol=       -19 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_10883" / 20378 P5 
+     open branch from bus   8422 to bus   8580 ckt 1  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  1   
+     open branch from bus   8422 to bus   8580 ckt 2  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  2   
+     open branch from bus   8565 to bus   8580 ckt 1  /   8565 HECKER4A      138    8580 RESNIK4A      138  1   
+     open branch from bus   8580 to bus  80470 ckt 1  /   8580 RESNIK4A      138   80470 MCCAMPB4A     138  1   
+  end
+ end
+
+ monitor flowgate 148 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    471.60 InitViol=       -19 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_1760_Dup1" / 10425 P2 
+     open branch from bus   8422 to bus   8580 ckt 1  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  1   
+     open branch from bus   8422 to bus   8580 ckt 2  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  2   
+     open branch from bus   8565 to bus   8580 ckt 1  /   8565 HECKER4A      138    8580 RESNIK4A      138  1   
+     open branch from bus   8580 to bus  80470 ckt 1  /   8580 RESNIK4A      138   80470 MCCAMPB4A     138  1   
+  end
+ end
+
+ monitor flowgate 149 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    471.60 InitViol=       -19 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_1760_Dup2" / 15989 P4 
+     open branch from bus   8422 to bus   8580 ckt 1  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  1   
+     open branch from bus   8422 to bus   8580 ckt 2  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  2   
+     open branch from bus   8565 to bus   8580 ckt 1  /   8565 HECKER4A      138    8580 RESNIK4A      138  1   
+     open branch from bus   8580 to bus  80470 ckt 1  /   8580 RESNIK4A      138   80470 MCCAMPB4A     138  1   
+  end
+ end
+
+ monitor flowgate 150 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    471.60 InitViol=       -19 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_1760_Dup3" / 18730 P5 
+     open branch from bus   8422 to bus   8580 ckt 1  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  1   
+     open branch from bus   8422 to bus   8580 ckt 2  /   8422 I_DUPSW4A     138    8580 RESNIK4A      138  2   
+     open branch from bus   8565 to bus   8580 ckt 1  /   8565 HECKER4A      138    8580 RESNIK4A      138  1   
+     open branch from bus   8580 to bus  80470 ckt 1  /   8580 RESNIK4A      138   80470 MCCAMPB4A     138  1   
+  end
+ end
+
+ monitor flowgate 151 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1071.79 InitViol=       -15 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_44086_Dup1" / 10090 P2 
+     open branch from bus   5400 to bus   5725 ckt 1  /   5400 SPRUCE        345    5725 PAWNEESW5     345  1   
+     open branch from bus   5725 to bus   5901 ckt 1  /   5725 PAWNEESW5     345    5901 MIGUEL5       345  1   
+     open branch from bus   5725 to bus   8164 ckt 1  /   5725 PAWNEESW5     345    8164 COLETO7A      345  1   
+     open branch from bus   5725 to bus   8689 ckt 1  /   5725 PAWNEESW5     345    8689 TANGO7A       345  1   
+  end
+ end
+
+ monitor flowgate 152 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1071.79 InitViol=       -15 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_44086_Dup3" / 18419 P5 
+     open branch from bus   5400 to bus   5725 ckt 1  /   5400 SPRUCE        345    5725 PAWNEESW5     345  1   
+     open branch from bus   5725 to bus   5901 ckt 1  /   5725 PAWNEESW5     345    5901 MIGUEL5       345  1   
+     open branch from bus   5725 to bus   8164 ckt 1  /   5725 PAWNEESW5     345    8164 COLETO7A      345  1   
+     open branch from bus   5725 to bus   8689 ckt 1  /   5725 PAWNEESW5     345    8689 TANGO7A       345  1   
+  end
+ end
+
+ monitor flowgate 153 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1071.79 InitViol=       -15 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_44086_Dup2" / 15738 P4 
+     open branch from bus   5400 to bus   5725 ckt 1  /   5400 SPRUCE        345    5725 PAWNEESW5     345  1   
+     open branch from bus   5725 to bus   5901 ckt 1  /   5725 PAWNEESW5     345    5901 MIGUEL5       345  1   
+     open branch from bus   5725 to bus   8164 ckt 1  /   5725 PAWNEESW5     345    8164 COLETO7A      345  1   
+     open branch from bus   5725 to bus   8689 ckt 1  /   5725 PAWNEESW5     345    8689 TANGO7A       345  1   
+  end
+ end
+
+ monitor flowgate 154 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1071.79 InitViol=       -15 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_44086" / 6615 P2 
+     open branch from bus   5400 to bus   5725 ckt 1  /   5400 SPRUCE        345    5725 PAWNEESW5     345  1   
+     open branch from bus   5725 to bus   5901 ckt 1  /   5725 PAWNEESW5     345    5901 MIGUEL5       345  1   
+     open branch from bus   5725 to bus   8164 ckt 1  /   5725 PAWNEESW5     345    8164 COLETO7A      345  1   
+     open branch from bus   5725 to bus   8689 ckt 1  /   5725 PAWNEESW5     345    8689 TANGO7A       345  1   
+  end
+ end
+
+ monitor flowgate 155 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    466.71 InitViol=       -14 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_37859" / 3647 P1 
+     open branch from bus    566 to bus   2035 ckt 1  /    566 CHERRYGROV    138    2035 BEARCK3_8     138  1   
+     open branch from bus   2028 to bus   2042 ckt 1  /   2028 CLYVIL2_T8    138    2042 SMITHFD2_8    138  1   
+     open branch from bus   2028 to bus  12028 ckt 1  /   2028 CLYVIL2_T8    138   12028 CLYVIL2_8     138  1   
+     open branch from bus   2033 to bus   2036 ckt 1  /   2033 KLR_MAG1_T8   138    2036 KELLER2_T8    138  1   
+     open branch from bus   2033 to bus  12033 ckt 1  /   2033 KLR_MAG1_T8   138   12033 HRTAG1_T8     138  1   
+     open branch from bus   2028 to bus   2035 ckt 1  /   2028 CLYVIL2_T8    138    2035 BEARCK3_8     138  1   
+     open branch from bus    566 to bus   2037 ckt 1  /    566 CHERRYGROV    138    2037 WPKELLR1_8    138  1   
+     open branch from bus   2033 to bus   2037 ckt 1  /   2033 KLR_MAG1_T8   138    2037 WPKELLR1_8    138  1   
+     open branch from bus   2039 to bus   2043 ckt 1  /   2039 MEADPRK1_8    138    2043 WATAGAN_T8    138  1   
+     open branch from bus   2039 to bus   2042 ckt 1  /   2039 MEADPRK1_8    138    2042 SMITHFD2_8    138  1   
+     open branch from bus   2043 to bus   2074 ckt 1  /   2043 WATAGAN_T8    138    2074 DEENSW_8      138  1   
+     open branch from bus   1852 to bus  15100 ckt 1  /   1852 ROANOKE2_8    138   15100 PARKVISTA1_8  138  1   
+ // !!! Failed to map 1 events reported below
+  //    OPEN BRANCH FROM BUS 2036 TO BUS 15100 CKT 1                  /* KELLER2_T8(138) - () /! Branch not found              
+  end
+ end
+
+ monitor flowgate 156 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    490.25 InitViol=       -12 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_5184" / 8041 P2 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 157 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    490.25 InitViol=       -12 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_5184_Dup2" / 17080 P4 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 158 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    490.25 InitViol=       -12 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_5184_Dup1" / 11525 P2 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 159 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    490.25 InitViol=       -12 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_5184_Dup3" / 19821 P5 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 160 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_7780" / 562 P1 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 161 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_1877_Dup3" / 18839 P5 
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 162 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2790_Dup1" / 11027 P2 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 163 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_7780_Dup1" / 8451 P2 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 164 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_10624" / 20155 P5 
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 165 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_1877" / 7059 P2 
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 166 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2790_Dup2" / 16591 P4 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 167 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_1877_Dup1" / 10534 P2 
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 168 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_1877_Dup2" / 16098 P4 
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 169 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2790" / 7552 P2 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 170 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    486.06 InitViol=        -8 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2790_Dup3" / 19332 P5 
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+     open branch from bus   8485 to bus   8882 ckt 1  /   8485 WESTSIDE4A    138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 171 "5764 ERIOHONDOSB8  138    8319 RIOHONDO4A    138  1 Co" rating     173.00 / Flow=    178.92 InitViol=        -6 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   5764 to bus   8319 ckt 1  /      51.22
+  contingency "DB_ID_43728_Dup1" / 6375 P2 
+     open branch from bus   5761 to bus   5766 ckt 1  /   5761 PAREDESSW8    138    5766 CNTRLAVESUB8  138  1   
+  end
+ end
+
+ monitor flowgate 172 "5764 ERIOHONDOSB8  138    8319 RIOHONDO4A    138  1 Co" rating     173.00 / Flow=    178.92 InitViol=        -6 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   5764 to bus   8319 ckt 1  /      51.22
+  contingency "DB_ID_43728" / 4053 P1 
+     open branch from bus   5761 to bus   5766 ckt 1  /   5761 PAREDESSW8    138    5766 CNTRLAVESUB8  138  1   
+  end
+ end
+
+ monitor flowgate 173 "8951 STEWART4A     138  888001 BONETE_SUB    138  1 Co" rating     452.73 / Flow=    457.16 InitViol=        -4 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8951 to bus 888001 ckt 1  /      -0.01
+  contingency "DB_ID_18077" / 23494 P7 
+     open branch from bus  44010 to bus  44342 ckt 05 /  44010 W_A_P__POI8A  138   44342 IMPERL05T3_8  138  05  
+     open branch from bus  44120 to bus  44311 ckt 24 /  44120 BRITMR__B138  138   44311 HAYES_24T3_8  138  24  
+     open branch from bus  47010 to bus  47014 ckt 24 /  47010 BELAIR_B138A  138   47014 BELAIR24T6_8  138  24  
+     open branch from bus  44342 to bus  44483 ckt 05 /  44342 IMPERL05T3_8  138   44483 MOCITY05T3_8  138  05  
+     open branch from bus  44483 to bus  44672 ckt 05 /  44483 MOCITY05T3_8  138   44672 STAFRD_T05_8  138  05  
+     open branch from bus  44672 to bus  44761 ckt 05 /  44672 STAFRD_T05_8  138   44761 WCHASE_T05_8  138  05  
+     open branch from bus  44760 to bus  44761 ckt 05 /  44760 WCHASE_S05_8  138   44761 WCHASE_T05_8  138  05  
+ // !!! Failed to map 1 events reported below
+  //    OPEN BRANCH FROM BUS 44342 TO BUS 744342 CKT 1                /* IMPERL058025(138) - () /! ToBus not found               
+  end
+ end
+
+ monitor flowgate 174 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    478.31 InitViol=        -0 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2785_Dup3" / 19331 P5 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 175 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    478.31 InitViol=        -0 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2785_Dup1" / 11026 P2 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 176 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    478.31 InitViol=        -0 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2785" / 7551 P2 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 177 "8517 HOLLY4B       138    8486 HOLLY4A       138  BT C" rating     478.00 / Flow=    478.31 InitViol=        -0 MW #help=0 #harm=0 #ExtHarm=0
+  monitor branch from bus   8517 to bus   8486 ckt BT /     343.48
+  contingency "DB_ID_2785_Dup2" / 16590 P4 
+     open branch from bus   8458 to bus   8490 ckt 2  /   8458 B_DAVIS4A     138    8490 AIRLINE4A     138  2   
+     open branch from bus   8490 to bus   8882 ckt 1  /   8490 AIRLINE4A     138    8882 CABANISS4A    138  1   
+  end
+ end
+
+ monitor flowgate 178 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32877" / 14816 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 179 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32834" / 14814 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 180 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32729_Dup1" / 20872 P5 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+     open branch from bus  11699 to bus 143062 ckt 1  /  11699 WOODARD_5     345  143062 IMPACT_5      345  1   
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+  end
+ end
+
+ monitor flowgate 181 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32759" / 14810 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 182 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32729" / 9536 P2 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+     open branch from bus  11699 to bus 143062 ckt 1  /  11699 WOODARD_5     345  143062 IMPACT_5      345  1   
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+  end
+ end
+
+ monitor flowgate 183 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32893" / 14817 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 184 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32775" / 14811 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 185 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32743" / 14809 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 186 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.23 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32818" / 14813 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 187 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.22 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32801" / 14812 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11688 ckt 1  /   1695 MOSES_5       345   11688 THORNTRE_5    345  1   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 188 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1051.22 Redisp=        85 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_32860" / 14815 P4 
+     open branch from bus   1695 to bus   1697 ckt 1  /   1695 MOSES_5       345    1697 SULSP_SS1_5   345  1   
+     open branch from bus   1695 to bus   5925 ckt 1  /   1695 MOSES_5       345    5925 DCEAST        345  1   
+     open branch from bus   1695 to bus  11688 ckt 2  /   1695 MOSES_5       345   11688 THORNTRE_5    345  2   
+     open branch from bus   1695 to bus  11699 ckt 1  /   1695 MOSES_5       345   11699 WOODARD_5     345  1   
+     open branch from bus   1692 to bus  11699 ckt 1  /   1692 PARIS_SW1_5   345   11699 WOODARD_5     345  1   
+      remove swshunt from bus   1695 /*   1695 MOSES_5       345 
+      remove swshunt from bus   5920 /*   5920 WELSHDC1      345 
+      remove machine EQ from bus   5920 /*   5920 WELSHDC1      345  Default dispatch
+      remove swshunt from bus   5925 /*   5925 DCEAST        345 
+  end
+ end
+
+ monitor flowgate 189 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1046.39 Redisp=       156 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_41212" / 24199 P7 
+     open branch from bus   1906 to bus   1939 ckt 1  /   1906 VENUS_S5      345    1939 MDLTHELP_S5   345  1   
+     open branch from bus   1907 to bus   1940 ckt 1  /   1907 VENUS_N5      345    1940 MDLTHELP_N5   345  1   
+  end
+ end
+
+ monitor flowgate 190 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1046.39 Redisp=       156 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_35183" / 18355 P5 
+// already opened     open branch from bus   1936 to bus   1939 ckt 1  /   1936 MDLTHELP_5    345    1939 MDLTHELP_S5   345  1   
+     open branch from bus   1936 to bus   1939 ckt BC /   1936 MDLTHELP_5    345    1939 MDLTHELP_S5   345  BC  
+     open branch from bus   1936 to bus   1940 ckt 1  /   1936 MDLTHELP_5    345    1940 MDLTHELP_N5   345  1   
+// already opened     open branch from bus   1936 to bus   1940 ckt BO /   1936 MDLTHELP_5    345    1940 MDLTHELP_N5   345  BO  
+     open branch from bus   1936 to bus 150155 ckt 5  /   1936 MDLTHELP_5    345  150155 MDANP_CT5    21.0  5   
+     open branch from bus   1936 to bus 150156 ckt 6  /   1936 MDLTHELP_5    345  150156 MDANP_CT6    21.0  6   
+     open branch from bus   1906 to bus   1939 ckt 1  /   1906 VENUS_S5      345    1939 MDLTHELP_S5   345  1   
+// already opened     open branch from bus   1939 to bus   1940 ckt 1  /   1939 MDLTHELP_S5   345    1940 MDLTHELP_N5   345  1   
+     open branch from bus   1939 to bus 150151 ckt 1  /   1939 MDLTHELP_S5   345  150151 MDANP_CT1    21.0  1   
+     open branch from bus   1939 to bus 150152 ckt 2  /   1939 MDLTHELP_S5   345  150152 MDANP_CT2    21.0  2   
+     open branch from bus   1907 to bus   1940 ckt 1  /   1907 VENUS_N5      345    1940 MDLTHELP_N5   345  1   
+     open branch from bus   1940 to bus 150153 ckt 3  /   1940 MDLTHELP_N5   345  150153 MDANP_CT3    21.0  3   
+     open branch from bus   1940 to bus 150154 ckt 4  /   1940 MDLTHELP_N5   345  150154 MDANP_CT4    21.0  4   
+  end
+ end
+
+ monitor flowgate 191 "8455 LONHILL7A     345    8956 WHITEPT7A     345  1 Co" rating    1057.00 / Flow=   1044.68 Redisp=       181 MW #help=1 #harm=1 #ExtHarm=0
+  monitor branch from bus   8455 to bus   8956 ckt 1  /     802.97
+  contingency "DB_ID_20478" / 343 P1 
+      remove machine C1 from bus 111141 /* 111141 CBECII_CT7   25.0  Default dispatch
+      remove machine C2 from bus 111142 /* 111142 CBECII_CT8   25.0  Default dispatch
+      remove machine C0 from bus 111143 /* 111143 CBECII_STG9  23.5  Default dispatch
+  end
+ end

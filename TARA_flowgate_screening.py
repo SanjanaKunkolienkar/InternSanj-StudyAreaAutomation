@@ -1,10 +1,7 @@
 import pyPowerGEM.wrapper as pw
-import pyPowerGEM.pyTARA as pt
-import os,sys,shutil
+import os,sys
 import pandas as pd
 from string import Template
-import numpy as np
-#import config_parser_helper as cph
 from config.definitions import ROOT_DIR
 
 def read_input_files(filename):

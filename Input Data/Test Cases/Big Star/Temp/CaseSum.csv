@@ -1,0 +1,38 @@
+EPE  LF case summary[TARA Ver 2301.2.0.0 64-bit - Thu Aug 17 14:59:55 2023]
+
+ Loadflow Case: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Study Case\22SUM_CHARGING_0 .raw
+ Study Data File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\files\SUB.sub
+ Contingency File: not provided
+ Monitor File: C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Big Star\Temp\1_flowgates.fgt
+ Exclude File: not provided
+ Pre/Post Contingency PAR Adjustment: Adjusted/Fixed
+
+ ConvStatus, Solved, 
+ Iterations,     12 
+ busPmismMax,     0.0203 
+ Buses,   9094 
+ LoadBuses,   8005 
+  GenBuses,   1002 
+SwingBuses,      4 
+  ShutDown,     83 
+     Loads,   6755 
+  Machines,   1060 
+NonTranBrn,  11226 
+Transformers,   2288 
+Phase Shifters,      7 
+Two-term.DC,      4
+SwitcShunts,   1526 
+TransImpdCorrTables,      0 
+Multi-term DC,      0 
+MultiSection lines,    180 
+Interarea Transfers,      0 
+FACTS control devices,     10 
+ Total Areas,     56 
+ Total Zones,    428 
+
+ Swing bus dispatch summary
+   Bus#,Bus Name    ,Volt,Area,AreaName    , Zon,ZoneName    ,  curPGen,  MinPGen,  MaxPGen,  curQGen,  MinQGen,  MaxQGen, VltSched,
+   5920,WELSHDC1    , 345,  16,DC_EAST     , 200,EHVDC       ,   599.40,  -600.00,   600.00,    48.71,  -360.00,   360.00,   1.0000,
+   6103,NORTHDC7B   , 345,  14,NORTH_DC    , 394,NHVDC       ,   219.81,  -220.00,   220.00,   104.94,  -132.00,   132.00,   1.0406,
+  86101,REC-230     , 230,  24,CFE         , 612,CFE         ,   263.85,  -500.00,   500.00,    -0.37,  -500.00,   500.00,   1.0100,
+ 120043,MLSES_UNIT3 ,20.0, 901,E_ONCOR_ED  , 952,E_RUSK      ,   641.34,   230.00,   805.00,    24.82,  -182.00,   410.00,   1.0203,
