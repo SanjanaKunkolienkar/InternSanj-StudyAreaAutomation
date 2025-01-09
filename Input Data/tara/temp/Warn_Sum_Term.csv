@@ -1,0 +1,5 @@
+
+    2,   46,    3,Input code not zero in the first line of RAW file means that it is a partial RAW case. TARA can read only a complete RAW case  not a partial RAW case. Aborting ...,22SSWG_2025_SUM1_U1_Final_10102022_OC_20230327_withSA.raw,    2,
+    4,   41,    3,No hourly load flow models found for mask [C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Brotherton\Study Case\22SSWG_2025_SUM1_U1_Final_10102022_OC_20230327_withSA.raw] in ,,,
+    5,   46,    3,Input code not zero in the first line of RAW file means that it is a partial RAW case. TARA can read only a complete RAW case  not a partial RAW case. Aborting ...,22SSWG_2025_SUM1_U1_Final_10102022_OC_20230327_withSA.raw,    2,
+    7,   41,    3,No hourly load flow models found for mask [C:\Users\skunkolienkar\Desktop\StudyAreaAutomation\Input Data\SSWGCase\Brotherton\Study Case\22SSWG_2025_SUM1_U1_Final_10102022_OC_20230327_withSA.raw] in ,,,

@@ -9,8 +9,8 @@ config = configparser.ConfigParser()
 # Read the settings.ini file
 ##This can be used if you have multiple folders in the SSWGCase folder. When using this comment like 16 and line 17.
 ##If not using the next three lines, uncomment like 16 and 17
-filename = 'Water Valley'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
-filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\' , filename , 'settings.ini')
+filename = 'Brotherton'#'Eldora Solar'#'Trigo Solar'#'BRP Bonete'#'Pecan Praire' #'Big star'
+filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\settings.ini')
 config.read(filepath)
 
 # filepath = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\settings.ini')
@@ -27,14 +27,14 @@ def main():
     voltage_cutoff = float(config.get('settings', 'voltage_cutoff'))
     POI_bus = str(config.get('settings', 'POI_bus'))
     level = int(config.get('settings', 'level'))
-    number_of_gens = 0 #int(config.get('settings', 'number_of_gens'))
-    option = 0 #int(config.get('settings', 'option'))
-    gen_MW = 0 #float(config.get('settings', 'gen_MW'))
-    gen_MVAR = 0 #float(config.get('settings', 'gen_MVAR'))
+    number_of_gens = int(config.get('settings', 'number_of_gens'))
+    option = int(config.get('settings', 'option'))
+    gen_MW = float(config.get('settings', 'gen_MW'))
+    gen_MVAR = float(config.get('settings', 'gen_MVAR'))
 
-    from_bus = 0 #int(config.get('settings', 'from_bus'))
-    to_bus = 0 #int(config.get('settings', 'to_bus'))
-    percent_from_frombus = 0 #float(config.get('settings', 'percent_from_frombus'))
+    from_bus = int(config.get('settings', 'from_bus'))
+    to_bus = int(config.get('settings', 'to_bus'))
+    percent_from_frombus = float(config.get('settings', 'percent_from_frombus'))
 
     #input validation
     #loading

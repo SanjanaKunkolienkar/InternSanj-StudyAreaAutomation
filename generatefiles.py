@@ -8,6 +8,9 @@ def create_combined_confile(ROOT_DIR, filename, confolder):
     # Function to combine all ERCOT confiles : only includes N-1 contingencies: P1, P2, P4, P5 and P7
     path_to_file = os.path.join(ROOT_DIR, 'Input Data\ERCOTcontingencies\\', confolder)
     output_file = os.path.join(ROOT_DIR, 'Input Data\SSWGCase\\', filename, 'files\\')
+
+    if not os.path.exists(output_file):
+        os.makedirs(output_file)
     #print(output_file)
     opfilename = os.path.join(output_file, 'AllERCOTcontingencies.con')
     with open(opfilename, 'w') as f:
@@ -67,8 +70,8 @@ def create_subfile(ROOT_DIR, filename, buses, genbuses):
     filename = os.path.join(output_file, 'SUB.sub')
     with open(filename, 'w') as f:
         f.write('subsystem \'Export\'\n')
-        for bus in Gbuses:
-            statement = '{}{}{}'.format(' bus ', bus, '\n')
+        for gbus in Gbuses:
+            statement = '{}{}{}'.format(' bus ', gbus, '\n')
             f.write(statement)
         f.write('End\n')
         f.write('subsystem \'Import\'\n')

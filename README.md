@@ -12,6 +12,8 @@ Before running the main.py ensure the following:
    3. Missing Gen Files: Can be empty.
    4. Planning Data Dictionary: Has the latest ERCOT planning data dictionary modified by EPE.
    5. SSWG Cases : Input the corresponding year SSWG case.
+   6. tara : Has the TARA application and excel file.
+   7. 
       1. Load the input files in following folders:
          1. PlanningDataDictionary: 
          2. SSWGCase: .raw/.sav file of the study case.
