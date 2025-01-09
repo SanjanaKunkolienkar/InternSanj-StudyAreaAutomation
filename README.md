@@ -15,6 +15,6 @@ Before running the main.py ensure the following:
    6. tara : Has the TARA application and excel file.
    7. 
       1. Load the input files in following folders:
-         1. PlanningDataDictionary: 
+         1. PlanningDataDictionary: ERCOT planning data dictionary
          2. SSWGCase: .raw/.sav file of the study case.
-         3. 
+         3. Mon and Con files in their respective folders
